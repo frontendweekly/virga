@@ -7,5 +7,17 @@
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "Yuya Saito <hello@studiomohawk.com> (https://github.com/studiomohawk)",
-  "license": "MIT"
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/frontendweekly/virga.git"
+  },
+  "keywords": [
+    "eleventy",
+    "netlify"
+  ],
+  "bugs": {
+    "url": "https://github.com/frontendweekly/virga/issues"
+  },
+  "homepage": "https://github.com/frontendweekly/virga#readme"
 }
