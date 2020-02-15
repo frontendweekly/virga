@@ -1,0 +1,19 @@
+*.log
+npm-debug.*
+*.scssc
+*.log
+*.swp
+.DS_Store
+.sass-cache
+node_modules
+dist
+.envrc
+.env
+
+# Specifics
+
+# Hide functions
+functions
+
+# Local Netlify folder
+.netlify

@@ -1,0 +1,11 @@
+{
+  "name": "virga",
+  "version": "0.0.1",
+  "description": "Virga is a bit opinionated but minimum Eleventy starter kit which also focused on using Netlify.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Yuya Saito <hello@studiomohawk.com> (https://github.com/studiomohawk)",
+  "license": "MIT"
+}
