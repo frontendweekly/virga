@@ -17,6 +17,7 @@ const parseTransform = require('./src/_transforms/parse-transform.js');
 const markdownIt = require('markdown-it');
 const markdownItClassy = require('markdown-it-classy');
 const markdownItFootnote = require('markdown-it-footnote');
+const markdownItDeflist = require('markdown-it-deflist');
 
 // Import data files
 const site = require('./src/_data/site.json');
@@ -49,6 +50,7 @@ module.exports = function(config) {
     })
       .use(markdownItClassy)
       .use(markdownItFootnote)
+      .use(markdownItDeflist)
   );
 
   // Passthrough copy

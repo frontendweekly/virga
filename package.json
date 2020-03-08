@@ -36,6 +36,7 @@
     "html-minifier": "^4.0.0",
     "markdown-it": "^10.0.0",
     "markdown-it-classy": "^0.2.0",
+    "markdown-it-deflist": "^2.0.3",
     "markdown-it-footnote": "^3.0.2",
     "postcss": "^7.0.27",
     "postcss-cli": "^7.1.0",
