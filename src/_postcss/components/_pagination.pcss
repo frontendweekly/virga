@@ -1,0 +1,34 @@
+.c-pagination a {
+  color: var(--color-text);
+  display: inline-flex;
+
+  &:not(:hover) {
+    text-decoration: none;
+  }
+
+  /* Flip content if direction is backwards */
+  &[data-direction='backwards'] {
+    flex-direction: row-reverse;
+  }
+
+  &[data-direction='backwards'] svg {
+    transform: rotate(-180deg);
+  }
+
+  /* If only child and forwards, push out to the right */
+  &[data-direction='forwards']:only-child {
+    margin-left: auto;
+  }
+}
+
+.c-pagination svg {
+  pointer-events: none;
+  margin-top: auto;
+  margin-bottom: auto;
+}
+
+.c-pagination .c-pagination__nav {
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+}

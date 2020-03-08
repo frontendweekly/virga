@@ -1,0 +1,21 @@
+{% if paginationNextUrl or paginationPrevUrl %}
+  <hr class="o-hr">
+  <div class="o-inner-wrapper">
+    <footer class="c-pagination">
+      <nav class="c-pagination__nav">
+        {% if paginationPrevUrl %}
+          <a href="{{ paginationPrevUrl }}" data-direction="backwards">
+            <span>{{ paginationPrevText if paginationPrevText else 'Previous' }}</span>
+            {% include "assets/icons/arrow.svg" %}
+          </a>
+        {% endif %}
+        {% if paginationNextUrl %}
+          <a href="{{ paginationNextUrl }}" data-direction="forwards">
+            <span>{{ paginationNextText if paginationNextText else 'Next' }}</span>
+            {% include "assets/icons/arrow.svg" %}
+          </a>
+        {% endif %}
+      </nav>
+    </footer>
+  </div>
+{% endif %}

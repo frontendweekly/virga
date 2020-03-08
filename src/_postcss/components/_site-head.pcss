@@ -1,0 +1,24 @@
+.c-site-head {
+  padding-top: calc(var(--space-base) * 4);
+  padding-bottom: calc(var(--space-base) * 4);
+  padding-left: calc(var(--space-base) * 2);
+  padding-right: calc(var(--space-base) * 2);
+}
+
+.c-site-head__inner {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.c-site-head__site-name {
+  --type-local-font-size-in-px: 24;
+  --type-local-space-bottom: var(--type-base-line-height) /
+    var(--type-local-font-size-in-px);
+
+  font-size: calc((var(--type-local-font-size-in-px) / var(--type-base-font-size)) * 1em);
+  line-height: calc(var(--type-base-line-height) / var(--type-local-font-size-in-px));
+  font-weight: 700;
+  text-decoration: none;
+  color: var(--color-text);
+}

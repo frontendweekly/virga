@@ -1,0 +1,84 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+ul[class],
+ol[class] {
+  padding: 0;
+  list-style: none;
+}
+
+body,
+h1,
+h2,
+h3,
+h4,
+p,
+ul[class],
+ol[class],
+figure,
+blockquote,
+dl,
+dd {
+  margin: 0;
+}
+
+html,
+body {
+  height: 100%;
+}
+
+body {
+  min-height: 100vh;
+  scroll-behavior: smooth;
+  text-rendering: optimizeLegibility;
+  font-variant-ligatures: common-ligatures;
+  display: flex;
+  flex-direction: column;
+}
+
+a {
+  color: var(--color-text);
+  text-decoration-skip-ink: auto;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+strong,
+blockquote em,
+th {
+  font-weight: 700;
+}
+
+main {
+  flex: 1 0 auto;
+  max-width: calc(var(--space-char-per-line) * 1ch);
+  margin-right: auto;
+  margin-left: auto;
+  padding-top: calc(var(--space-base) * 5);
+  padding-bottom: calc(var(--space-base) * 5);
+  padding-left: calc(var(--space-base) * 2);
+  padding-right: calc(var(--space-base) * 2);
+}
+
+main:focus {
+  outline: none;
+}

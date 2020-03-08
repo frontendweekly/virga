@@ -12,6 +12,9 @@ dist
 
 # Specifics
 
+# Hide compiled CSS
+src/_includes/assets/styles/*
+
 # Hide functions
 functions
 

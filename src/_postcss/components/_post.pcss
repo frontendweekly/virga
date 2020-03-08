@@ -1,0 +1,158 @@
+.c-post {
+  /* List */
+  & ul,
+  & ol,
+  & dl {
+    --type-local-font-size-in-px: 40;
+
+    padding-left: calc(
+      (var(--type-local-font-size-in-px) / var(--type-base-font-size)) * 1em
+    );
+  }
+
+  /* Table */
+  & table {
+    border-collapse: collapse;
+    overflow-x: auto;
+    width: 100%;
+  }
+
+  & th {
+    border-style: solid;
+    border-width: 1px 0;
+    border-top-color: var(--color-gray-400);
+    border-bottom-color: var(--color-gray-400);
+    font-weight: 700;
+    text-transform: uppercase;
+    text-align: left;
+  }
+
+  /* Figure & Video */
+  & figure img,
+  & pre > code,
+  & .c-video-player {
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+  }
+
+  & figure,
+  & .c-video-player,
+  & video {
+    width: 100%;
+    max-width: calc(var(--space-char-per-line) * 1ch);
+    margin-left: 50%;
+
+    /* Changing this value to 47% removes the horizontal scrollbar once the viewport is < 930px */
+    transform: translateX(-50%);
+
+    /* Changing this value to 49% allows for the suggestion above to also eliminate the horizontal scroll. */
+    position: relative;
+  }
+
+  /*  Figure & Image */
+  & img {
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  & figure img {
+    position: relative;
+    z-index: 1;
+  }
+
+  & figcaption {
+    font-size: 0.9em;
+    font-style: italic;
+    margin: 0.5rem auto 0 auto;
+    text-align: center;
+  }
+
+  /* Code */
+  & pre > code {
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  & code:not([class]),
+  & kbd:not([class]),
+  & samp:not([class]) {
+    /* stylelint-disable font-family-no-duplicate-names */
+    font-family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace, monospace;
+    background-color: var(--color-gray-200);
+    font-size: 0.9em;
+    padding: 1px 2px;
+  }
+
+  & pre {
+    --type-local-font-size-in-px: 16;
+
+    font-size: 0.9em;
+    border-radius: 2px;
+    background-color: var(--color-gray-900);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    padding: 1rem;
+    margin-left: calc(
+      (var(--type-local-font-size-in-px) / var(--type-base-font-size)) * -1em
+    );
+    margin-right: calc(
+      (var(--type-local-font-size-in-px) / var(--type-base-font-size)) * -1em
+    );
+  }
+
+  /* Block quotes */
+  & blockquote {
+    --type-local-font-size-in-px: 16;
+    --type-local-font-size-in-px--large: 40;
+
+    border-left: var(--space-base) solid var(--color-gray-800);
+    margin-left: calc(
+      (var(--type-local-font-size-in-px) / var(--type-base-font-size)) * -1em
+    );
+    margin-right: calc(
+      (var(--type-local-font-size-in-px) / var(--type-base-font-size)) * -1em
+    );
+    padding-left: calc(
+      (var(--type-local-font-size-in-px) / var(--type-base-font-size)) * 1em
+    );
+    padding-right: calc(
+      (var(--type-local-font-size-in-px) / var(--type-base-font-size)) * 1em
+    );
+    font-style: italic;
+  }
+
+  /* Video */
+  & .c-video-player {
+    padding-top: 66%;
+  }
+
+  & .c-video-player > iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+  }
+
+  /* Footnote */
+  & .footnote-ref a {
+    text-decoration: none;
+  }
+
+  & .footnotes {
+    font-size: 0.9em;
+  }
+
+  & .footnotes-list {
+    list-style: decimal;
+  }
+
+  & .footnotes p {
+    margin-top: 0;
+  }
+}
+
+.c-heading-permalink {
+  font-size: 0.8em;
+  color: var(--color-gray-700);
+  margin-left: var(--space-base);
+  vertical-align: middle;
+}

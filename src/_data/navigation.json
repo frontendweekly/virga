@@ -1,0 +1,24 @@
+{
+  "items": [
+    {
+      "text": "Home",
+      "url": "/",
+      "external": false
+    },
+    {
+      "text": "Archive",
+      "url": "/archive",
+      "external": false
+    },
+    {
+      "text": "Twitter",
+      "url": "https://twitter.com/cssradar",
+      "external": true
+    },
+    {
+      "text": "GitHub",
+      "url": "https://github.com/frontendweekly",
+      "external": true
+    }
+  ]
+}

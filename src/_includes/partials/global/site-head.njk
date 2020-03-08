@@ -1,0 +1,13 @@
+<a class="o-skip-link" href="#main-content">Skip to content</a>
+<header role="banner" class="c-site-head">
+  <div class="o-wrapper">
+    <span class="u-visually-hidden">{{ site.name }}: {{ pageType }}</span>
+    <div class="c-site-head__inner">
+      <a href="/" class="c-site-head__site-name"{{ 'aria-current=page' if page.url == '/' | safe }}>
+        <span class="u-visually-hidden">{{ 'Back to homepage' if page.url != '/' else 'Homepage' }}</span>
+        <span aria-hidden="true">{{ site.name }}</span>
+      </a>
+      {% include "partials/components/navigation.njk" %}
+    </div>
+  </div>
+</header>

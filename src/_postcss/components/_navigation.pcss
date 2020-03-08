@@ -1,0 +1,34 @@
+.c-navigation {
+  --type-local-font-size-in-px: 16;
+
+  font-size: calc((var(--type-local-font-size-in-px) / var(--type-base-font-size)) * 1em);
+}
+
+.c-navigation__list {
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  -ms-overflow-style: none;
+  display: flex;
+  align-items: center;
+}
+
+.c-navigation__list::-webkit-scrollbar {
+  display: none;
+}
+
+.c-navigation__list > * + * {
+  margin-left: var(--space-base);
+}
+
+.c-navigation__item {
+  padding: var(--space-base) 0;
+  flex-shrink: 0;
+}
+
+.c-navigation__item a {
+  color: currentColor;
+}
+
+.c-navigation__item a:not(:hover) {
+  text-decoration: none;
+}

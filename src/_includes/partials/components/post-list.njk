@@ -1,0 +1,26 @@
+{% if postListItems.length %}
+<section class="c-post-list h-feed">
+  <div class="o-inner-wrapper">
+    <h2 class="c-post-list__heading p-name">{{ postListHeading }}</h2>
+    <ol class="c-post-list__items " reversed>
+      {% for item in postListItems %}
+        {% if item.date.getTime() <= global.now %}
+          {% set metaAuthor = item.data.author %}
+          {% set metaDate = item.date %}
+          <li class="c-post-list__item">
+            <article>
+              <h3>
+                <a href="{{ item.url }}" class="c-post-list__link u-url" rel="bookmark">{{ item.data.title }}</a>
+              </h3>
+              {% include "partials/components/post-meta.njk" %}
+              <p class="c-post-list__summary p-summary">
+                <a href="{{ item.url }}" class="c-post-list__link u-url" rel="bookmark">{{ item.data.desc }}</a>
+              </p>
+            </article>
+          </li>
+        {% endif %}
+      {% endfor %}
+    </ol>
+  </div>
+</section>
+{% endif %}

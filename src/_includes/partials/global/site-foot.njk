@@ -1,0 +1,22 @@
+<footer role="contentinfo" class="c-site-foot">
+  <div class="o-wrapper">
+    <div class="c-site-foot__inner">
+      {% if page.url != '/' %}
+      <article class="c-site-foot__details">
+        <h3>{{ site.name }}</h3>
+        <p>{{ site.shortDesc }}</p>
+      </article>
+      {% endif %}
+
+      {% include "partials/components/navigation.njk" %}
+
+      <hr class="o-hr o-hr--three-stars">
+
+      {% if site.showThemeCredit %}
+      <p class="site-foot__credit">
+        Powered by Virga v{{ pkg.version }}</a>.  Made Proudly in Tokyo.
+      </p>
+      {% endif %}
+    </div>
+  </div>
+</footer>

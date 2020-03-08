@@ -1,0 +1,13 @@
+/* TEAM */
+Yuya Saito
+Site: hello@studiomohawk.com
+Twitter: @cssradar
+Location: Tokyo, Japan
+
+/* THANKS */
+Andy Bell — for Hylia (https://github.com/hankchizljaw/hylia)
+
+/* SITE */
+Software:
+- Eleventy / https://www.11ty.dev/
+- PostCSS / https://postcss.org/

@@ -1,0 +1,35 @@
+{% set pageTitle = title + ' - ' + site.name %}
+
+{% if pageType == 'Homepage' %}
+  {% set pageTitle = site.name %}
+{% endif %}
+
+{% set currentUrl = site.url + page.url %}
+
+{% if desc %}
+  {% set metaDesc = desc %}
+{% endif %}
+
+{% if author %}
+  {% set authorName = author %}
+{% else %}
+  {% set authorName = site.author.name %}
+{% endif %}
+
+{% if mail %}
+  {% set authorMail = mail %}
+{% else %}
+  {% set authorMail = site.author.mail %}
+{% endif %}
+
+<title>{{ pageTitle }}</title>
+<link rel="canonical" href="{{ currentUrl }}">
+{% if authorMail %}
+  <link rel="me" href="mailto:{{ authorMail }}">
+{% endif %}
+{% if authorName %}
+  <meta name="author" content="{{ authorName }}">
+{% endif %}
+{% if metaDesc %}
+  <meta name="description" content="{{ metaDesc }}">
+{% endif %}

@@ -1,0 +1,25 @@
+{% extends 'layouts/base.njk' %}
+{% set pageType = 'Post' %}
+
+{# Intro content #}
+{% set introHeading = title %}
+
+{% set metaAuthor = author %}
+{% set metaDate = date %}
+
+{% set introSummary %}
+  {% include "partials/components/post-meta.njk" %}
+{% endset %}
+
+{% block content %}
+<main id="main-content" tabindex="-1" class="page-{{ pageType | lower }}">
+  <article class="c-post h-entry">
+    {% include "partials/components/intro.njk" %}
+    <div class="c-post__body inner-wrapper">
+      {{ content | safe }}
+    </div>
+  </article>
+</main>
+{% endblock %}
+
+{{ content | safe }}

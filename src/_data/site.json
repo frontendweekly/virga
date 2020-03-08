@@ -1,0 +1,12 @@
+{
+  "name": "Virga",
+  "shortDesc": "Virga is a minimum Eleventy starter kit for those who love to customize for your own needs. It is based on Hylia Starter Kit created by Andy Bell.",
+  "url": "https://virga.frontendweekly.tokyo",
+  "lang": "en",
+  "author": {
+    "name": "Yuya Saito",
+    "mail": "hello@studiomohawk.com"
+  },
+  "showThemeCredit": true,
+  "maxPostsPerPage": 5
+}

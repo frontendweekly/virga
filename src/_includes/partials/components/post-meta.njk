@@ -1,0 +1,9 @@
+<p class="c-post-meta">
+  {% if metaAuthor %}
+    <span class="c-post-meta__author p-author h-card">{{ metaAuthor }}</span>
+  {% endif %}
+  {% if metaDate %}
+    <time datetime="{{ metaDate | w3DateFilter }}"
+          class="c-post-meta__date dt-published">{{ metaDate | dateFilter }}</time>
+  {% endif %}
+</p>
