@@ -1,0 +1,16 @@
+[build]
+  command = "npm run production"
+  publish = "dist"
+  functions = "functions"
+
+[build.environment]
+  NODE_VERSION = "12.14.0"
+
+[[headers]]
+  for = "/*"
+  [headers.values]
+    X-Frame-Options = "DENY"
+    X-XSS-Protection = "1; mode=block"
+    X-Content-Type-Options = "nosniff"
+    Referrer-Policy= "origin-when-cross-origin"
+    Strict-Transport-Security= "max-age=86400"
