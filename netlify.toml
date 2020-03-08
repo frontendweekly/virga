@@ -14,3 +14,10 @@
     X-Content-Type-Options = "nosniff"
     Referrer-Policy= "origin-when-cross-origin"
     Strict-Transport-Security= "max-age=86400"
+
+# Netlify subdomain
+[[redirects]]
+    from = "https://virga.netlify.com/*"
+    to = "https://virga.frontendweekly.tokyo/:splat"
+    status = 301
+    force = true
