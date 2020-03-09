@@ -4,15 +4,11 @@
  * @author ericwbailey
  */
 
-code[class*='language-'],
-pre[class*='language-'] {
+pre[class*='language-'] > code[class*='language-'] {
   color: #f8f8f2;
-  /* stylelint-disable font-family-no-duplicate-names */
-  font-family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace, monospace;
   text-align: left;
-  word-spacing: normal;
   word-break: normal;
-  word-wrap: normal;
+  white-space: pre-wrap;
   -moz-tab-size: 2;
   -o-tab-size: 2;
   tab-size: 2;
@@ -20,13 +16,6 @@ pre[class*='language-'] {
   -moz-hyphens: none;
   -ms-hyphens: none;
   hyphens: none;
-}
-
-/* Inline code */
-:not(pre) > code[class*='language-'] {
-  padding: 0.1em;
-  border-radius: 0.3em;
-  white-space: normal;
 }
 
 .token.comment,
