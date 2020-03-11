@@ -6,7 +6,7 @@
     "build": "cross-env ELEVENTY_ENV=production eleventy",
     "build:clean": "rimraf dist/*",
     "build:postcss": "postcss src/_postcss/main.pcss -o src/_includes/assets/styles/main.css --env production",
-    "build:production": "run-s clean build:postcss build",
+    "build:production": "run-s build:clean build:postcss build",
     "dev": "cross-env ELEVENTY_ENV=development eleventy --serve",
     "dev:netlify": "cross-env ELEVENTY_ENV=development netlify dev",
     "start": "npm run dev"
