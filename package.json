@@ -3,13 +3,13 @@
   "version": "0.5.0",
   "description": "Virga is a bit opinionated but minimum Eleventy starter kit which also focused on using Netlify.",
   "scripts": {
-    "start": "npm run dev",
-    "dev": "cross-env ELEVENTY_ENV=development eleventy --serve",
     "build": "cross-env ELEVENTY_ENV=production eleventy",
+    "build:clean": "rimraf dist/*",
     "build:postcss": "postcss src/_postcss/main.pcss -o src/_includes/assets/styles/main.css --env production",
-    "netlify:dev": "cross-env ELEVENTY_ENV=development netlify dev",
-    "production": "npm run clean && npm run build:postcss && npm run build",
-    "clean": "rimraf dist/*"
+    "build:production": "run-s clean build:postcss build",
+    "dev": "cross-env ELEVENTY_ENV=development eleventy --serve",
+    "dev:netlify": "cross-env ELEVENTY_ENV=development netlify dev",
+    "start": "npm run dev"
   },
   "author": "Yuya Saito <hello@studiomohawk.com> (https://github.com/studiomohawk)",
   "license": "MIT",
@@ -51,6 +51,7 @@
     "husky": "^4.2.3",
     "lint-staged": "^10.0.8",
     "netlify-cli": "^2.37.0",
+    "npm-run-all": "^4.1.5",
     "prettier": "^1.19.1",
     "rimraf": "^3.0.2",
     "stylelint": "^13.2.0",
