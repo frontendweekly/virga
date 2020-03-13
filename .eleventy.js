@@ -1,5 +1,3 @@
-const fs = require('fs');
-
 // Import plugins
 const rssPlugin = require('@11ty/eleventy-plugin-rss');
 const syntaxHighlight = require('@11ty/eleventy-plugin-syntaxhighlight');
@@ -18,13 +16,14 @@ const markdownIt = require('markdown-it');
 const markdownItClassy = require('markdown-it-classy');
 const markdownItFootnote = require('markdown-it-footnote');
 const markdownItDeflist = require('markdown-it-deflist');
+const markdownItAttribution = require('markdown-it-attribution');
 
 // Import data files
 const site = require('./src/_data/site.json');
 
 module.exports = function(config) {
   // Build
-  config.addWatchTarget('./src/_postcss/');
+  // config.addWatchTarget('./src/_postcss/');
 
   // Plugins
   config.addPlugin(rssPlugin);
@@ -51,6 +50,7 @@ module.exports = function(config) {
       .use(markdownItClassy)
       .use(markdownItFootnote)
       .use(markdownItDeflist)
+      .use(markdownItAttribution)
   );
 
   // Passthrough copy
