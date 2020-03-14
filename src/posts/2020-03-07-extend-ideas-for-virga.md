@@ -20,8 +20,7 @@ At Frontend Weekly Tokyo, I've done some modifications on Hylia. So these are go
 ## IndieWeb
 
 > There are many reasons why you should use the IndieWeb.
-
-— Indieweb.org
+> — Indieweb.org
 
 Eleventy is very good at practicing IndieWeb since using it means you already own your content.
 
@@ -49,7 +48,5 @@ desc: Virga is a starter kit for who love to extend after all.
 ```
 
 If you omit `author` in front matter, Virga uses data from `src/_data/site.json`.
-
----
 
 You could dig really deep on IndieWeb with Eleventy and Virga in that direction.

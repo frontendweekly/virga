@@ -1,0 +1,39 @@
+.c-post {
+  & .c-blockquote {
+    --type-local-font-size-in-px: 16;
+    --type-local-font-size-in-px--large: 40;
+  }
+  & blockquote {
+    border-left: var(--space-base) solid var(--color-gray-800);
+    margin-left: calc(
+      (var(--type-local-font-size-in-px) / var(--type-base-font-size)) * -1ch
+    );
+    margin-right: calc(
+      (var(--type-local-font-size-in-px) / var(--type-base-font-size)) * -1ch
+    );
+    padding-left: calc(
+      (var(--type-local-font-size-in-px) / var(--type-base-font-size)) * 1ch
+    );
+    padding-right: calc(
+      (var(--type-local-font-size-in-px) / var(--type-base-font-size)) * 1ch
+    );
+    font-style: italic;
+  }
+
+  & .c-blockquote__attribution {
+    margin-left: calc(
+      (var(--type-local-font-size-in-px) / var(--type-base-font-size)) * -1ch
+    );
+    margin-right: calc(
+      (var(--type-local-font-size-in-px) / var(--type-base-font-size)) * -1ch
+    );
+    padding-left: calc(
+      (var(--type-local-font-size-in-px) / var(--type-base-font-size)) * 1ch +
+        (var(--space-base))
+    );
+    padding-right: calc(
+      (var(--type-local-font-size-in-px) / var(--type-base-font-size)) * 1ch
+    );
+    text-align: left;
+  }
+}

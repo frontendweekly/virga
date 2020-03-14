@@ -29,7 +29,6 @@
 
   /* Figure & Video */
   & figure,
-  & .c-video-player,
   & video {
     width: 100%;
     max-width: calc(var(--space-char-per-line) * 1ch);
@@ -64,71 +63,26 @@
     font-size: 0.9em;
   }
 
+  & pre {
+    display: block;
+    overflow-x: auto;
+    background-color: var(--color-gray-900);
+    border-radius: 2px;
+    padding: 1rem;
+    text-align: left;
+    white-space: pre-wrap;
+    word-spacing: normal;
+    word-break: normal;
+    word-wrap: normal;
+    width: 100%;
+  }
+
   /* Inline Code */
   & code:not([class]),
   & kbd:not([class]),
   & samp:not([class]) {
     background-color: var(--color-gray-200);
     padding: 1px 2px;
-  }
-
-  /* Code Block */
-  & pre > code {
-    display: block;
-    background-color: var(--color-gray-900);
-    border-radius: 2px;
-    padding: 1rem;
-  }
-
-  /* Block quotes */
-  & blockquote {
-    --type-local-font-size-in-px: 16;
-    --type-local-font-size-in-px--large: 40;
-
-    border-left: var(--space-base) solid var(--color-gray-800);
-    margin-left: calc(
-      (var(--type-local-font-size-in-px) / var(--type-base-font-size)) * -1em
-    );
-    margin-right: calc(
-      (var(--type-local-font-size-in-px) / var(--type-base-font-size)) * -1em
-    );
-    padding-left: calc(
-      (var(--type-local-font-size-in-px) / var(--type-base-font-size)) * 1em
-    );
-    padding-right: calc(
-      (var(--type-local-font-size-in-px) / var(--type-base-font-size)) * 1em
-    );
-    font-style: italic;
-  }
-
-  /* Video */
-  & .c-video-player {
-    padding-top: 66%;
-  }
-
-  & .c-video-player > iframe {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-  }
-
-  /* Footnote */
-  & .footnote-ref a {
-    text-decoration: none;
-  }
-
-  & .footnotes {
-    font-size: 0.9em;
-  }
-
-  & .footnotes-list {
-    list-style: decimal;
-  }
-
-  & .footnotes p {
-    margin-top: 0;
   }
 }
 

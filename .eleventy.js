@@ -50,7 +50,9 @@ module.exports = function(config) {
       .use(markdownItClassy)
       .use(markdownItFootnote)
       .use(markdownItDeflist)
-      .use(markdownItAttribution)
+      .use(markdownItAttribution, {
+        removeMarker: false
+      })
   );
 
   // Passthrough copy
