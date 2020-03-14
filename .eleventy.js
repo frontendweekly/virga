@@ -22,8 +22,8 @@ const markdownItAttribution = require('markdown-it-attribution');
 const site = require('./src/_data/site.json');
 
 module.exports = function(config) {
-  // Build
-  // config.addWatchTarget('./src/_postcss/');
+  // Watch postcss
+  config.addWatchTarget('./src/_postcss/');
 
   // Plugins
   config.addPlugin(rssPlugin);

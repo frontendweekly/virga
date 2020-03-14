@@ -20,7 +20,7 @@ module.exports = class {
   }
 
   async render({rawCss, rawFilepath}) {
-    return await postcss(plugins)
+    return postcss(plugins)
       .process(rawCss, {
         from: rawFilepath
       })
