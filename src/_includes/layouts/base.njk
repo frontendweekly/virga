@@ -24,4 +24,11 @@
 {% block content %}
 {% endblock %}
 {% include "partials/global/site-foot.njk" %}
+<script>
+  if ('serviceWorker' in navigator) {
+    window.addEventListener('load', () => {
+      navigator.serviceWorker.register('/service-worker.js');
+    });
+  }
+</script>
 </body>
