@@ -15,8 +15,8 @@ dist
 # Hide compiled CSS
 src/_includes/assets/styles/*
 
-# Hide functions
-functions
+# Hide compiled functions
+functions/*.zip
 
 # Local Netlify folder
 .netlify

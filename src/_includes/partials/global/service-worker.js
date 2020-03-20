@@ -9,7 +9,7 @@ const CACHE_KEYS = {
 const EXCLUDED_URLS = ['admin', '.netlify'];
 
 // URLS that we want to be cached when the worker is installed
-const PRE_CACHE_URLS = ['/'];
+const PRE_CACHE_URLS = ['/', 'fonts'];
 
 // You might want to bypass a certain host
 const IGNORED_HOSTS = ['localhost'];
