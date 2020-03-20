@@ -80,8 +80,17 @@
     }
   },
   "lint-staged": {
-    "*.{js,json,pcss,md}": "prettier --write",
-    "*.{pcss}": "stylelint --fix",
-    "*.{js}": "eslint --fix"
+    "*.{js,json,pcss,md}": [
+      "prettier --write",
+      "git add"
+    ],
+    "*.{pcss}": [
+      "stylelint --fix",
+      "git add"
+    ],
+    "*.{js}": [
+      "eslint --fix",
+      "git add"
+    ]
   }
 }
