@@ -5,7 +5,11 @@
     <ol class="c-post-list__items " reversed>
       {% for item in postListItems %}
         {% if item.date.getTime() <= global.now %}
-          {% set metaAuthor = item.data.author %}
+          {% if item.data.author %}
+            {% set metaAuthor = item.data.author %}
+          {% else %}
+            {% set metaAuthor = site.author.name %}
+          {% endif %}
           {% set metaDate = item.date %}
           <li class="c-post-list__item">
             <article>

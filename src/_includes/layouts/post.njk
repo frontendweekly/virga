@@ -3,8 +3,11 @@
 
 {# Intro content #}
 {% set introHeading = title %}
-
-{% set metaAuthor = author %}
+{% if author %}
+  {% set metaAuthor = author %}
+{% else %}
+  {% set metaAuthor = site.author.name %}
+{% endif %}
 {% set metaDate = date %}
 
 {% set introSummary %}
@@ -15,7 +18,7 @@
 <main id="main-content" tabindex="-1" class="page-{{ pageType | lower }}">
   <article class="c-post h-entry">
     {% include "partials/components/intro.njk" %}
-    <div class="c-post__body inner-wrapper">
+    <div class="c-post__body o-inner-wrapper">
       {{ content | safe }}
     </div>
   </article>
