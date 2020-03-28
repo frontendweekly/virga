@@ -54,6 +54,14 @@
   }
 
   /* Code */
+  & .c-code-block {
+    background-color: var(--color-gray-900);
+    border-radius: 2px;
+    padding: 1rem;
+    overflow-x: auto;
+    width: 100%;
+  }
+
   & pre,
   & code,
   & kbd,
@@ -64,17 +72,12 @@
   }
 
   & pre {
-    display: block;
-    overflow-x: auto;
-    background-color: var(--color-gray-900);
-    border-radius: 2px;
-    padding: 1rem;
     text-align: left;
-    white-space: pre-wrap;
     word-spacing: normal;
     word-break: normal;
     word-wrap: normal;
-    width: 100%;
+    tab-size: 2;
+    hyphens: none;
   }
 
   /* Inline Code */
