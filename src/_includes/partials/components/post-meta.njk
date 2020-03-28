@@ -6,4 +6,7 @@
     <time datetime="{{ metaDate | w3DateFilter }}"
           class="c-post-meta__date dt-published">{{ metaDate | dateFilter }}</time>
   {% endif %}
+  {% if tags %}
+    <span class="p-author h-card">/ Filed under {% for item in tags %}<a href="/tags/{{ item | slug }}">{{ item }}</a> {% endfor %}</span>
+  {% endif %}
 </p>

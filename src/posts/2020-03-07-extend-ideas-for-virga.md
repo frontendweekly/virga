@@ -3,6 +3,8 @@ title: How Would I Extend Virga?
 date: 2020-03-07
 author: Yuya Saito
 desc: Virga is a starter kit for who love to extend after all.
+tags:
+  - virga
 ---
 
 ## Modification ideas for Virga

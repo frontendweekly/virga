@@ -2,6 +2,8 @@
 title: Money Blues
 date: 2020-03-28T09:07:19.154Z
 author: Yuya Saito
+tags:
+  - virga
 ---
 
 I have decided that I'll use [Virga](https://github.com/frontendweekly/virga) for my personal blog so I have added `paymentPointer` in `src/_data/site.json` which is to experience web monetized content in your browser while supporting sites by using [Coil](https://coil.com/).

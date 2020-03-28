@@ -3,6 +3,8 @@ title: TROCT CSS Architecture
 date: 2020-03-03
 author: Yuya Saito
 desc: TROCT is not even a word but this is how I apply ITCSS.
+tags:
+  - CSS
 ---
 
 The title is just a click bait and I won't claim I invented this since it is just my way of applying the Inverted Triangle architecture (AKA ITCSS) which was first introduced by Harry Roberts.
