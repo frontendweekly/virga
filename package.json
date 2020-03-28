@@ -1,7 +1,7 @@
 {
   "name": "virga",
   "version": "0.6.4",
-  "description": "Virga is a bit opinionated but minimum Eleventy starter kit which also focused on using Netlify.",
+  "description": "Virga is a bit opinionated but minimum Eleventy starter kit which also focused on using Netlify. And I'm using it as my blog about Eleventy.",
   "scripts": {
     "build": "cross-env ELEVENTY_ENV=production eleventy",
     "build:clean": "rimraf dist/*",
