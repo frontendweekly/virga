@@ -3,6 +3,8 @@ title: Differences between Hylia and Virga
 date: 2020-03-01
 author: Yuya Saito
 desc: Virga is based on Hylia but there are some differences you should know
+tags:
+  - virga
 ---
 
 ## Credit where credit's due.

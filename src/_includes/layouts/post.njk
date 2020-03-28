@@ -22,6 +22,19 @@
       {{ content | safe }}
     </div>
   </article>
+{% if tags %}
+  <hr class="o-hr o-hr--three-stars">
+  <footer class="c-post__footer">
+    <div class="o-inner-wrapper">
+      <h3>Filed under</h3>
+      <nav class="c-navigation p-category">
+        {% for item in tags %}
+          <a href="/tags/{{ item | slug }}">{{ item }}</a>
+        {% endfor %}
+      </nav>
+    </div>
+  </footer>
+{% endif %}
 </main>
 {% endblock %}
 

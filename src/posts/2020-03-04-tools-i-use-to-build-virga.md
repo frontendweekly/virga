@@ -3,6 +3,8 @@ title: Tools I use to build Virga
 date: 2020-03-04
 author: Yuya Saito
 desc: Or I don't know how I make stuff without those great tools.
+tags:
+  - colophon
 ---
 
 ## Hardware: MacBook

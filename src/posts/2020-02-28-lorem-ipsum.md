@@ -3,6 +3,8 @@ title: Let's take a look at how a post would be like
 date: 2020-02-28
 author: Yuya Saito
 desc: Be aware, lorem ipsum is everywhere.
+tags:
+  - virga
 ---
 
 # This is an heading 1 lorem ipsum dolor

@@ -5,4 +5,4 @@ postsHeading: Latest posts
 archiveButtonText: See all posts
 ---
 
-{{ site.shortDesc }}
+{{ site.description }}

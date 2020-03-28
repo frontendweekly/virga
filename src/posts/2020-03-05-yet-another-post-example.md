@@ -3,6 +3,8 @@ title: Yet Another Post Example
 date: 2020-03-05
 author: Yuya Saito
 desc: Table, Video embed and other markdown enhancement
+tags:
+  - virga
 ---
 
 ## Table
