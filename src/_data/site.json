@@ -8,5 +8,6 @@
     "mail": "hello@studiomohawk.com"
   },
   "showThemeCredit": true,
-  "maxPostsPerPage": 5
+  "maxPostsPerPage": 5,
+  "paymentPointer": "$pay.stronghold.co/1a1d5ecbf6f988e4be3abc11cfb0a0b912d"
 }
