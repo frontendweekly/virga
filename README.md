@@ -9,6 +9,10 @@ You can fork this repo and get started now by [deploying Virga to Netlify][deplo
 
 [deploy-to-netlify]: https://app.netlify.com/start/deploy?repository=https://github.com/frontendweekly/virga
 
+## NOTE
+
+- When you fork this repo, make sure replace or remove `paymentPointer` in `src/_data/site.json`. I have explained why and how on [Money Blues](https://virga.frontendweekly.tokyo/posts/2020-03-28-money-blues/).
+
 ## Example
 
 [Here is Virga actually running on Netlify](https://virga.frontendweekly.tokyo).
