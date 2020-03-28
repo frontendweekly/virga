@@ -33,3 +33,6 @@
 {% if metaDesc %}
   <meta name="description" content="{{ metaDesc }}">
 {% endif %}
+{% if site.paymentPointer %}
+  <meta name="monetization" content="{{ site.paymentPointer }}">
+{% endif %}
