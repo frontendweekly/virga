@@ -12,6 +12,10 @@
 
       <hr class="o-hr o-hr--three-stars">
 
+      {% if site.showSmallPrint %}
+      {% include "partials/global/small-print.njk" %}
+      {% endif %}
+
       {% if site.showThemeCredit %}
       <p class="site-foot__credit">
         <small>Powered by Virga</a>.  Made Proudly in Tokyo.</small>
