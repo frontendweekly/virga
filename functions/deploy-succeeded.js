@@ -1,8 +1,8 @@
 // Stole from https://github.com/maxboeck/mxb/blob/master/_lambda/deploy-succeeded.js
 
-import fetch from 'node-fetch';
-import dotenv from 'dotenv';
-import Twitter from 'twitter';
+const fetch = require('node-fetch');
+const dotenv = require('dotenv');
+const Twitter = require('twitter');
 
 dotenv.config();
 
