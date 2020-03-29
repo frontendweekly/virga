@@ -7,7 +7,7 @@ const Twitter = require('twitter');
 dotenv.config();
 
 // URL of site JSON feed
-const FEED_URL = 'https://sixtysix.frontendweekly.tokyo/feed.json';
+const FEED_URL = 'https://virga.frontendweekly.tokyo/feed.json';
 
 // Configure Twitter API Client
 const twitter = new Twitter({
