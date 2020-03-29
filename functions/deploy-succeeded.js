@@ -79,7 +79,7 @@ const prepareStatusText = (siteTitle, post) => {
 
   const title = post.title;
 
-  let tweetText = `${title} via SixtySix: `;
+  let tweetText = `${title} via ${siteTitle}: `;
 
   // truncate text if its too long for a tweet.
   if (tweetText.length > maxLength) {
@@ -100,7 +100,7 @@ const publishPost = async (siteTitle, post) => {
       status: statusText,
     });
     if (tweet) {
-      return status(200, `Post ${post.date} successfully posted to Twitter.`);
+      return status(200, `Post ${post.title} successfully posted to Twitter.`);
     } else {
       return status(422, 'Error posting to Twitter API.');
     }
