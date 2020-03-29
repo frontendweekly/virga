@@ -57,8 +57,7 @@ Let's dig in to each layers.
 Tokens layer is for Design tokens. Now Design tokens has [own W3C Community Group](https://github.com/design-tokens) and since the name comes from the Salesforce design system team, I'll quote the original definition here.
 
 > Design tokens are the visual design atoms of the design system — specifically, they are named entities that store visual design attributes.
-
-— Design Tokens - Lightning Design System - https://www.lightningdesignsystem.com/design-tokens/
+> — Design Tokens, [Lightning Design System](https://www.lightningdesignsystem.com/design-tokens/)
 
 I might be able to put these "tokens" into Roots, but I really love the principles of Design tokens so it stays.
 
@@ -76,8 +75,7 @@ Both belongs to "roots" of project so that's where the name comes from.
 `_element.pcss` has most styles for "all un-classed HTML tags" which also has "reset" or "normalize" rules.
 
 > [Reset CSS] is a starting point, not a self-contained black box of no-touchiness.
-
-— CSS Tools: Reset CSS - https://meyerweb.com/eric/tools/css/reset/
+> — [CSS Tools: Reset CSS](https://meyerweb.com/eric/tools/css/reset/)
 
 This is from Eric Meyer who introduced "Reset CSS" into this world so I'm following his words.
 

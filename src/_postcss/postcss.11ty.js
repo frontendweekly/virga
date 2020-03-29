@@ -6,7 +6,7 @@ const {plugins} = postcssrc.sync();
 
 const fileName = {
   postcss: 'main.pcss',
-  css: 'main.css'
+  css: 'main.css',
 };
 
 module.exports = class {
@@ -15,15 +15,15 @@ module.exports = class {
     return {
       permalink: `css/${fileName.css}`,
       rawFilepath,
-      rawCss: await fs.readFileSync(rawFilepath)
+      rawCss: await fs.readFileSync(rawFilepath),
     };
   }
 
   async render({rawCss, rawFilepath}) {
     return postcss(plugins)
       .process(rawCss, {
-        from: rawFilepath
+        from: rawFilepath,
       })
-      .then(result => result.css);
+      .then((result) => result.css);
   }
 };

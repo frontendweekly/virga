@@ -87,8 +87,7 @@ and here is `inline code`.
 ### heading 3 introducing block quote
 
 > You can't connect the dots looking forward; you can only connect them looking backwards. So you have to trust that the dots will somehow connect in your future.
-
-—Jobs, Steve. "Stanford Commencement Adress." 12 June 2005. Speech.
+> —Jobs, Steve. "Stanford Commencement Adress." 12 June 2005. Speech.
 
 ## How about images?
 
