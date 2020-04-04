@@ -67,16 +67,16 @@ $tokens-map: (
 
 However, Sass has `importer` option which can be utilized to do some thing like this in Sass file.
 
-```
+```sass
 @import './tokens/token.yml';
 ```
 
 `importer` executes JavaScript function(s) when a `@use` rule or an `@import` rule is encountered.
 That means Sass can run `theo` in `importer` function to do the transformation.
 
-```
+```javascript
 /* Stolen from https://basalt.io/blog/theo-design-tokens-using-node-sass-importer-for-any-build-method */
-const { resolve, parse } = require('path');
+const {resolve, parse} = require('path');
 const theo = require('theo');
 
 /**
@@ -96,22 +96,21 @@ function theoImporter(url, prev) {
   // imports are almost always relative, so let's figure out how to get to there from here so we end up with an absolute url
   const designTokenFilePath = resolve(prevDirectory, url);
 
-  const theoConverted = theo
-    .convertSync({
-      transform: {
-        type: 'web',
-        file: designTokenFilePath,
-      },
-      format: {
-        // This can be any format Theo supports (or your own custom one!) <https://www.npmjs.com/package/theo#formats>
-        // I'm choosing map.scss
-        type: 'map.scss'
-      }
-    });
+  const theoConverted = theo.convertSync({
+    transform: {
+      type: 'web',
+      file: designTokenFilePath,
+    },
+    format: {
+      // This can be any format Theo supports (or your own custom one!) <https://www.npmjs.com/package/theo#formats>
+      // I'm choosing map.scss
+      type: 'map.scss',
+    },
+  });
 
   return {
-    contents: theoConverted
-  }
+    contents: theoConverted,
+  };
 }
 
 module.exports = theoImporter;
@@ -119,16 +118,16 @@ module.exports = theoImporter;
 
 And you can "load" this `importer` function like:
 
-```
+```javascript
 const theoImporter = require('../../_theo-importer');
 
 const sassResult = sass.renderSync({
   file: rawFilepath,
   outputStyle: 'expanded',
   importer: [
-    theoImporter // Here
-  ]
-})
+    theoImporter, // Here
+  ],
+});
 ```
 
 With this `importer`(and JavaScript API from Sass), I can use same technique from ["How Virga processes PostCSS"](/posts/2020-03-29-how-virga-processes-postcss/).
@@ -147,7 +146,7 @@ All this can be done with Eleventy JavaScript Templates.
 
 I'll explain interesting parts.
 
-```
+```javascript
 const sassResult = sass
   .renderSync({
     file: rawFilepath,
@@ -159,7 +158,7 @@ const sassResult = sass
 
 As I showed few lines above, this is Sass JavaScript API which use `importer` option.
 
-```
+```javascript
 module.exports = class {
   data() {
     return {
@@ -198,7 +197,7 @@ So I've decided to reuse `sass.11ty.js` to run from command line.
 You can do `‌node src/_sass/sass.11ty.js` to invoke it.
 And since I only run this from command line in production, I've added this lines of codes.
 
-```
+```javascript
 if (process.env.ELEVENTY_ENV === 'production') {
   console.log(`Writing CSS to ${prodDistpath}...`);
   fs.writeFileSync(prodDistpath, sassResult);
