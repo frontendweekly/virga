@@ -3,9 +3,9 @@ title: 'Eleventy with Theo, Sass and PostCSS'
 date: 2020-03-29T04:12:48.591Z
 author: Yuya Saito
 tags:
-	- eleventy
-	- design-token
-	- sass
+  - eleventy
+  - design-token
+  - sass
 ---
 
 Eleventy is very flexible on how you want to process a file. In the recent post ["How Virga processes PostCSS"](/posts/2020-03-29-how-virga-processes-postcss/), I explained how I use JavaScript as Eleventy templates to process PostCSS.
