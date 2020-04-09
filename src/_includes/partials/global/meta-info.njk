@@ -8,6 +8,8 @@
 
 {% if desc %}
   {% set metaDesc = desc %}
+{% else %}
+  {% set metaDesc = site.description %}
 {% endif %}
 
 {% if author %}
