@@ -1,10 +1,16 @@
 {
   "plugins": [
-    "stylelint-prettier"
+    "stylelint-prettier",
+    "stylelint-order"
   ],
   "rules": {
     "prettier/prettier": true,
-    "no-descending-specificity": null
+    "no-descending-specificity": null,
+    "order/order": [
+      "custom-properties",
+      "declarations"
+    ],
+    "order/properties-alphabetical-order": true
   },
   "extends": [
     "stylelint-config-standard",
