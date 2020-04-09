@@ -18,9 +18,13 @@
                 <a href="{{ item.url }}" class="c-post-list__link u-url" rel="bookmark">{{ item.data.title }}</a>
               </h3>
               {% include "partials/components/post-meta.njk" %}
+
+              {% if item.data.desc %}
               <p class="c-post-list__summary p-summary">
                 <a href="{{ item.url }}" class="c-post-list__link u-url" rel="bookmark">{{ item.data.desc }}</a>
               </p>
+              {% endif %}
+
             </article>
           </li>
         {% endif %}
