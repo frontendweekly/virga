@@ -1,27 +1,27 @@
 @font-face {
   font-family: 'IBM Plex Serif';
+  font-style: normal;
+  font-weight: normal;
   src: url('/fonts/IBMPlexSerif-Regular.woff2') format('woff2'),
     url('/fonts/IBMPlexSerif-Regular.woff') format('woff');
-  font-weight: normal;
-  font-style: normal;
   font-display: swap;
 }
 
 @font-face {
   font-family: 'IBM Plex Serif';
+  font-style: normal;
+  font-weight: bold;
   src: url('/fonts/IBMPlexSerif-Bold.woff2') format('woff2'),
     url('/fonts/IBMPlexSerif-Bold.woff') format('woff');
-  font-weight: bold;
-  font-style: normal;
   font-display: swap;
 }
 
 @font-face {
   font-family: 'IBM Plex Serif';
+  font-style: italic;
+  font-weight: bold;
   src: url('/fonts/IBMPlexSerif-MediumItalic.woff2') format('woff2'),
     url('/fonts/IBMPlexSerif-MediumItalic.woff') format('woff');
-  font-weight: bold;
-  font-style: italic;
   font-display: swap;
 }
 
@@ -47,8 +47,8 @@ html {
 }
 
 body {
-  line-height: calc(var(--type-base-line-height) / var(--type-base-font-size));
   font-family: var(--type-face-serif);
+  line-height: calc(var(--type-base-line-height) / var(--type-base-font-size));
 }
 
 h1 {

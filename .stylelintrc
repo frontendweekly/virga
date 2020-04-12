@@ -1,19 +1,14 @@
 {
   "plugins": [
-    "stylelint-prettier",
-    "stylelint-order"
+    "stylelint-prettier"
   ],
   "rules": {
     "prettier/prettier": true,
-    "no-descending-specificity": null,
-    "order/order": [
-      "custom-properties",
-      "declarations"
-    ],
-    "order/properties-alphabetical-order": true
+    "no-descending-specificity": null
   },
   "extends": [
     "stylelint-config-standard",
-    "stylelint-config-prettier"
+    "stylelint-config-prettier",
+    "stylelint-config-recess-order"
   ]
 }

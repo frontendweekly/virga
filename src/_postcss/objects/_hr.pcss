@@ -1,27 +1,27 @@
 .o-hr {
-  clear: both;
   margin: 2rem auto 2rem;
+  clear: both;
   border: 0;
   border-bottom: 1px var(--color-gray-800) solid;
 }
 
 .o-hr--three-stars {
-  border: 0;
   width: 100%;
+  border: 0;
 }
 
 .o-hr--three-stars::before {
-  content: '* * *';
-  color: var(--color-gray-600);
   display: inline-block;
-  text-align: center;
   width: 100%;
+  color: var(--color-gray-600);
+  text-align: center;
   vertical-align: middle;
+  content: '* * *';
 }
 
 .footnotes-sep {
+  margin-top: calc((var(--type-base-line-height) / var(--type-base-font-size)) * 2em);
   clear: both;
   border: 0;
   border-bottom: 1px var(--color-gray-800) solid;
-  margin-top: calc((var(--type-base-line-height) / var(--type-base-font-size)) * 2em);
 }

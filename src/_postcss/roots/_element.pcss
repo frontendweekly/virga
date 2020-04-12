@@ -31,14 +31,14 @@ body {
 }
 
 body {
+  display: flex;
+  flex-direction: column;
   min-height: 100vh;
+  overflow-x: hidden;
+  overflow-y: scroll;
   scroll-behavior: smooth;
   text-rendering: optimizeLegibility;
   font-variant-ligatures: common-ligatures;
-  display: flex;
-  flex-direction: column;
-  overflow-x: hidden;
-  overflow-y: scroll;
 }
 
 a {
@@ -47,8 +47,8 @@ a {
 }
 
 img {
-  max-width: 100%;
   display: block;
+  max-width: 100%;
 }
 
 input,
@@ -72,8 +72,8 @@ th {
 
 main {
   flex: 1 0 auto;
-  max-width: calc(var(--space-char-per-line) * 1ch);
   width: 100%;
+  max-width: calc(var(--space-char-per-line) * 1ch);
   margin-right: auto;
   margin-left: auto;
 }

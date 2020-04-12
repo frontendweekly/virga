@@ -5,17 +5,17 @@
  */
 
 pre[class*='language-'] > code[class*='language-'] {
-  color: #f8f8f2;
-  -moz-tab-size: 2;
-  -o-tab-size: 2;
-  tab-size: 2;
+  padding: 0;
   -webkit-hyphens: none;
   -moz-hyphens: none;
   -ms-hyphens: none;
   hyphens: none;
+  color: #f8f8f2;
   word-break: break-word;
+  -moz-tab-size: 2;
+  -o-tab-size: 2;
+  tab-size: 2;
   background-color: transparent;
-  padding: 0;
 }
 
 .token.comment,
@@ -100,9 +100,9 @@ pre[class*='language-'] > code[class*='language-'] {
   }
 
   .token.important {
-    background: highlight;
-    color: window;
     font-weight: normal;
+    color: window;
+    background: highlight;
   }
 
   .token.atrule,

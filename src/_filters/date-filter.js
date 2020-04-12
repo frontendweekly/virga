@@ -1,5 +1,5 @@
 // Stolen from https://stackoverflow.com/a/31615643
-const appendSuffix = n => {
+const appendSuffix = (n) => {
   let s = ['th', 'st', 'nd', 'rd'];
   let v = n % 100;
   return n + (s[(v - 20) % 10] || s[v] || s[0]);
@@ -20,7 +20,7 @@ module.exports = function dateFilter(value) {
     'September',
     'October',
     'November',
-    'December'
+    'December',
   ];
   const dayWithSuffix = appendSuffix(dateObject.getDate());
 
