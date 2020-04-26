@@ -2,16 +2,17 @@
 title: Money Blues
 date: 2020-03-28T09:07:19.154Z
 author: Yuya Saito
+desc: Virga is now used for my personal blog and Coil for experimenting web monetized standard
 tags:
   - virga
 ---
 
-I have decided that I'll use [Virga](https://github.com/frontendweekly/virga) for my personal blog so I have added `paymentPointer` in `src/_data/site.json` which is to experience web monetized content in your browser while supporting sites by using [Coil](https://coil.com/).
+I have decided that I'll use [Virga](https://github.com/frontendweekly/virga) for my personal blog, so I have added `paymentPointer` in `src/_data/site.json` which is to experiment web monetized content in your browser while supporting sites by using [Coil](https://coil.com/).
 
 Coil is very cool since:
 
-- it's goal is to make it based on [an actual web standard](https://webmonetization.org/docs/explainer.html)
-- it is very easy to setup; create an account on Coil(it's free) and add a `<meta>` tag in the `<head>` of your site
+- its goal is to make it based on [an actual web standard](https://webmonetization.org/docs/explainer.html)
+- it is very easy to set up; create an account on Coil(it's free) and add a `<meta>` tag in the `<head>` of your site
 
 Example:
 
@@ -29,4 +30,4 @@ If you were to decide to fork Virga to start your own blog, do please replace `p
 
 Chris Coyier from CSS Tricks has covered about Coil on ["Site Monetization with Coil (and Removing Ads for Supporters)"](https://css-tricks.com/site-monetization-with-coil-and-removing-ads-for-supporters/). You should check out the article and hope you would experiment with Coil.
 
-By the way, the title of this post is come form Bob Dylan's song.
+By the way, the title of this post is form Bob Dylan's song.

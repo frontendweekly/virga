@@ -2,6 +2,7 @@
 title: 'Eleventy with Theo, Sass and PostCSS'
 date: 2020-03-29T04:12:48.591Z
 author: Yuya Saito
+desc: You can use Design Token in Eleventy and here's how I might do it
 tags:
   - eleventy
   - design-token

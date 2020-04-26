@@ -2,6 +2,10 @@
 title: 'Eleventy with Rollup'
 date: 2020-04-05T11:13:14.711Z
 author: Yuya Saito
+desc: My favorite languages are HTML and CSS but sometimes I do need JavaScript and when I do I use Rollup
+tags:
+  - eleventy
+  - bundler
 ---
 
 I've written on ["Eleventy with Theo, Sass and PostCSS"](https://virga.frontendweekly.tokyo/posts/2020-03-29-eleventy-with-theo-sass-and-postcss/) which is about how to utilize Eleventy JavaScript Templates to build Theo, Sass and PostCSS.

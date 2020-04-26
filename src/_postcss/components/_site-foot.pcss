@@ -8,7 +8,7 @@
   flex-direction: column;
 }
 
-.c-site-foot__inner::before {
+.c-site-foot__inner:before {
   display: block;
   width: 100%;
   margin-right: auto;
@@ -16,6 +16,10 @@
   content: '';
   border: 0 solid var(--color-gray-800);
   border-top-width: 1px;
+}
+
+.c-site-foot--compact .c-site-foot__inner:before {
+  margin-bottom: calc(var(--space-base) * 4);
 }
 
 .c-site-foot__details {

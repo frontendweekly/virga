@@ -1,4 +1,4 @@
-<footer role="contentinfo" class="c-site-foot">
+<footer role="contentinfo" class="c-site-foot{{ ' c-site-foot--compact' if page.url === '/' }}">
   <div class="o-wrapper">
     <div class="c-site-foot__inner">
       {% if page.url != '/' %}
@@ -6,11 +6,8 @@
         <h3>{{ site.name }}</h3>
         <p>{{ site.description }}</p>
       </article>
+      <hr class="o-hr o-hr--three-stars" aria-hidden="true">
       {% endif %}
-
-      {% include "partials/components/navigation.njk" %}
-
-      <hr class="o-hr o-hr--three-stars">
 
       {% if site.showSmallPrint %}
       {% include "partials/global/small-print.njk" %}

@@ -2,6 +2,7 @@
 title: 'How Virga processes PostCSS'
 date: 2020-03-28T11:30:00.823Z
 author: Yuya Saito
+desc: Virga use PostCSS and here's how I'm processing it
 tags:
   - eleventy
   - postcss
@@ -41,9 +42,9 @@ module.exports = (ctx) => ({
 Next step of process is to "convert modern CSS into something most browsers can understand, determining the polyfills you need based on your targeted browsers or runtime environments" via [`PostCSS Preset Env`](https://github.com/csstools/postcss-preset-env).
 It is like [Babel](https://babeljs.io/) for CSS.
 
-Third step is [`autoprefixer`](https://github.com/postcss/autoprefixer) which parses CSS and adds vendor prefixes to rules by Can I Use. Even though needs for "vendor prefixes" getting smaller now, I would still include this plugin.
+the third step is [`autoprefixer`](https://github.com/postcss/autoprefixer) which parses CSS and adds vendor prefixes to rules by Can I Use. Even though needs for "vendor prefixes" getting smaller now, I would still include this plugin.
 
-Final step is [`cssnano`](https://github.com/cssnano/cssnano) which is a modular minifier, built on top of the PostCSS ecosystem.
+The final step is [`cssnano`](https://github.com/cssnano/cssnano) which is a modular minifier, built on top of the PostCSS ecosystem.
 
 ```
 cssnano: ctx.env === 'production' ? {} : false
@@ -52,7 +53,7 @@ cssnano: ctx.env === 'production' ? {} : false
 Are you wondering what's with this line?
 This is a condition to use `cssnano` or not based on environment variable. If it is `production` then use `cssnano` to minify CSS.
 
-Unfortunately having `.postcssrc.js` isn't going to do all of the process above so let's dig deeper.
+Unfortunately having `.postcssrc.js` isn't going to do all the process above so let's dig deeper.
 
 ## Development Build
 
