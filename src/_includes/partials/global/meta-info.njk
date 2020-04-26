@@ -38,3 +38,7 @@
 {% if site.paymentPointer %}
   <meta name="monetization" content="{{ site.paymentPointer }}">
 {% endif %}
+{% if site.webmention %}
+  <link rel="webmention" href="https://webmention.io/{{ site.webmention }}/webmention">
+  <link rel="pingback" href="https://webmention.io/webmention?forward={{ site.url }}">
+{% endif %}

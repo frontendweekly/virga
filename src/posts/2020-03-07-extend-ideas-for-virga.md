@@ -11,13 +11,13 @@ tags:
 
 Virga is based on [Hylia](https://hylia.website/) without Netlify CMS bit and few modifications ([I did wrote about differences between the two](/2020-03-02-differences-between-hylia-and-virga/)).
 
-Virga is pretty much ready for starting a blog, I think. I don't own a blog but I'm thinking about using Virga on [this site called Frontend Weekly Tokyo](https://frontendweekly.tokyo/) which was build using Hylia.
+Virga is pretty much ready for starting a blog, I think. I don't own a blog, but I'm thinking about using Virga on [this site called Frontend Weekly Tokyo](https://frontendweekly.tokyo/) which was build using Hylia.
 
 At Frontend Weekly Tokyo, I've done some modifications on Hylia. So these are good candidates to extend Virga, too.
 
 - **Monetization** through service called [Coil](https://coil.com/about). I choose this because Coil is currently only provider for [Web Monetization spec](https://webmonetization.org/).
-- **Webmentions**, although I need to patch few bugs, Webmentions is working on Virga. I've followed this [Max Böck's tutorial on setting up Webmentions on Eleventy](https://mxb.dev/blog/using-webmentions-on-static-sites/). Very detailed and helpful.
-- **Auto Tweet using Netlify functions**. Netlify provides AWS Lambda as Netlify Functions so you achieve lots of thing via "serverless". On Frontend Weekly, Netlify Functions does Tweet when a post went public. Again, I've stole this [Max Böck's tutorial](https://mxb.dev/blog/syndicating-content-to-twitter-with-netlify-functions/).
+- **Webmentions**, Webmentions is working at Frontend Weekly Tokyo. I've followed this [Max Böck's tutorial on setting up Webmentions on Eleventy](https://mxb.dev/blog/using-webmentions-on-static-sites/). Very detailed and helpful.
+- **Auto Tweet using Netlify functions**. Netlify provides AWS Lambda as Netlify Functions, so you achieve lots of things via "serverless". On Frontend Weekly Tokyo, Netlify Functions does Tweet when a post went public. Again, I've stolen this [Max Böck's tutorial](https://mxb.dev/blog/syndicating-content-to-twitter-with-netlify-functions/).
 
 ## IndieWeb
 
