@@ -10,12 +10,10 @@ tags:
 ---
 
 Eleventy is very flexible on how you want to process a file. In the recent post ["How Virga processes PostCSS"](/posts/2020-03-29-how-virga-processes-postcss/), I explained how I use JavaScript as Eleventy templates to process PostCSS.
-
 With the same idea with little changes, you can do more complex process.
 
 I'll demonstrate this in this post with using Theo, Sass and PostCSS(again).
-
-Before get into the details, I believe I owe an explanation on Theo and Sass.
+Before I get into the details, I believe I owe an explanation on Theo and Sass.
 
 If you want to see the example repo I have created for this post, It's at [11ty-theo-sass-postcss-example](https://github.com/frontendweekly/11ty-theo-sass-postcss-example).
 
@@ -36,7 +34,7 @@ Design Tokens now have own [W3C Community Group](https://github.com/design-token
 
 Have you noticed that Sass has changed its primary implementation of Sass?
 
-Sass was originally written in Ruby and then LibSass is a C/C++ port of the Sass engine. LibSass is just a library so it has been used with a wrapper like Node Sass.
+Sass was originally written in Ruby and then LibSass is a C/C++ port of the Sass engine. LibSass is just a library, so it has been used with a wrapper like Node Sass.
 
 Now Sass is written in Dart and it is the primary implementation of Sass which means it gets new features before any other implementation.
 
@@ -178,8 +176,7 @@ module.exports = class {
 ```
 
 And this is Eleventy JavaScript Templates part.
-
-I was very happy since it would looks like easy thing to do.
+I was very happy since it looked like easy thing to do.
 
 ## But, `sass` command line doesn't come with `importer` option
 
@@ -193,7 +190,7 @@ node-sass --importer ./theo-importer.js src/_sass/main.scss src/_includes/assets
 sass --importer ./theo-importer.js src/_sass/main.scss src/_includes/assets/styles/main.css
 ```
 
-`importater` has been "Experimental" in `node-sass`. I'm not sure if Dart Sass will have this available in future.
+`importater` has been "Experimental" in `node-sass`. I'm not sure if Dart Sass will have this available in the future.
 So I've decided to reuse `sass.11ty.js` to run from command line.
 You can do `‌node src/_sass/sass.11ty.js` to invoke it.
 And since I only run this from command line in production, I've added this lines of codes.

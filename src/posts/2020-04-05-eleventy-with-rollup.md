@@ -23,7 +23,7 @@ If you like to add some JavaScript into Eleventy, having Rollup to bundle JavaSc
 
 ## Rollup config file
 
-Rollup does recommend to have a config file so...
+Rollup does recommend having a config file so...
 
 ```javascript
 const resolve = require('@rollup/plugin-node-resolve');

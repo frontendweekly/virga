@@ -28,8 +28,9 @@ PostCSS can be configured by having `.postcssrc.js` file(well, there are several
 ```javascript
 // .postcssrc.js
 module.exports = (ctx) => ({
+  map: ctx.env !== 'production' ? {inline: true} : false,
   plugins: {
-    'postcss-import': {}, // ⇐ Journey starts here
+    'postcss-import': {},
     'postcss-preset-env': {
       stage: 1,
     },
@@ -46,8 +47,8 @@ the third step is [`autoprefixer`](https://github.com/postcss/autoprefixer) whic
 
 The final step is [`cssnano`](https://github.com/cssnano/cssnano) which is a modular minifier, built on top of the PostCSS ecosystem.
 
-```
-cssnano: ctx.env === 'production' ? {} : false
+```javascript
+cssnano: ctx.env === 'production' ? {} : false;
 ```
 
 Are you wondering what's with this line?
@@ -65,7 +66,7 @@ const fs = require('fs');
 const path = require('path');
 const postcss = require('postcss');
 const postcssrc = require('postcss-load-config');
-const {plugins} = postcssrc.sync();
+const {plugins, options} = postcssrc.sync();
 
 const fileName = {
   postcss: 'main.pcss',
@@ -76,7 +77,8 @@ module.exports = class {
   async data() {
     const rawFilepath = path.join(__dirname, `./${fileName.postcss}`);
     return {
-      permalink: `css/${fileName.css}`, // ⇐ This is where final css file will be available.
+      permalink: `css/${fileName.css}`,
+      eleventyExcludeFromCollections: true,
       rawFilepath,
       rawCss: await fs.readFileSync(rawFilepath),
     };
@@ -85,6 +87,7 @@ module.exports = class {
   async render({rawCss, rawFilepath}) {
     return postcss(plugins)
       .process(rawCss, {
+        ...options,
         from: rawFilepath,
       })
       .then((result) => result.css);
@@ -96,13 +99,13 @@ I stole this from [EleventyOne](https://github.com/philhawksworth/eleventyone) b
 This file is processed by Eleventy. Although it doesn't look like a "template language", it actually is.
 
 According to [Eleventy Documentation](https://www.11ty.dev/docs/languages/javascript/#classes), "Eleventy looks for classes that have a `render` method and uses `render` to return the content of the template."
-Since YAML Front Matter is not supported in JavaScript template types. `data` method is there to pass `data` to control how this template will render(in other word, build) a file.
+Since YAML Front Matter is not supported in JavaScript template types. `data` method is there to pass `data` to control how this template will render(in other words, build) a file.
 So according to this setting, the final css will be generated into ‌`dist/css/main.css`.
 
 Finally, you would want to add `addWatchTarget` at `.eleventy.js` so that when the file or the files in this directory change Eleventy will trigger a build which would look like this:
 
-```
-module.exports = function(config) {
+```javascript
+module.exports = function (config) {
   config.addWatchTarget('./src/_postcss/');
 };
 ```
@@ -114,26 +117,24 @@ You can take a look at [actual `.eleventy.js` file here.](https://github.com/fro
 As for production build, Virga utilizes [`PostCSS CLI`](https://github.com/postcss/postcss-cli) to do the build.
 
 Why do you separate the build process between development and production?
-
 It is a very good question.
 
 Hylia inlines all CSS into `<style>` in `<head>` and Virga does this too.
 In development environment, Virga generates CSS into `dist/css/main.css` directly but In production, it is `src/_includes/assets/styles/main.css` so CSS file is in Eleventy Layouts.
 
 ```html
-<!-- Please do not copy & paste this code, it won't work since I've added white space before/after % to prevent Eleventy to process it. -->
 <style>
-  { % include "assets/styles/main.css" % }
+  {% raw %}{% include "assets/styles/main.css" %}{% endraw %}
 </style>
 ```
 
 By using `include` you can "inline" CSS like above.
 
-```
-"build:postcss": "postcss src/_postcss/main.pcss -o src/_includes/assets/styles/main.css --env production"
+```shell
+"build:postcss": "cross-env NODE_ENV=production postcss src/_postcss/main.pcss -o src/_includes/assets/styles/main.css"
 ```
 
-When `npm run build:postcss` above command will be executed.
+When you run `npm run build:postcss`, above command will be executed.
 `-o src/_includes/assets/styles/main.css` does the "output" build css into `src/_includes/assets/styles/main.css`.
 
 All in all, this is why Virga separate build process.
