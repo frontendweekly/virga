@@ -14,6 +14,7 @@ module.exports = class {
     const rawFilepath = path.join(__dirname, `./${fileName.postcss}`);
     return {
       permalink: `css/${fileName.css}`,
+      eleventyExcludeFromCollections: true,
       rawFilepath,
       rawCss: await fs.readFileSync(rawFilepath),
     };

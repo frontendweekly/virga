@@ -51,6 +51,14 @@ body {
   line-height: calc(var(--type-base-line-height) / var(--type-base-font-size));
 }
 
+h1,
+h2 {
+  margin-top: calc(var(--type-local-space-top) * 1em);
+  margin-bottom: calc(var(--type-local-space-bottom) * 1em);
+  font-size: calc((var(--type-local-font-size-in-px) / var(--type-base-font-size)) * 1em);
+  line-height: calc(var(--type-base-line-height) / var(--type-local-font-size-in-px));
+}
+
 h1 {
   --type-local-font-size-in-px: calc(var(--type-base-font-size) * var(--type-scale-5));
   --type-local-space-top: calc(
@@ -59,11 +67,6 @@ h1 {
   --type-local-space-bottom: calc(
     var(--space-char-per-line) / var(--type-local-font-size-in-px)
   );
-
-  margin-top: calc(var(--type-local-space-top) * 1em);
-  margin-bottom: calc(var(--type-local-space-bottom) * 1em);
-  font-size: calc((var(--type-local-font-size-in-px) / var(--type-base-font-size)) * 1em);
-  line-height: calc(var(--type-base-line-height) / var(--type-local-font-size-in-px));
 }
 
 h2 {
@@ -74,11 +77,6 @@ h2 {
   --type-local-space-bottom: calc(
     var(--type-base-line-height) / var(--type-local-font-size-in-px)
   );
-
-  margin-top: calc(var(--type-local-space-top) * 1em);
-  margin-bottom: calc(var(--type-local-space-bottom) * 1em);
-  font-size: calc((var(--type-local-font-size-in-px) / var(--type-base-font-size)) * 1em);
-  line-height: calc(var(--type-base-line-height) / var(--type-local-font-size-in-px));
 }
 
 h3,
@@ -86,11 +84,11 @@ h4,
 h5,
 h6 {
   --type-local-font-size-in-px: calc(var(--type-base-font-size) * var(--type-scale-3));
-  --type-local-space-top: calc(
+  --type-local-space: calc(
     var(--type-base-line-height) / var(--type-local-font-size-in-px)
   );
 
-  margin-top: calc(var(--type-local-space-top) * 1em);
+  margin-top: calc(var(--type-local-space) * 1em);
   font-size: 1em;
 }
 
@@ -143,13 +141,13 @@ h1 + h3 {
   );
 }
 
-:matches(h1, h2, h3, h4, h5, h6) + :matches(h3, h4, h5, h6),
+:is(h1, h2, h3, h4, h5, h6) + :is(h3, h4, h5, h6),
 main > h6:first-child {
   margin-top: 0;
 }
 
-:matches(h3, h4, h5) + :matches(p, ol, ul, dl, figure, blockquote, pre, table),
-:matches(h1, h2, h3, h4, h5) + h6 + *,
+:is(h3, h4, h5) + :is(p, ol, ul, dl, figure, blockquote, pre, table),
+:is(h1, h2, h3, h4, h5) + h6 + *,
 hr + h6 {
   margin-top: 0;
 }

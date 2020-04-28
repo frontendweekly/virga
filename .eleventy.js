@@ -48,6 +48,7 @@ module.exports = function (config) {
       html: true,
       breaks: true,
       linkify: true,
+      typographer: true,
     })
       .use(markdownItClassy)
       .use(markdownItFootnote)
