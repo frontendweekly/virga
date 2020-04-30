@@ -1,6 +1,6 @@
 const jsdom = require('@tbranyen/jsdom');
 const {JSDOM} = jsdom;
-const minify = require('../_utils/minify.js');
+const minify = require('./minify.js');
 const slugify = require('slugify');
 
 module.exports = function (value, outputPath) {

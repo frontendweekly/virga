@@ -7,6 +7,6 @@
           class="c-post-meta__date dt-published">{{ metaDate | dateFilter }}</time>
   {% endif %}
   {% if tags %}
-    <span class="p-author h-card">/ Filed under {{ tags | tagToSentence | safe }}</span>
+    <span class="p-author h-card">/ Filed under {{ tags | tagsToSentence | safe }}</span>
   {% endif %}
 </p>

@@ -3,14 +3,10 @@ const rssPlugin = require('@11ty/eleventy-plugin-rss');
 const syntaxHighlight = require('@11ty/eleventy-plugin-syntaxhighlight');
 
 // Import filters
-const dateFilter = require('./src/_filters/date-filter.js');
-const markdownFilter = require('./src/_filters/markdown-filter.js');
-const w3DateFilter = require('./src/_filters/w3-date-filter.js');
-const tagToSentence = require('./src/_filters/tags-to-sentence.js');
+const filters = require('./src/_filters/filters.js');
 
 // Import transforms
-const htmlMinTransform = require('./src/_transforms/html-min-transform.js');
-const parseTransform = require('./src/_transforms/parse-transform.js');
+const transforms = require('./src/_transforms/transforms.js');
 
 // Markdown Setting
 const markdownIt = require('markdown-it');
@@ -31,15 +27,14 @@ module.exports = function (config) {
   config.addPlugin(syntaxHighlight);
 
   // Filters
-  config.addFilter('dateFilter', dateFilter);
-  config.addFilter('markdownFilter', markdownFilter);
-  config.addFilter('w3DateFilter', w3DateFilter);
-  config.addFilter('jsonify', (value) => JSON.stringify(value));
-  config.addFilter('tagToSentence', tagToSentence);
+  Object.keys(filters).forEach((filterName) => {
+    config.addFilter(filterName, filters[filterName]);
+  });
 
   // Transforms
-  config.addTransform('htmlmin', htmlMinTransform);
-  config.addTransform('parse', parseTransform);
+  Object.keys(transforms).forEach((transformName) => {
+    config.addTransform(transformName, transforms[transformName]);
+  });
 
   // Load markdown-it plugins
   config.setLibrary(
@@ -88,6 +83,8 @@ module.exports = function (config) {
       input: 'src',
       output: 'dist',
     },
+    templateFormats: ['njk', 'md', '11ty.js'],
+    htmlTemplateEngine: 'njk',
     markdownTemplateEngine: 'njk',
     passthroughFileCopy: true,
   };
