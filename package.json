@@ -68,20 +68,5 @@
     "stylelint-config-recess-order": "^2.0.4",
     "stylelint-config-standard": "^20.0.0",
     "stylelint-prettier": "^1.1.2"
-  },
-  "browserslist": [
-    "defaults",
-    "not IE 11",
-    "not IE_Mob 11"
-  ],
-  "husky": {
-    "hooks": {
-      "pre-commit": "lint-staged"
-    }
-  },
-  "lint-staged": {
-    "*.{js,json,pcss,md}": "prettier --write",
-    "*.{pcss}": "stylelint --fix",
-    "*.{js}": "eslint --fix"
   }
 }
