@@ -1,19 +1,7 @@
 // Import plugins
 const rssPlugin = require('@11ty/eleventy-plugin-rss');
 const syntaxHighlight = require('@11ty/eleventy-plugin-syntaxhighlight');
-
-// Import filters
-const filters = require('./src/_filters/filters.js');
-
-// Import transforms
-const transforms = require('./src/_transforms/transforms.js');
-
-// Markdown Setting
-const markdownIt = require('markdown-it');
-const markdownItClassy = require('markdown-it-classy');
-const markdownItFootnote = require('markdown-it-footnote');
-const markdownItDeflist = require('markdown-it-deflist');
-const markdownItAttribution = require('markdown-it-attribution');
+const molle = require('@frontendweekly/molle');
 
 // Import data files
 const site = require('./src/_data/site.json');
@@ -25,33 +13,7 @@ module.exports = function (config) {
   // Plugins
   config.addPlugin(rssPlugin);
   config.addPlugin(syntaxHighlight);
-
-  // Filters
-  Object.keys(filters).forEach((filterName) => {
-    config.addFilter(filterName, filters[filterName]);
-  });
-
-  // Transforms
-  Object.keys(transforms).forEach((transformName) => {
-    config.addTransform(transformName, transforms[transformName]);
-  });
-
-  // Load markdown-it plugins
-  config.setLibrary(
-    'md',
-    markdownIt({
-      html: true,
-      breaks: true,
-      linkify: true,
-      typographer: true,
-    })
-      .use(markdownItClassy)
-      .use(markdownItFootnote)
-      .use(markdownItDeflist)
-      .use(markdownItAttribution, {
-        removeMarker: false,
-      })
-  );
+  config.addPlugin(molle);
 
   // Passthrough copy
   config.addPassthroughCopy('src/images');
