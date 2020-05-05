@@ -1,0 +1,58 @@
+{% macro facepile( webmentions, type ) %}
+<div class="c-webmention__{{ type | slug }}">
+  <h4>{{ type }}</h4>
+  <ol class="c-webmention__facepile" reversed>
+    {% for wm in webmentions | reverse | head(5) %}
+      <li class="c-webmention__face-item">
+        <a href="{{ wm.author.url }}">
+          <img src="{{ wm.author.photo if wm.author.photo else '/images/webmention-avatar-default.svg' }}"
+               title="{{ wm.author.name }}"
+               alt="{{ wm.author.name }}"
+               class="c-webmention__face"
+               width="32px"
+               height="32px">
+        </a>
+      </li>
+    {% endfor %}
+    {% if webmentions.length > 5 %}
+      <li class="c-webmention__face-item">
+        <span>+{{ webmentions.length - 5 }}</span>
+      </li>
+    {% endif %}
+  </ol>
+</div>
+{% endmacro %}
+
+{% macro mediaObjectList( webmentions, type ) %}
+<div class="c-webmention__{{ type | slug }}">
+  <h4>{{ type }}</h4>
+  <ol class="c-webmention__with-contents-list" reversed>
+    {% for wm in webmentions | reverse %}
+    <li class="c-webmention__item">
+      <article class="c-wm-self o-media h-cite" id="webmention-{{ wm['wm-id'] }}">
+        <a class="c-wm-self__author o-media__figure p-author h-card u-url" href="{{ wm.url }}">
+          <img src="{{ wm.author.photo if wm.author.photo else '/images/webmention-avatar-default.svg' }}"
+               title="{{ wm.author.name }}"
+               alt="{{ wm.author.name }}"
+               class="c-webmention__face"
+               width="32px"
+               height="32px">
+        </a>
+        <div class="c-wm-self__body o-media__body">
+          <div class="c-wm-self__title o-media__title">
+            <strong class="p-name">{{ wm.author.name }}</strong>
+            <time class="c-wm-self__pubdate dt-published"
+                  datetime="{{ wm.published }}">
+              ({{ wm.published | dateOrdinalSuffixFilter }})
+            </time>
+          </div>
+          <p class="c-wm-self__content p-content" lang="ja">
+            {{ wm.content.value | safe }}
+          </p>
+        </div>
+      </article>
+    </li>
+    {% endfor %}
+  </ol>
+</div>
+{% endmacro %}

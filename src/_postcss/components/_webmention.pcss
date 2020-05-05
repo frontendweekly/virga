@@ -1,0 +1,29 @@
+.c-webmention__facepile {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+.c-webmention__face-item {
+  position: relative;
+  flex: none;
+}
+
+.c-webmention__face-item:not(:first-child) {
+  margin-left: calc(var(--space-base) * -1);
+}
+
+.c-webmention__face {
+  border-radius: 12%;
+  object-fit: cover;
+}
+
+.c-webmention__with-contents-list > * + * {
+  margin-top: calc(var(--space-base) * 2);
+}
+
+.c-wm-self {
+  --type-local-font-size-in-px: 16;
+
+  font-size: calc((var(--type-local-font-size-in-px) / var(--type-base-font-size)) * 1em);
+}

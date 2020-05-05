@@ -1,0 +1,30 @@
+{%- set absoluteUrl -%}{{ page.url | url | absoluteUrl(site.url) }}{%- endset -%}
+{%- set mentions = webmentions | webmentionData(absoluteUrl) -%}
+{%- set repostOfs = mentions | webmentionProperty(['repost-of']) -%}
+{%- set likeOfs = mentions | webmentionProperty(['like-of']) -%}
+{%- set withContents = mentions | webmentionProperty(['mention-of', 'in-reply-to']) -%}
+
+{% if mentions.length %}
+<aside class="c-webmention" id="webmentions">
+  <div class="o-inner-wrapper">
+    <div class="c-webmention__list o-with-sidebar">
+      <h3>Webmentions for "{{ introHeading }}"</h3>
+      <div class="o-with-sidebar__inner">
+        <div class="c-webmention__side o-with-sidebar__side">
+          {% if repostOfs.length %}
+            {{ facepile(repostOfs, 'repost-of') }}
+          {% endif %}
+          {% if likeOfs.length %}
+            {{ facepile(likeOfs, 'like-of') }}
+          {% endif %}
+        </div>
+        <div class="c-webmention__main o-with-sidebar__main">
+          {% if withContents.length %}
+            {{ mediaObjectList(withContents, 'mention-of & in-reply-to') }}
+          {% endif %}
+        </div>
+      </div>
+    </div>
+  </div>
+</aside>
+{% endif %}

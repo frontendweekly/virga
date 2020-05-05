@@ -1,0 +1,21 @@
+.o-switcher {
+  --o-switcher-threshold: 30rem;
+  --o-switcher-gap: calc(var(--space-base) * 2);
+}
+
+.o-switcher > * {
+  display: flex;
+  flex-wrap: wrap;
+  margin: calc(var(--o-switcher-gap) / 2 * -1);
+}
+
+.o-switcher__inner > * {
+  flex-basis: calc((var(--o-switcher-threshold) - (100% - var(--o-switcher-gap))) * 999);
+  flex-grow: 1;
+  margin: calc(var(--o-switcher-gap) / 2);
+}
+
+.o-switcher__inner > :nth-last-child(n + 4),
+.o-switcher__inner > :nth-last-child(n + 4) ~ * {
+  flex-basis: 100%;
+}

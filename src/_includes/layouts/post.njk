@@ -1,4 +1,6 @@
 {% extends 'layouts/base.njk' %}
+{% from 'macros/webmention.njk' import facepile, mediaObjectList %}
+
 {% set pageType = 'Post' %}
 
 {# Intro content #}
@@ -23,7 +25,7 @@
     </div>
   </article>
 {% if tags %}
-  <hr class="o-hr o-hr--three-stars">
+  <hr class="o-hr o-hr--three-stars" aria-hidden="true">
   <footer class="c-post__footer">
     <div class="o-inner-wrapper">
       <h3>Filed under</h3>
@@ -34,6 +36,9 @@
       </nav>
     </div>
   </footer>
+{% endif %}
+{% if site.webmention %}
+  {% include "partials/components/webmention.njk" %}
 {% endif %}
 </main>
 {% endblock %}

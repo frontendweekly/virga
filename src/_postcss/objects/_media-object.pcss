@@ -1,0 +1,23 @@
+.o-media {
+  display: flex;
+  align-items: flex-start;
+}
+
+.o-media__figure {
+  display: block;
+  flex: none;
+  margin-right: var(--space-base);
+}
+
+.o-media__body {
+  flex: 1;
+}
+
+.o-media--center {
+  align-items: center;
+}
+
+.o-media--reverse > .o-media__figure {
+  order: 1;
+  margin-left: var(--space-base);
+}

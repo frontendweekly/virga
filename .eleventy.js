@@ -3,6 +3,9 @@ const rssPlugin = require('@11ty/eleventy-plugin-rss');
 const syntaxHighlight = require('@11ty/eleventy-plugin-syntaxhighlight');
 const molle = require('@frontendweekly/molle');
 
+// Filters
+const filters = require('./_filters/filters.js');
+
 // Import data files
 const site = require('./src/_data/site.json');
 
@@ -14,6 +17,11 @@ module.exports = function (config) {
   config.addPlugin(rssPlugin);
   config.addPlugin(syntaxHighlight);
   config.addPlugin(molle);
+
+  // Filters
+  Object.keys(filters).forEach((filterName) => {
+    config.addFilter(filterName, filters[filterName]);
+  });
 
   // Passthrough copy
   config.addPassthroughCopy('src/images');

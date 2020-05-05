@@ -1,0 +1,24 @@
+.o-with-sidebar {
+  --o-with-sidebar-side-width: 10rem;
+  --o-with-sidebar-gap: calc(var(--space-base) * 2);
+
+  overflow: hidden;
+}
+
+.o-with-sidebar__inner {
+  display: flex;
+  flex-wrap: wrap;
+  margin: calc(var(--o-with-sidebar-gap) / 2 * -1);
+}
+
+.o-with-sidebar__inner > * {
+  flex-basis: var(--o-with-sidebar-side-width);
+  flex-grow: 1;
+  margin: calc(var(--o-with-sidebar-gap) / 2);
+}
+
+.o-with-sidebar__inner > :last-child {
+  flex-basis: 0;
+  flex-grow: 999;
+  min-width: calc(50% - var(--o-with-sidebar-gap));
+}
