@@ -10,7 +10,7 @@ tags:
 
 ## When you own your contents, then who owns reactions for them?
 
-ACT I: Meet the **Hero**—their **world,** what they **want,** what they **fear.**{c-post\_\_explanation}
+ACT I: Meet the **Hero**—their **world,** what they **want,** what they **fear.**{explanation}
 
 [Frontend Weekly Tokyo](https://frontendweekly.tokyo/) was used to be on Medium, but it has gone a bit rogue in my opinion. Eleventy and Netlify allow me to own my contents with ease, so I've decided to give them a try.
 
@@ -22,7 +22,7 @@ Owning contents is the very foundation of IndieWeb. I wanted to expand my bounda
 
 ### Webmention is a Web standard to help me to connect
 
-Inciting Incident: Your Hero's **worst fears** realized.{c-post\_\_explanation}
+Inciting Incident: Your Hero's **worst fears** realized.{explanation}
 
 So to answer the question, I should own reactions to my contents, but how can I do that?
 
@@ -39,7 +39,7 @@ This is a story about implementing Webmention in Eleventy.
 
 ## Strategy to enable Webmention on Virga
 
-ACT II: **The Hero makes a decision** about how to resolve the problem created by the Inciting Incident.{c-post\_\_explanation}
+ACT II: **The Hero makes a decision** about how to resolve the problem created by the Inciting Incident.{explanation}
 
 ### Diagnosis
 
@@ -67,7 +67,7 @@ To enable Webmention, I need to do 1) Receive, 2) Transform the data, 3) Display
 
 ### Receiving Webmention
 
-First Reversal: The Hero makes the first major **progress** in their journey.{c-post\_\_explanation}
+First Reversal: The Hero makes the first major **progress** in their journey.{explanation}
 
 In order to receive webmentions, I need to declare an endpoint to accept them.
 I could host this on my server, but for Eleventy (in the case of static sites), I need a third-party service for this.
@@ -236,7 +236,7 @@ ELSE IF `wm-property` === `mention-of` AND `in-reply-to`, I want something like 
 
 ### HTML, CSS and filter
 
-Low Point: The Hero loses all hope, believes **all is lost.** But out of this darkness comes a **plan** to win the movie.{c-post\_\_explanation}
+Low Point: The Hero loses all hope, believes **all is lost.** But out of this darkness comes a **plan** to win the movie.{explanation}
 
 #### Filter: `webmentionData()`
 
@@ -263,7 +263,7 @@ I have introduced 3 objects([Media Object](http://www.stubbornella.org/content/2
 
 ## Finale
 
-The Hero confronts that obstacle by making a **leap of faith** that allows them to overcome it.{c-post\_\_explanation}
+The Hero confronts that obstacle by making a **leap of faith** that allows them to overcome it.{explanation}
 
 - One of the hardest things in this journey which I've mentioned earlier is I don't have many Webmentions to display 😢.
 - All the code to fetch and display Webmention is only on Virga for now, but I want this in all of my blogs, so I'll figure out how to port this to MOLLE.
