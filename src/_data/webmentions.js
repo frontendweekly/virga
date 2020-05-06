@@ -28,7 +28,7 @@ async function fetchWebmentions() {
     return false;
   }
 
-  const url = `${API_ORIGIN}?domain=${webmention}&token=${TOKEN}&per-page=999&sort-by=published`;
+  const url = `${API_ORIGIN}?domain=${webmention}&token=TOKEN&per-page=999&sort-by=published`;
 
   try {
     const response = await CacheAsset(url, {
