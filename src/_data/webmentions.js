@@ -28,7 +28,7 @@ async function fetchWebmentions() {
     return false;
   }
 
-  const url = `${API_ORIGIN}?domain=${webmention}&token=TOKEN&per-page=999&sort-by=published`;
+  const url = `${API_ORIGIN}?domain=${webmention}&token=${TOKEN}&per-page=999&sort-by=published`;
 
   try {
     const response = await CacheAsset(url, {
@@ -36,7 +36,9 @@ async function fetchWebmentions() {
       type: 'json',
     });
 
-    signale.info(`${response.children.length} webmentions fetched from ${url}`);
+    signale.info(
+      `${response.children.length} webmentions fetched from {API_ORIGIN}?domain=${webmention}}`
+    );
     return response;
   } catch (err) {
     signale.fatal(err);
