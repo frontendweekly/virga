@@ -12,14 +12,15 @@ tags:
 
 ACT I: Meet the **Hero**—their **world,** what they **want,** what they **fear.**{c-post\_\_explanation}
 
-[Frontend Weekly Tokyo](https://frontendweekly.tokyo/) was used to be on Medium. (It was an e-mail newsletter before that.) I've decided to practice [IndieWeb](https://indieweb.org/) because I wanted to use Eleventy and Medium has gone a bit rogue in my opinion.
+[Frontend Weekly Tokyo](https://frontendweekly.tokyo/) was used to be on Medium, but it has gone a bit rogue in my opinion. Eleventy and Netlify allow me to own my contents with ease, so I've decided to give them a try.
 
+Owning contents is the very foundation of IndieWeb. I wanted to expand my boundary a bit further.
 "You are better connected" is one of three principles of IndieWeb which includes this statement:
 
 > Even replies and likes on other services can come back to your site so they’re all in one place.
 > — IndieWeb. [What is the IndieWeb?](https://indieweb.org/), (2020, Apr 13)
 
-### Webmention is a Web standard to helps me to connect
+### Webmention is a Web standard to help me to connect
 
 Inciting Incident: Your Hero's **worst fears** realized.{c-post\_\_explanation}
 
@@ -45,8 +46,8 @@ ACT II: **The Hero makes a decision** about how to resolve the problem created b
 To enable Webmention, I need to do 1) Receive, 2) Transform the data, 3) Display the data on Post pages.
 
 - I want to make it as portable as I can so that I can use this implementation in all of my blogs
-- 1. will involve with making the data available to the next step
-- 2. could be done using filter which can be a plugin
+- 1\) will involve with making the data available to the next step
+- 2\) could be done using filter which can be a plugin
 - However, 3) it involves with template so making it as a plugin would be difficult
 
 ### Guiding Policy
@@ -56,9 +57,9 @@ To enable Webmention, I need to do 1) Receive, 2) Transform the data, 3) Display
 
 ### Actions
 
-- 1. Receive: - Use [webmention.io](https://webmention.io/) as my endpoint - Use `_data/webmention.js` to fetch the data - Try out [`eleventy-cache-assets`](https://github.com/11ty/eleventy-cache-assets)
-- 2. Transform: Create filters - Use [`webmentionsForUrl`](https://github.com/maxboeck/eleventy-webmentions/blob/master/.eleventy.js#L39-L88) as the base
-- 3. Display: Create templates - See [Fat marker sketch](http://localhost:8080/posts/2020-05-03-setting-up-webmentions-on-eleventy/#heading-ui:-fat-marker-sketch)
+- 1\) Receive: - Use [webmention.io](https://webmention.io/) as my endpoint - Use `_data/webmention.js` to fetch the data - Try out [`eleventy-cache-assets`](https://github.com/11ty/eleventy-cache-assets)
+- 2\) Transform: Create filters - Use [`webmentionsForUrl`](https://github.com/maxboeck/eleventy-webmentions/blob/master/.eleventy.js#L39-L88) as the base
+- 3\) Display: Create templates - See [Fat marker sketch](http://localhost:8080/posts/2020-05-03-setting-up-webmentions-on-eleventy/#heading-ui:-fat-marker-sketch)
 
 #### UI: [Fat marker sketch](https://basecamp.com/shapeup/1.3-chapter-04#fat-marker-sketches)
 
@@ -74,9 +75,9 @@ Which is where [webmention.io](https://webmention.io/) comes in.
 
 #### Sign in with webmention.io
 
-Webmention.io is a free service and using [IndieAuth](https://indieauth.com/) for signing in.
+Webmention.io is a free service and using [IndieAuth](https://indieauth.com/) to sign in.
 
-I can sign it in using Twitter or GitHub but I find it, it's easier to sign in using e-mail.
+I could sign it in using Twitter or GitHub, but I will use my e-mail to sign in.
 
 ```json
 "author": {
@@ -91,18 +92,16 @@ I have this field filled at `_data/site.json` which in result outputs `<link rel
 
 After successful sign in, Webmention.io will navigate me to `https://webmention.io/settings` and there is it a snippet to copy & paste. Handy.
 
-In order to accept Webmentions, I need this:
-
 ```html
 <link rel="webmention" href="https://webmention.io/virga.frontendweekly.com/webmention" />
 <link rel="pingback" href="https://webmention.io/virga.frontendweekly.com/xmlrpc" />
 ```
 
-Which I can copy & paste into `<head>`.
+I can copy & paste this into `<head>`.
 
 #### But, will anybody send Webmention?
 
-I've already finished implementing fetching webmentions part, when I'm writing this, so I can answer this very question.
+When I'm writing this I've already finished implementing a part where I fetch webmentions, so I can answer this question.
 
 Answer is no. At least, not for me.
 So I need another tool. [Bridgy](https://brid.gy/).
@@ -110,10 +109,10 @@ So I need another tool. [Bridgy](https://brid.gy/).
 > Bridgy is another free service that can monitor your Twitter, Facebook or Instagram activity and send a webmention for every like, reply or repost you receive.
 > — Max Böck. [Static Indieweb pt2: Using Webmentions](https://mxb.dev/blog/using-webmentions-on-static-sites/), (2019, Jan 10)
 
-I've gone to Bridgy and have connected my Twitter account.
-I have THREE(!) webmentions on virga.frontendweekly.tokyo and one of them is mine.
+I went to Bridgy and connected with my Twitter account.
+I have THREE(!) webmentions (which are not mine) on virga.frontendweekly.tokyo.
+Well, three is better than zero.
 
-Well, three is better than zero.  
 Because you see, this story about implementing Webmentions on Eleventy is actually the second try for me.
 What happened to the first one?
 I DIDN'T have any webmentions on Virga, so I couldn't go further.
@@ -124,9 +123,8 @@ Having a not so popular blog which tries to tell a story about Webmention turned
 
 I have rediscovered the power of Eleventy when I look at the starter template by Max Böck.
 
-I can use JavaScript at `src/_data` to fetch data, and the object it obtains will be available to all templates. I somehow believed that data in `src/_date` have to be JSON, but it just needs to return object.
+I can use JavaScript at `src/_data` to fetch data, and the object will be available to all templates. I somehow believed that data in `src/_date` have to be JSON, but they just need to return object.
 
-Max Böck has utilized this to fetch webmentions data from Webmention.io API.
 His [example code is here](https://github.com/maxboeck/eleventy-webmentions/blob/master/_data/webmentions.js).
 
 My favorite bit from his code is here:
@@ -156,9 +154,11 @@ module.exports = async function () {
 };
 ```
 
-Fetching webmentions occurs only in production.
+- Fetching webmentions occurs only in production.
+- Fetched webmentions are cached.
+- If there are cached data, it fetches data from `lastFetched`.
 
-According to my Eleventy log, running this JavaScript costs 924ms last time I run which is a lot when you're in development therefore this code ensures to use cache when in development.
+This is brilliant, but I wanted to try [`eleventy-cache-assets`](https://github.com/11ty/eleventy-cache-assets) for more versatility.
 
 #### Swap the cache implementation with [`eleventy-cache-assets`](https://github.com/11ty/eleventy-cache-assets)
 
@@ -177,11 +177,13 @@ const response = await CacheAsset(url, {
 This means cache this request to `url` for 1 day and save it as json.
 I could still use `process.env.ELEVENTY_ENV === 'production'` to prevent running in PROD, but this will be cached for 1 day, so I don't think I need to worry about performance anymore.
 
+I wish there is a way to `read` the cache data, or maybe there already is.
+
 ## Transform the data
 
 Midpoint: The point of no return. Something big and unexpected happens, and now there's no going back to the Hero's normal life.{c-post\_\_explanation}
 
-Now I need transform this fetched data to be UI ready one.
+Now I need transform this fetched data to be UI ready.
 
 ```json
 {
@@ -208,7 +210,7 @@ Now I need transform this fetched data to be UI ready one.
 ```
 
 This is one of the Webmentions I received. (Well, I send this one.)
-Let's look at `wm-property` field since this piece of data defines how to display the data.
+Let's look at `wm-property` field since this piece of data will define how to display the data.
 
 According to webmention.io's README, there are 6 properties:
 
