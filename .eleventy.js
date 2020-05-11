@@ -4,7 +4,7 @@ const syntaxHighlight = require('@11ty/eleventy-plugin-syntaxhighlight');
 const molle = require('@frontendweekly/molle');
 
 // Filters
-const filters = require('./_filters/filters.js');
+const filters = require('./src/_filters/filters.js');
 
 // Import data files
 const site = require('./src/_data/site.json');

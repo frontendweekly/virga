@@ -12,15 +12,27 @@
       <div class="o-with-sidebar__inner">
         <div class="c-webmention__side o-with-sidebar__side">
           {% if repostOfs.length %}
-            {{ facepile(repostOfs, 'repost-of') }}
+          {% set webmentionPropertyHeading = 'repost-of' %}
+          <div class="c-webmention__{{ webmentionPropertyHeading | slug }}">
+            <h4>{{ webmentionPropertyHeading }}</h4>
+            {{ facepile(repostOfs) }}
+          </div>
           {% endif %}
           {% if likeOfs.length %}
-            {{ facepile(likeOfs, 'like-of') }}
+          {% set webmentionPropertyHeading = 'like-of' %}
+          <div class="c-webmention__{{ webmentionPropertyHeading | slug }}">
+            <h4>{{ webmentionPropertyHeading }}</h4>
+            {{ facepile(likeOfs) }}
+          </div>
           {% endif %}
         </div>
         <div class="c-webmention__main o-with-sidebar__main">
           {% if withContents.length %}
-            {{ mediaObjectList(withContents, 'mention-of & in-reply-to') }}
+          {% set webmentionPropertyHeading = 'mention-of & in-reply-to-of' %}
+          <div class="c-webmention__{{ webmentionPropertyHeading | slug }}">
+            <h4>{{ webmentionPropertyHeading }}</h4>
+            {{ mediaObjectList(withContents) }}
+          </div>
           {% endif %}
         </div>
       </div>
