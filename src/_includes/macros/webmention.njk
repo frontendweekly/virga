@@ -21,7 +21,7 @@
 {% endmacro %}
 
 {% macro mediaObjectList( webmentions ) %}
-<ol class="c-webmention__with-contents-list" reversed>
+ <ol class="c-webmention__with-contents-list" reversed>
     {% for wm in webmentions | reverse %}
       <li class="c-webmention__item">
         <article class="c-wm-self o-media h-cite" id="webmention-{{ wm['wm-id'] }}">

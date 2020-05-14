@@ -1,0 +1,26 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`webmentions it should return expected field 1`] = `
+Object {
+  "author": Object {
+    "name": Any<String>,
+    "photo": Any<String>,
+    "type": Any<String>,
+    "url": Any<String>,
+  },
+  "content": Object {
+    "html": Any<String>,
+    "text": Any<String>,
+  },
+  "mention-of": Any<String>,
+  "published": Anything,
+  "type": Any<String>,
+  "url": Any<String>,
+  "wm-id": Any<Number>,
+  "wm-private": Any<Boolean>,
+  "wm-property": Any<String>,
+  "wm-received": Anything,
+  "wm-source": Any<String>,
+  "wm-target": Any<String>,
+}
+`;
