@@ -50,5 +50,7 @@ module.exports = async function () {
   const feed = await fetchWebmentions();
   if (feed) {
     return feed.children;
+  } else {
+    return {};
   }
 };
