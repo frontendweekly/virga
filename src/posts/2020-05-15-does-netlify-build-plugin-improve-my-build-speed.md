@@ -11,9 +11,9 @@ Meet the Hero—their world, what they want, what they fear.{explanation}
 
 My last journey was to [auto generate image from article data](https://virga.frontendweekly.tokyo/posts/2020-05-06-auto-generate-ogp-image-with-eleventy-and-puppeteer/) and by adding this feature, I've also added 2 mins of build time since generating screenshots takes time.
 
-In the finale of my story, I've mentioned on Netlify Build Plugins and its capability to access to the cache between build.
+In the finale of my story, I've mentioned about Netlify Build Plugins and thier capability to access to the cache between build.
 
-I was going wait for a blog post from Phil Hawksworth as he mentioned writing it on his Tweet, but it would be more rewarding for me to get my own hand dirty in this topic.
+I was going wait for a blog post from Phil Hawksworth as he mentioned writing it on his Tweet, but it would be more fun for me to get my own hand dirty on this topic.
 
 As always, I'm not sure how this story is going to end, but I'll record what happened to me along the way.
 
@@ -24,7 +24,7 @@ This is a story about untangling Netlify Build Plugins so that I can create one 
 
 Your Hero's worst fears realized.{explanation}
 
-Before I actually write some JavaScript(I'm assuming that it is the language I can use to build Netlify Build Plugins), I need to find out about I can run Netlify Build Plugins locally.
+Before I actually write some JavaScript(I'm assuming that is the language I can use to build Netlify Build Plugins), I need to find out about I can run Netlify Build Plugins locally.
 
 Here are references I've found so far and I haven't read it all yet.
 
@@ -37,12 +37,12 @@ Here are references I've found so far and I haven't read it all yet.
 
 According to [netlify/build](https://github.com/netlify/build), after enabling Build Plugins at Netlify, what I need to do is add:
 
-```toml
+```text
 [[plugins]]
   package = "netlify-plugin-debug-cache"
 ```
 
-this to my `netlify.toml` which I've done it.
+something like this to my `netlify.toml`.
 
 Before I've added above, I run `npx netlify build --dry` and that gave me this:
 
@@ -141,20 +141,21 @@ This is what I get from the same command after I've added the configuration to `
   If this looks good to you, run `netlify build` to execute the build
 ```
 
-Nice. It did automatically install the plugin as a npm module and looks like `netlify-plugin-debug-cache` is executed `onEnd` event.
+Nice.
+It did automatically install the plugin as a npm module and looks like `netlify-plugin-debug-cache` is executed `onEnd` event.
 
 When I do `npx netlify build` (without `--dry`), there is `cache-output.json` in my `dist` directory. Since I haven't save anything in cache yet, I have `[]` in my `cache-output.json`.
 
-## ACT II:
+## ACT II: How to create own Netlify Build Plugin
 
 The Hero makes a decision about how to resolve the problem created by the Inciting Incident.{explanation}
 
-Now I've learned how I can run a Netlify Build Plugin locally, let's dig a bit deeper. Next objective will be saving the cache, but before doing that I need to know how to create own Netlify Build Plugin to save the cache.
+Now I've learned how to run a Netlify Build Plugin locally, let's dig a bit deeper. Next objective will be saving the cache, but before doing that I need to know how to create own Netlify Build Plugin.
 
 According to [netlify/build](https://github.com/netlify/build#anatomy-of-a-plugin), a plugin consists of two files: a `manifest.yml` and a JavaScript file exporting an object, so I made those.
 
 ```shell
-.
+plugins
 └── netlify-plugin-molle-cache
    ├── index.js
    └── manifest.yml
@@ -184,7 +185,7 @@ module.exports = {
 
 And I've updated `netlify.toml`:
 
-```
+```text
 [[plugins]]
   package = "./plugins/netlify-plugin-molle-cache"
 [[plugins]]
@@ -201,13 +202,14 @@ Then again run `npx netlify build`.
 Hello world from onPreBuild event!
 ```
 
-🎉 Yay. I kinda wish I could get this info by doing `npx netlify build --dry`, but worked as I've expected.
+🎉 Yay.
+I wish I could get this info by doing `npx netlify build --dry`, but worked as I've expected.
 
-### First Reversal:
+### First Reversal: how does Netlify Build Plugin cache thing works?
 
 The Hero makes the first major progress in their journey.{explanation}
 
-My objective is to save cache which means I need to save something, anything since I'm just trying to figure out how Netlify Build Plugin cache thing works.
+My objective is to save cache which means I need to save something. It really doesn't matter what that is since I'm just trying to figure out how Netlify Build Plugin cache thing works.
 
 In the Tweet of Phil Hawksworth, he shared [this screenshot about cache](https://twitter.com/philhawksworth/status/1257284661874692097/photo/1) and looks like there is `utils.cache` available somewhere.
 
@@ -256,6 +258,7 @@ This will log:
 ```
 
 Looks like I can use `util.cache.save()` to fulfill my objective, so my next action is figuring out what to save.
+
 My ultimate objective here is to avoid taking screenshots as much as I can so that I can speed up my build.
 So let's save screenshots which are saved at `dist/previews`.
 
@@ -282,7 +285,7 @@ module.exports = {
 
 This means I can remove `netlify-plugin-debug-cache` since I save this for debugging cache but `.netlify` has enough info to do that.
 
-## Midpoint:
+## Midpoint: Utilizing cache to prevent taking screenshots
 
 The point of no return. Something big and unexpected happens, and now there's no going back to the Hero's normal life.{explanation}
 
@@ -291,7 +294,7 @@ I think Eleventy doesn't come with "increment build", so I need a way to prevent
 
 My `screenshot.11ty.js` has this as a main function.
 
-```
+```js
 async render(data) {
   if (process.env.ELEVENTY_ENV === 'production') {
     const dom = markup(data.screenshot.data);
@@ -306,16 +309,14 @@ So I need a new condition to prevent running those 2 functions.
 
 It looks like a solid plan. Let's see if fits in reality.
 
-### Finale:
+### Finale: The answer is yes
 
 The Hero confronts that obstacle by making a leap of faith that allows them to overcome it.{explanation}
 
-And after an hour or so, I have finished modifying my plugin and `screenshot.11ty.js`.
+And after an hour or so, I have finished modifying my plugin and `screenshot.11ty.js`:
 
-- Plugin: [https://github.com/frontendweekly/sixtysix/tree/master/plugins/netlify-plugin-molle-cache](https://github.com/frontendweekly/sixtysix/tree/master/plugins/netlify-plugin-molle-cache)
+- Plugin: [https://github.com/frontendweekly/molle/tree/master/packages/netlify-plugin-screenshot-cache](https://github.com/frontendweekly/molle/tree/master/packages/netlify-plugin-screenshot-cache)
 - `screenshot.11ty.js`: [https://github.com/frontendweekly/sixtysix/blob/master/src/previews/screenshot.11ty.js](https://github.com/frontendweekly/sixtysix/blob/master/src/previews/screenshot.11ty.js)
-
-There they are.
 
 So Does Netlify Build Plugin improve my build speed?
 
@@ -324,9 +325,7 @@ If I have a new quote, I have `Build time: 1m. Total deploy time: 1m 3s`.
 
 The answer is yes.
 
-Now I can port both my plugin and `screenshot.11ty.js` to [MOLLE](https://github.com/frontendweekly/molle).
-
-Netlify Build Plugins have lots of possibilities, and it is relatively easy to debug, so it's very enjoyable to implement.
+Netlify Build Plugins have lots of possibilities, and it is relatively easy to debug, so it's enjoyable to implement.
 I'll see what could I done with this for Eleventy.
 
 Well, then until next journey.

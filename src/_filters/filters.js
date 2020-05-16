@@ -1,9 +1,6 @@
 const sanitizeHTML = require('sanitize-html');
 
 module.exports = {
-  consoleDump: (data) => {
-    console.log(data);
-  },
   webmentionData: (data, url) => {
     // Extract webmentions by url
     const extractByURL = (item, url) => item['wm-target'] === url;
