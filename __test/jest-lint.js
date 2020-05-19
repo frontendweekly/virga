@@ -1,5 +1,5 @@
 module.exports = {
   displayName: 'lint',
   runner: 'jest-runner-eslint',
-  testMatch: ['/**/*.js'],
+  testMatch: ['<rootDir>/**/*.js'],
 };
