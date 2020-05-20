@@ -83,6 +83,6 @@
     "jest-runner-eslint": "^0.8.0",
     "jest-watch-select-projects": "^2.0.0",
     "@testing-library/dom": "^7.5.7",
-    "@testing-library/jest-dom": "^5.7.0"
+    "@testing-library/jest-dom": "^5.8.0"
   }
 }
