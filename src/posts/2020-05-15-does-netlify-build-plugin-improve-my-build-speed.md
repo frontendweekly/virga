@@ -11,7 +11,7 @@ Meet the Hero—their world, what they want, what they fear.{explanation}
 
 My last journey was to [auto generate image from article data](https://virga.frontendweekly.tokyo/posts/2020-05-06-auto-generate-ogp-image-with-eleventy-and-puppeteer/) and by adding this feature, I've also added 2 mins of build time since generating screenshots takes time.
 
-In the finale of my story, I've mentioned about Netlify Build Plugins and thier capability to access to the cache between build.
+In the finale of my story, I've mentioned Netlify Build Plugins, and their capability to access to the cache between build.
 
 I was going wait for a blog post from Phil Hawksworth as he mentioned writing it on his Tweet, but it would be more fun for me to get my own hand dirty on this topic.
 
@@ -42,7 +42,7 @@ According to [netlify/build](https://github.com/netlify/build), after enabling B
   package = "netlify-plugin-debug-cache"
 ```
 
-something like this to my `netlify.toml`.
+Something like this to my `netlify.toml`.
 
 Before I've added above, I run `npx netlify build --dry` and that gave me this:
 
