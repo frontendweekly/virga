@@ -31,26 +31,24 @@ const ps = [
   },
 ];
 
-const main = async () => {
+(async () => {
   const options = await qoa.prompt(ps);
 
-  return matter.stringify('', {
+  const frontMatter = matter.stringify('', {
     title: options.title,
     desc: '',
     date: new Date(),
     author: author.name,
   });
-};
 
-main().then((result) => {
-  const {data} = matter(result);
+  const {data} = matter(frontMatter);
   const filePath = `${POSTS_DIR}/${yyyymmddify(data.date)}-${slugify(data.title, {
     lower: true,
   })}.md`;
   try {
     signale.success(`Creating new post: ${filePath}`);
-    fs.writeFileSync(filePath, result, 'utf-8');
+    fs.writeFileSync(filePath, frontMatter, 'utf-8');
   } catch (err) {
     handleError(err);
   }
-});
+})();
