@@ -7,6 +7,10 @@
     "name": "Yuya Saito",
     "mail": "hello@studiomohawk.com"
   },
+  "social": {
+    "github": "https://github.com/frontendweekly",
+    "twitter": "https://twitter.com/frontend_weekly"
+  },
   "showSmallPrint": true,
   "showThemeCredit": true,
   "maxPostsPerPage": 5,
