@@ -13,14 +13,14 @@ My last journey was to [auto generate image from article data](https://virga.fro
 
 In the finale of my story, I've mentioned Netlify Build Plugins, and their capability to access to the cache between build.
 
-I was going wait for a blog post from Phil Hawksworth as he mentioned writing it on his Tweet, but it would be more fun for me to get my own hand dirty on this topic.
+I was going to wait for a blog post from Phil Hawksworth as he mentioned writing it on his Tweet, but it would be more fun for me to get my own hand dirty on this topic.
 
 As always, I'm not sure how this story is going to end, but I'll record what happened to me along the way.
 
 And this is where my journey begins.
 This is a story about untangling Netlify Build Plugins so that I can create one to speed up my build.
 
-### Inciting Incident:
+### Inciting Incident: Figuring out Netlify Build Plugins
 
 Your Hero's worst fears realized.{explanation}
 
