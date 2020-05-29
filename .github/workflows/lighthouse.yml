@@ -1,5 +1,5 @@
 name: Lighthouse CI Action
-on: [pull_request]
+on: [push, pull_request]
 jobs:
   build:
     runs-on: ubuntu-latest
@@ -17,7 +17,7 @@ jobs:
         uses: jakepartusch/wait-for-netlify-action@v1
         id: netlify
         with:
-          site_name: 'gallant-panini-bc8593'
+          site_name: 'virga'
       - name: Audit URLs using Lighthouse
         uses: treosh/lighthouse-ci-action@v3
         with:
