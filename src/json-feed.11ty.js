@@ -62,7 +62,9 @@ module.exports = class {
       item.summary = post.data.desc;
       item.content_html = await this.prepareContent(post.templateContent);
       item.date_published = post.data.date;
-      item.author = post.data.author;
+      item.author = {
+        name: `${post.data.author}`,
+      };
 
       feed.items.push(item);
     }
