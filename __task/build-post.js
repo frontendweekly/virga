@@ -44,6 +44,7 @@ const ps = [
   const {data} = matter(frontMatter);
   const filePath = `${POSTS_DIR}/${yyyymmddify(data.date)}-${slugify(data.title, {
     lower: true,
+    remove: /[*+~.()'"!:@]/g,
   })}.md`;
   try {
     signale.success(`Creating new post: ${filePath}`);

@@ -36,6 +36,10 @@ const status = (code, msg) => {
   };
 };
 
+// Helper Function to calc date difference between published date and now
+const differenceInDays = (publishedDate) =>
+  Math.ceil((new Date() - new Date(publishedDate)) / 1000 / 60 / 60 / 24);
+
 // Check existing posts
 const processPosts = async (posts) => {
   const siteTitle = posts.title;
@@ -48,7 +52,10 @@ const processPosts = async (posts) => {
   // assume the last post is not yet syndicated
   const latestPost = items[0];
 
-  console.log('latestPost.url is ', latestPost.url);
+  // if the latest post is 7 days old, assume post is syndicated
+  if (differenceInDays(latestPost.date_published) >= 7) {
+    return status(400, 'Latest post was already syndicated. No action taken.');
+  }
 
   try {
     // check twitter for any tweets containing post URL.
