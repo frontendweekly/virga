@@ -23,5 +23,31 @@ This is a story about creating a theme for Eleventy, and I'll do it on open as F
 As always I don't know how this story going to end, but I'll document what happened to me along the way.
 
 Notice the time stamp right after the header?
-I think this journey will be long one, so I'm going to write this story open as well which means when I finished writing an "update", I'll upload it.
-The time stamp indicates when I stop writing.
+I think this journey will be long one, so I'm going to write this story open as well which means when I finished writing an "update", I'll make it public.
+The time stamp indicates modification time.
+
+## Blank. Not broken
+
+@ 22:18 May 31, 2020{explanation}
+
+I'm not a designer. I've never been one.
+I haven't done any development as a professional for long time either.
+I do work around there but I'm not sure what I do.
+
+Anyway.
+
+Sixty Six has been distilled to blank state. Surprised to find out it is not broken. Surprised to see how simple Sixty Six is.
+Which forces me to think about what Sixty Six is.
+
+Here's what I have come up so far.
+
+"Sixty Six is a collection of highlights which makes a foundation for the discoverable mental notes."
+
+My english skill has been diminishing but I still can tell this isn't good one, but it is not broken.
+
+What is the kernel of Sixty Six?
+
+I'm not a designer. I may not be able to introduce myself as an engineer anymore, however I still love HTML and CSS. That has to account for something.
+
+I'm nowhere close to answer the question.
+I'll start with HTML to find a way in.
