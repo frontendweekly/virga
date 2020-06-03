@@ -30,9 +30,9 @@ The time stamp indicates modification time.
 
 @ 22:18 May 31, 2020{explanation}
 
-I'm not a designer. I've never been one.
+I'm not a designer. I had once call myself one but not anymore.
 I haven't done any development as a professional for long time either.
-I do work around there but I'm not sure what I do.
+I definitely work around those area, but I'm not there.
 
 Anyway.
 
@@ -51,3 +51,21 @@ I'm not a designer. I may not be able to introduce myself as an engineer anymore
 
 I'm nowhere close to answer the question.
 I'll start with HTML to find a way in.
+
+## My canvas
+
+@ 23:17 June 3, 2020{explanation}
+
+In "The Festival of Sunflower" (Translation is mine. It's titled "ひまわりの祝祭" in Japanese) which is one of my favorite mystery book by Iori Fujiwara, main character had always build his canvas from a plywood in his high school.
+
+He paint it white, torch it, make it flat and paint it white again. He does this several times to build his canvas.
+I'm no artist. I've never done any oil painting, but I can empathize why he does this.
+
+He said by doing this, he can produce interesting "matière".
+
+The browser is not a canvas for me. HTML is.
+The browser is a plywood.
+I paint it white, torch it, make it flat and paint it white again. I do this several times.
+
+Virga is based on [Hylia](https://github.com/hankchizljaw/hylia).
+Hylia has given me very solid foundation, so I only have to touch a few HTML.
