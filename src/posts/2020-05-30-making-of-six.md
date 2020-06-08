@@ -63,9 +63,33 @@ I'm no artist. I've never done any oil painting, but I can empathize why he does
 
 He said by doing this, he can produce interesting "matière".
 
-The browser is not a canvas for me. HTML is.
-The browser is a plywood.
-I paint it white, torch it, make it flat and paint it white again. I do this several times.
+I've been thinking that browsers are the canvas.
+The browser is not the canvas. HTML is.
+The browser is the plywood.
 
-Virga is based on [Hylia](https://github.com/hankchizljaw/hylia).
-Hylia has given me very solid foundation, so I only have to touch a few HTML.
+I paint it white, torch it, make it flat and paint it white again. And I do this several times.
+
+I think I now have interesting "matière".
+I now own the material I can build upon.
+
+## Start from the Caboose
+
+@ 23:26 June 8, 2020{explanation}
+
+I love tinkering with footer. When I design stuff, I tend to start working from footer.
+Apparently so does Frank Chimero.
+I bet there is a collection of footer design somewhere.
+
+So that's what I've done.
+
+![Footer on Sixty Six](/images/2020-06-08-qtnrwZZm@2x.png)
+
+It's been there for about one week.
+I thought about using grid, but decided to go with [The Switcher](https://every-layout.dev/layouts/switcher/).
+
+Every contents are in it, but I think it's too vanilla.
+But It's too early to talk about personality of Six yet.
+
+Let's work on other kind of footer: meta.
+That's where I put something like author, publish date and etc.
+It's kind of like footer. I often even use `<footer>` for it.
