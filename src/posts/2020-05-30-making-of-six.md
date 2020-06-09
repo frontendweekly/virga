@@ -74,7 +74,7 @@ I now own the material I can build upon.
 
 ## Start from the Caboose
 
-@ 23:26 June 8, 2020{explanation}
+@ 23:15 June 9, 2020{explanation}
 
 I love tinkering with footer. When I design stuff, I tend to start working from footer.
 Apparently so does Frank Chimero.
@@ -93,3 +93,9 @@ But It's too early to talk about personality of Six yet.
 Let's work on other kind of footer: meta.
 That's where I put something like author, publish date and etc.
 It's kind of like footer. I often even use `<footer>` for it.
+
+Sixty Six has only one meta, yet again working from footer make sense for me.
+I've prepended a symbol `—` to bylines which carry the message about Sixty Six.
+
+I've gone back and forward if I should have other meta data other than authors.
+I have to going up the ladder a bit for that question.
