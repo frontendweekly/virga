@@ -98,4 +98,39 @@ Sixty Six has only one meta, yet again working from footer make sense for me.
 I've prepended a symbol `—` to bylines which carry the message about Sixty Six.
 
 I've gone back and forward if I should have other meta data other than authors.
-I have to going up the ladder a bit for that question.
+
+## The quote
+
+@ 21:18 June 15, 2020{explanation}
+
+Main contents for Sixty Six are quotes and I have been working on it since I've started to do redesign.
+
+I tend to quote the whole paragraph if it's not too long; therefore, my contents tend to be short. It's quite safe to say they are not long-form at all.
+
+I need them to stand out, so the quote have given the largest font size.
+
+Georgia is my choice for this redesign. I love working with typeface since I don't get to do so in my day job. Japanese fonts are very heavy so for performance budget we've set, I cannot use custom fonts.
+
+However, I still choose Georgia since this is how typically read in my Instapaper app which is where the most of quotes come from.
+
+Sixty Six is my bedlock for the discoverable memory. I don't have any research to back this up, but I think it helps me to remember if the typeface for reading and recalling is same. I don't have to question my self why I chose different typeface at least.
+
+It's been about one week since I've finished working on the quote and list of quotes.
+It's still very minimum but I like minimum.
+
+## Adding sprit
+
+@ 21:39 June 18, 2020{explanation}
+
+> One of the ways that I’ve found to add spirit to simple designs is through color. The color need not be showy, only rich and nuanced.
+> — Frank Chimero, Redesign: Clearing A Path. (2020, May 24)
+
+I am going to follow his advice. It seems very good one since I do like to work on color.
+
+I want to add hint of my personality via color. I like green. I like red. And I like black and white. I was gonna pick one, but I use them all.
+
+I've got a lot of help from [Color Ninja](https://www.color.ninja/) and [Sip](https://sipapp.io/) for doing this.
+
+And I think I've settled with current setting. I wouldn't call it as a scheme since there no science behind my choice, but I think that's what make this personal.
+
+I also used a texture(it's from [Hero Patterns](https://www.heropatterns.com/)). It's very subtle. `fill-opacity='0.08'` subtle.
