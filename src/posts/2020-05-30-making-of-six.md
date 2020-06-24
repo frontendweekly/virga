@@ -134,3 +134,18 @@ I've got a lot of help from [Color Ninja](https://www.color.ninja/) and [Sip](ht
 And I think I've settled with current setting. I wouldn't call it as a scheme since there no science behind my choice, but I think that's what make this personal.
 
 I also used a texture(it's from [Hero Patterns](https://www.heropatterns.com/)). It's very subtle. `fill-opacity='0.08'` subtle.
+
+## Six is `1.0.0`
+
+@ 23:50 June 24, 2020{explanation}
+
+[Sixty Six](https://sixtysix.frontendweekly.tokyo/) is stable, so Six is `1.0.0`.
+It's been 24 days. I've been working on this whenever I have time, yet I feel I haven't done much.
+However, this journey has come to the end for now.
+I'm sure I'm going to nurture this design time to time.
+
+Very minimum but has a split. That's how I see Six.
+I'm happy with the result.
+It's been fun for sure.
+
+Well, then until next journey.
