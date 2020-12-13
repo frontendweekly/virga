@@ -4,7 +4,7 @@
   functions = "functions"
 
 [build.environment]
-  NODE_VERSION = "12.14.0"
+  NODE_VERSION = "14.15.114.15.1"
 
 [[headers]]
   for = "/*"
