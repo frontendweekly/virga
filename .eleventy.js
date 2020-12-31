@@ -5,9 +5,6 @@ const molle = require('@frontendweekly/molle');
 const collectionPost = require('@frontendweekly/collection-posts');
 const collectionPostFeed = require('@frontendweekly/collection-postfeed');
 
-// Filters
-const filters = require('./11ty/_filters/filters.js');
-
 // Import data files
 const site = require('./11ty/_data/site.json');
 
@@ -19,11 +16,6 @@ module.exports = function (config) {
   config.addPlugin(rssPlugin);
   config.addPlugin(syntaxHighlight);
   config.addPlugin(molle);
-
-  // Filters
-  Object.keys(filters).forEach((filterName) => {
-    config.addFilter(filterName, filters[filterName]);
-  });
 
   // Passthrough copy
   config.addPassthroughCopy('11ty/images');

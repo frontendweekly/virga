@@ -6,7 +6,4 @@
     <time datetime="{{ metaDate | dateIsoFilter }}"
           class="c-post-meta__date dt-published">{{ metaDate | dateOrdinalSuffixFilter }}</time>
   {% endif %}
-  {% if tags %}
-    <span class="p-author h-card">/ Filed under {{ tags | tagsToSentence | safe }}</span>
-  {% endif %}
 </p>
