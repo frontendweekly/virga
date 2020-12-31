@@ -7,7 +7,7 @@ const matter = require('gray-matter');
 const slugify = require('slugify');
 
 // Import data files
-const {author} = require('../src/_data/site.json');
+const {author} = require('../11ty/_data/site.json');
 
 // Posts location
 const POSTS_DIR = resolve(__dirname, '../src/posts');
@@ -42,10 +42,13 @@ const ps = [
   });
 
   const {data} = matter(frontMatter);
-  const filePath = `${POSTS_DIR}/${yyyymmddify(data.date)}-${slugify(data.title, {
-    lower: true,
-    remove: /[*+~.()'"!:@]/g,
-  })}.md`;
+  const filePath = `${POSTS_DIR}/${yyyymmddify(data.date)}-${slugify(
+    data.title,
+    {
+      lower: true,
+      remove: /[*+~.()'"!:@]/g,
+    }
+  )}.md`;
   try {
     signale.success(`Creating new post: ${filePath}`);
     fs.writeFileSync(filePath, frontMatter, 'utf-8');

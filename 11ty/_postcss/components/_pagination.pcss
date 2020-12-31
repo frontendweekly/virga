@@ -1,0 +1,38 @@
+.c-pagination {
+  margin-top: calc(var(--space-base) * 4);
+
+  & a {
+    display: inline-flex;
+    color: var(--color-text);
+  }
+
+  & a:not(:hover) {
+    text-decoration: none;
+  }
+
+  & svg {
+    margin-top: auto;
+    margin-bottom: auto;
+    pointer-events: none;
+  }
+
+  /* Flip content if direction is backwards */
+  & a[data-direction='backwards'] {
+    flex-direction: row-reverse;
+  }
+
+  & a[data-direction='backwards'] svg {
+    transform: rotate(-180deg);
+  }
+
+  /* If only child and forwards, push out to the right */
+  & a[data-direction='forwards']:only-child {
+    margin-left: auto;
+  }
+}
+
+.c-pagination__nav {
+  display: flex;
+  width: 100%;
+  flex-wrap: wrap;
+}

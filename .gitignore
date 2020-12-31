@@ -13,7 +13,7 @@ dist
 # Specifics
 
 # Hide compiled CSS
-src/_includes/assets/styles/*
+11ty/_includes/assets/styles/*
 
 # Hide compiled functions
 functions/*.zip

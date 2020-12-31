@@ -6,14 +6,14 @@ const collectionPost = require('@frontendweekly/collection-posts');
 const collectionPostFeed = require('@frontendweekly/collection-postfeed');
 
 // Filters
-const filters = require('./src/_filters/filters.js');
+const filters = require('./11ty/_filters/filters.js');
 
 // Import data files
-const site = require('./src/_data/site.json');
+const site = require('./11ty/_data/site.json');
 
 module.exports = function (config) {
   // Watch postcss
-  config.addWatchTarget('./src/_postcss/');
+  config.addWatchTarget('./11ty/_postcss/');
 
   // Plugins
   config.addPlugin(rssPlugin);
@@ -26,24 +26,24 @@ module.exports = function (config) {
   });
 
   // Passthrough copy
-  config.addPassthroughCopy('src/images');
-  config.addPassthroughCopy('src/favicon.*');
-  config.addPassthroughCopy('src/humans.txt');
-  config.addPassthroughCopy('src/fonts');
-  config.addPassthroughCopy('src/scripts');
+  config.addPassthroughCopy('11ty/images');
+  config.addPassthroughCopy('11ty/favicon.*');
+  config.addPassthroughCopy('11ty/humans.txt');
 
   // Layout aliases
   config.addLayoutAlias('home', 'layouts/home.njk');
 
   // Custom collections
-  config.addCollection('posts', (collection) => collectionPost(collection));
+  config.addCollection('posts', (collection) =>
+    collectionPost(collection, './11ty/posts/*.md')
+  );
   config.addCollection('postFeed', (collection) =>
-    collectionPostFeed(collection, site.maxPostsPerPage)
+    collectionPostFeed(collection, './11ty/posts/*.md', site.maxPostsPerPage)
   );
 
   return {
     dir: {
-      input: 'src',
+      input: '11ty',
       output: 'dist',
     },
     templateFormats: ['njk', 'md', '11ty.js'],

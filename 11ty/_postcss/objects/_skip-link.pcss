@@ -1,0 +1,24 @@
+.o-skip-link:not(:focus) {
+  position: absolute;
+  overflow: hidden;
+  width: 1px;
+  height: auto;
+  padding: 0;
+  border: 0;
+  margin: 0;
+  clip: rect(0 0 0 0);
+  white-space: nowrap;
+}
+
+.o-skip-link:focus {
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: inline-block;
+  padding: 1rem;
+  background-color: black;
+  color: white;
+  font-weight: 700;
+  line-height: 1;
+  text-decoration: none;
+}

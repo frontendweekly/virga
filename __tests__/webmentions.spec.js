@@ -1,4 +1,4 @@
-const wm = require('../src/_data/webmentions');
+const wm = require('../11ty/_data/webmentions');
 
 describe('webmentions', () => {
   beforeEach(() => {

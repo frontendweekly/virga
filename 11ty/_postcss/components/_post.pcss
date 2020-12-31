@@ -1,0 +1,121 @@
+.c-post {
+  /* List */
+  & ul,
+  & ol,
+  & dd {
+    --type-local-font-size-in-px: 40;
+
+    padding-left: calc(
+      (var(--type-local-font-size-in-px) / var(--type-base-font-size)) * 1em
+    );
+  }
+
+  /* Table */
+  & table {
+    width: 100%;
+    border-collapse: collapse;
+    overflow-x: auto;
+  }
+
+  & th {
+    border-width: 1px 0;
+    border-style: solid;
+    border-top-color: var(--color-gray-400);
+    border-bottom-color: var(--color-gray-400);
+    font-weight: 700;
+    text-align: left;
+    text-transform: uppercase;
+  }
+
+  /* Figure & Video */
+  & figure,
+  & video {
+    position: relative;
+    width: 100%;
+    max-width: calc(var(--space-char-per-line) * 1ch);
+  }
+
+  /*  Figure & Image */
+  & img {
+    margin-right: auto;
+    margin-left: auto;
+  }
+
+  & figure img {
+    position: relative;
+    z-index: 1;
+  }
+
+  & figcaption {
+    margin: 0.5rem auto 0 auto;
+    font-size: 0.9em;
+    font-style: italic;
+    text-align: center;
+  }
+
+  /* Code */
+  & .c-code-block {
+    width: 100%;
+    padding: 0 1rem;
+    background-color: var(--color-gray-900);
+    border-radius: 2px;
+    overflow-x: auto;
+  }
+
+  & pre,
+  & code,
+  & kbd,
+  & samp {
+    /* stylelint-disable font-family-no-duplicate-names */
+    font-family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace,
+      monospace;
+    font-size: 0.9em;
+  }
+
+  & pre {
+    hyphens: none;
+    tab-size: 2;
+    text-align: left;
+    word-break: normal;
+    word-spacing: normal;
+    word-wrap: normal;
+  }
+
+  /* Inline Code */
+  & code:not([class]),
+  & kbd:not([class]),
+  & samp:not([class]) {
+    padding: 1px 2px;
+    background-color: var(--color-gray-200);
+    white-space: normal;
+  }
+
+  /* Explanation */
+  & .explanation {
+    margin-top: 0;
+    color: var(--color-gray-700);
+    font-size: 0.9em;
+    font-style: italic;
+  }
+
+  & h2 + .explanation {
+    --type-local-font-size-in-px: calc(
+      var(--type-base-font-size) * var(--type-scale-4)
+    );
+    --type-local-collapse-adjustment-size-in-px: calc(
+      var(--type-local-font-size-in-px) * 2
+    );
+
+    margin-top: calc(
+      var(--type-local-collapse-adjustment-size-in-px) /
+        var(--type-local-font-size-in-px) * -1em
+    );
+  }
+
+  & .c-heading-permalink {
+    margin-left: var(--space-base);
+    color: var(--color-gray-700);
+    font-size: 0.8em;
+    vertical-align: middle;
+  }
+}
