@@ -10,12 +10,12 @@
       {% endif %}
 
       {% if site.showSmallPrint %}
-      {% include "partials/global/small-print.njk" %}
+      {% include "partials/components/small-print.njk" %}
       {% endif %}
 
       {% if site.showThemeCredit %}
-      <p class="site-foot__credit">
-        <small>Powered by Virga</a>.  Made Proudly in Tokyo.</small>
+      <p class="c-site-foot__credit">
+        <small>Powered by <a href="{{ site.social.github }}">Virga</a>. Made Proudly in Tokyo.</small>
       </p>
       {% endif %}
     </div>

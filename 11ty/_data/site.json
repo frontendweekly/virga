@@ -8,12 +8,11 @@
     "mail": "hello@studiomohawk.com"
   },
   "social": {
-    "github": "https://github.com/frontendweekly",
+    "github": "https://github.com/frontendweekly/virga",
     "twitter": "https://twitter.com/frontend_weekly"
   },
   "showSmallPrint": true,
   "showThemeCredit": true,
   "maxPostsPerPage": 5,
-  "paymentPointer": "$pay.stronghold.co/1a1d5ecbf6f988e4be3abc11cfb0a0b912d",
-  "webmention": "virga.frontendweekly.tokyo"
+  "paymentPointer": "$pay.stronghold.co/1a1d5ecbf6f988e4be3abc11cfb0a0b912d"
 }

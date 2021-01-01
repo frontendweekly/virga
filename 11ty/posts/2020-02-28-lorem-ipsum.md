@@ -94,3 +94,9 @@ and here is `inline code`.
 ### With heading 3 as subheading
 
 ![Site flow for Virga](/images/varga-site-flow.png 'This is a site flow for Varga')
+
+## How about footnotes?
+
+Here is a footnote reference,[^1] and another.[^longnote]
+[^1]: Here is the footnote.
+[^longnote]: Here's one with multiple blocks.

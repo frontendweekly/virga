@@ -5,7 +5,6 @@ body {
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --color-mode: 'dark';
     --color-text: #f5f5f7;
     --color-bg: #464646;
   }
@@ -23,5 +22,10 @@ body {
 
   .c-post .explanation {
     color: var(--color-gray-300);
+  }
+
+  .c-footnotes::before,
+  .c-site-foot__inner::before {
+    border-color: var(--color-gray-400);
   }
 }

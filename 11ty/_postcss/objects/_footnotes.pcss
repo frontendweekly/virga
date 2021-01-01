@@ -1,0 +1,27 @@
+.o-footnotes {
+  margin-top: 1em;
+  font-size: 0.9em;
+
+  &::before {
+    display: block;
+    width: 100%;
+    border: 0 solid var(--color-gray-800);
+    border-top-width: 1px;
+    margin-right: auto;
+    margin-left: auto;
+    content: '';
+  }
+
+  & ol {
+    margin-top: 1em;
+    list-style: decimal;
+  }
+
+  & p {
+    margin-top: 0;
+  }
+}
+
+.footnote-ref a {
+  text-decoration: none;
+}

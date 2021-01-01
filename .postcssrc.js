@@ -1,5 +1,5 @@
 module.exports = (ctx) => ({
-  map: ctx.env !== 'production' ? {inline: true} : false,
+  map: ctx.env !== 'production' ? {} : false,
   plugins: {
     'postcss-import': {},
     'postcss-preset-env': {

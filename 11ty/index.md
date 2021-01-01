@@ -1,8 +1,8 @@
 ---
 layout: home
 title: Virga — A minimum Eleventy starter kit
-postsHeading: Latest posts
-archiveButtonText: See all posts
+postsHeading: Latest stories
+archiveButtonText: See all stories
 ---
 
 {{ site.description }}

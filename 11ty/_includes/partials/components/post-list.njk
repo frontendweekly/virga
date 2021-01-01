@@ -13,14 +13,15 @@
           {% set metaDate = item.date %}
           {% set tags = item.data.tags %}
           <li class="c-post-list__item">
-            <article>
-              <h3>
-                <a href="{{ item.url }}" class="c-post-list__link u-url" rel="bookmark">{{ item.data.title }}</a>
-              </h3>
+            <article class="c-post-list">
+              <a href="{{ item.url }}" class="c-post-list__link u-url" rel="bookmark">
+                <span class="u-visually-hidden">{{ item.data.title }}</span>
+              </a>
+              <h3>{{ item.data.title }}</h3>
               {% include "partials/components/post-meta.njk" %}
               {% if item.data.desc %}
               <p class="c-post-list__summary p-summary">
-                <a href="{{ item.url }}" class="c-post-list__link u-url" rel="bookmark">{{ item.data.desc }}</a>
+                {{ item.data.desc }}
               </p>
               {% endif %}
             </article>

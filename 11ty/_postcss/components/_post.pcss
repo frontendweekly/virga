@@ -1,5 +1,8 @@
 .c-post {
-  /* List */
+  & a:hover {
+    text-decoration: none;
+  }
+
   & ul,
   & ol,
   & dd {
@@ -10,7 +13,6 @@
     );
   }
 
-  /* Table */
   & table {
     width: 100%;
     border-collapse: collapse;
@@ -27,7 +29,6 @@
     text-transform: uppercase;
   }
 
-  /* Figure & Video */
   & figure,
   & video {
     position: relative;
@@ -35,7 +36,6 @@
     max-width: calc(var(--space-char-per-line) * 1ch);
   }
 
-  /*  Figure & Image */
   & img {
     margin-right: auto;
     margin-left: auto;
@@ -51,15 +51,6 @@
     font-size: 0.9em;
     font-style: italic;
     text-align: center;
-  }
-
-  /* Code */
-  & .c-code-block {
-    width: 100%;
-    padding: 0 1rem;
-    background-color: var(--color-gray-900);
-    border-radius: 2px;
-    overflow-x: auto;
   }
 
   & pre,
@@ -81,7 +72,6 @@
     word-wrap: normal;
   }
 
-  /* Inline Code */
   & code:not([class]),
   & kbd:not([class]),
   & samp:not([class]) {
@@ -90,7 +80,6 @@
     white-space: normal;
   }
 
-  /* Explanation */
   & .explanation {
     margin-top: 0;
     color: var(--color-gray-700);
@@ -110,12 +99,5 @@
       var(--type-local-collapse-adjustment-size-in-px) /
         var(--type-local-font-size-in-px) * -1em
     );
-  }
-
-  & .c-heading-permalink {
-    margin-left: var(--space-base);
-    color: var(--color-gray-700);
-    font-size: 0.8em;
-    vertical-align: middle;
   }
 }

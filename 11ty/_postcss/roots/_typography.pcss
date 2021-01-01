@@ -105,7 +105,6 @@ ul,
 dl,
 figure,
 blockquote,
-.c-code-block,
 table {
   margin: calc(
       (var(--type-base-line-height) / var(--type-base-font-size)) * 1em
@@ -137,10 +136,6 @@ main > h6:first-child {
 :is(h3, h4, h5) + :is(p, ol, ul, dl, figure, blockquote, pre, table),
 :is(h1, h2, h3, h4, h5) + h6 + *,
 hr + h6 {
-  margin-top: 0;
-}
-
-blockquote + p {
   margin-top: 0;
 }
 

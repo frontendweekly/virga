@@ -33,7 +33,7 @@ Before I explaining responsibilities for each layer, I'll show you how I'm apply
 │  └── _typography.pcss
 ├── objects
 │  ├── _hr.pcss
-│  ├── _layout.pcss
+│  ├── _wrapper.pcss
 │  └── _skip-link.pcss
 ├── components
 │  ├── _intro.pcss
