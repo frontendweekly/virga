@@ -3,7 +3,9 @@ const fs = require('fs');
 
 const qoa = require('qoa');
 const signale = require('signale');
+// eslint-disable-next-line node/no-extraneous-require
 const matter = require('gray-matter');
+// eslint-disable-next-line node/no-extraneous-require
 const slugify = require('slugify');
 
 // Import data files
@@ -15,6 +17,7 @@ const POSTS_DIR = resolve(__dirname, '../src/posts');
 // Helper Function to return unknown errors
 const handleError = (err) => {
   signale.fatal(err);
+  // eslint-disable-next-line no-process-exit
   process.exit(1);
 };
 
