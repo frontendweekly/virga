@@ -1,7 +1,9 @@
 {% if postListItems.length %}
 <section class="c-post-list h-feed">
   <div class="o-inner-wrapper">
+    {% if postListHeading %}
     <h2 class="c-post-list__heading p-name">{{ postListHeading }}</h2>
+    {% endif %}
     <ol class="c-post-list__items" reversed>
       {% for item in postListItems %}
         {% if item.date.getTime() <= global.now %}
