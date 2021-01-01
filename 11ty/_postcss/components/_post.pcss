@@ -1,4 +1,8 @@
 .c-post {
+  & a {
+    word-break: break-word;
+  }
+
   & a:hover {
     text-decoration: none;
   }
@@ -6,10 +10,8 @@
   & ul,
   & ol,
   & dd {
-    --type-local-font-size-in-px: 40;
-
     padding-left: calc(
-      (var(--type-local-font-size-in-px) / var(--type-base-font-size)) * 1em
+      (var(--type-base-font-size) / var(--type-base-font-size)) * 1em
     );
   }
 
@@ -68,8 +70,6 @@
     tab-size: 2;
     text-align: left;
     word-break: normal;
-    word-spacing: normal;
-    word-wrap: normal;
   }
 
   & code:not([class]),
@@ -77,7 +77,7 @@
   & samp:not([class]) {
     padding: 1px 2px;
     background-color: var(--color-gray-200);
-    white-space: normal;
+    word-break: break-word;
   }
 
   & .explanation {
@@ -92,7 +92,7 @@
       var(--type-base-font-size) * var(--type-scale-4)
     );
     --type-local-collapse-adjustment-size-in-px: calc(
-      var(--type-local-font-size-in-px) * 2
+      var(--type-local-font-size-in-px) * 1.5
     );
 
     margin-top: calc(
