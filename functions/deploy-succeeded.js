@@ -1,5 +1,6 @@
 // Stole from https://github.com/maxboeck/mxb/blob/master/_lambda/deploy-succeeded.js
 
+// eslint-disable-next-line node/no-extraneous-require
 const fetch = require('node-fetch');
 const dotenv = require('dotenv');
 const Twitter = require('twitter');
@@ -64,7 +65,10 @@ const processPosts = async (posts) => {
     if (q.statuses && q.statuses.length === 0) {
       return publishPost(siteTitle, latestPost);
     } else {
-      return status(400, 'Latest post was already syndicated. No action taken.');
+      return status(
+        400,
+        'Latest post was already syndicated. No action taken.'
+      );
     }
   } catch (err) {
     return handleError(err);
@@ -84,7 +88,12 @@ const prepareStatusText = (siteTitle, post) => {
   const spaceLength = 2;
   const colon = 1;
   const maxLength =
-    tweetMaxLength - titleLength - siteTitleLength - spaceLength - colon - urlLength;
+    tweetMaxLength -
+    titleLength -
+    siteTitleLength -
+    spaceLength -
+    colon -
+    urlLength;
 
   let tweetText = `${siteTitle}: ${post.title} `;
 
