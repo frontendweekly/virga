@@ -1,6 +1,5 @@
-// Stole from https://github.com/maxboeck/mxb/blob/master/_lambda/deploy-succeeded.js
+// Stolen from https://github.com/maxboeck/mxb/blob/master/_lambda/deploy-succeeded.js
 
-// eslint-disable-next-line node/no-extraneous-require
 const fetch = require('node-fetch');
 const dotenv = require('dotenv');
 const Twitter = require('twitter');

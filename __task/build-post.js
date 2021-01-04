@@ -3,16 +3,14 @@ const fs = require('fs');
 
 const qoa = require('qoa');
 const signale = require('signale');
-// eslint-disable-next-line node/no-extraneous-require
 const matter = require('gray-matter');
-// eslint-disable-next-line node/no-extraneous-require
 const slugify = require('slugify');
 
 // Import data files
 const {author} = require('../11ty/_data/site.json');
 
 // Posts location
-const POSTS_DIR = resolve(__dirname, '../src/posts');
+const POSTS_DIR = resolve(__dirname, '../11ty/posts');
 
 // Helper Function to return unknown errors
 const handleError = (err) => {
