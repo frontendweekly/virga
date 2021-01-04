@@ -113,7 +113,7 @@ extends @frontendweekly/browserslist-config-molle
 
 While I'm digging into Browserslist document, I did found a gem.
 
-```sh
+```shell
 npx browserslist@latest --update-db
 ```
 
