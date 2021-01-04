@@ -34,6 +34,7 @@ module.exports = class {
   }
 
   async render(data) {
+    // eslint-disable-next-line sonarjs/prefer-object-literal
     const feed = {};
 
     feed.version = 'https://jsonfeed.org/version/1';
