@@ -1,32 +1,34 @@
 /**
- * a11y-dark theme for JavaScript, CSS, and HTML
- * Based on the okaidia theme: https://github.com/PrismJS/prism/blob/gh-pages/themes/prism-okaidia.css
- * @author ericwbailey
+ * Dracula Theme originally by Zeno Rocha [@zenorocha]
+ * https://draculatheme.com/
+ *
+ * Ported for PrismJS by Albert Vallverdu [@byverdu]
  */
 
-pre[class*='language-'] > code[class*='language-'] {
-  padding: 0;
-  background-color: transparent;
-  color: #f8f8f2;
-  -webkit-hyphens: none;
-  -moz-hyphens: none;
-  -ms-hyphens: none;
+code[class*='language-'],
+pre[class*='language-'] {
+  background: none;
   hyphens: none;
-  -moz-tab-size: 2;
-  -o-tab-size: 2;
   tab-size: 2;
-  word-break: break-word;
+  text-align: left;
+  word-break: normal;
+  word-spacing: normal;
+  word-wrap: normal;
 }
 
 .token.comment,
 .token.prolog,
 .token.doctype,
 .token.cdata {
-  color: #d4d0ab;
+  color: #6272a4;
 }
 
 .token.punctuation {
-  color: #fefefe;
+  color: #f8f8f2;
+}
+
+.namespace {
+  opacity: 0.7;
 }
 
 .token.property,
@@ -34,12 +36,12 @@ pre[class*='language-'] > code[class*='language-'] {
 .token.constant,
 .token.symbol,
 .token.deleted {
-  color: #ffa07a;
+  color: #ff79c6;
 }
 
 .token.boolean,
 .token.number {
-  color: #00e0e0;
+  color: #bd93f9;
 }
 
 .token.selector,
@@ -48,7 +50,7 @@ pre[class*='language-'] > code[class*='language-'] {
 .token.char,
 .token.builtin,
 .token.inserted {
-  color: #abe338;
+  color: #50fa7b;
 }
 
 .token.operator,
@@ -57,76 +59,34 @@ pre[class*='language-'] > code[class*='language-'] {
 .language-css .token.string,
 .style .token.string,
 .token.variable {
-  color: #00e0e0;
+  color: #f8f8f2;
 }
 
 .token.atrule,
 .token.attr-value,
-.token.function {
-  color: #ffd700;
+.token.function,
+.token.class-name {
+  color: #f1fa8c;
 }
 
 .token.keyword {
-  color: #00e0e0;
+  color: #8be9fd;
 }
 
 .token.regex,
 .token.important {
-  color: #ffd700;
+  color: #ffb86c;
 }
 
 .token.important,
 .token.bold {
   font-weight: bold;
 }
+
 .token.italic {
   font-style: italic;
 }
 
 .token.entity {
   cursor: help;
-}
-
-@media screen and (-ms-high-contrast: active) {
-  code[class*='language-'],
-  pre[class*='language-'] {
-    background: window;
-    color: windowText;
-  }
-
-  :not(pre) > code[class*='language-'],
-  pre[class*='language-'] {
-    background: window;
-  }
-
-  .token.important {
-    background: highlight;
-    color: window;
-    font-weight: normal;
-  }
-
-  .token.atrule,
-  .token.attr-value,
-  .token.function,
-  .token.keyword,
-  .token.operator,
-  .token.selector {
-    font-weight: bold;
-  }
-
-  .token.attr-value,
-  .token.comment,
-  .token.doctype,
-  .token.function,
-  .token.keyword,
-  .token.operator,
-  .token.property,
-  .token.string {
-    color: highlight;
-  }
-
-  .token.attr-value,
-  .token.url {
-    font-weight: normal;
-  }
 }

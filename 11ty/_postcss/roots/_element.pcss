@@ -4,9 +4,8 @@
   box-sizing: border-box;
 }
 
-ul[class],
-ol[class] {
-  padding: 0;
+ul[role='list'],
+ol[role='list'] {
   list-style: none;
 }
 
@@ -25,6 +24,10 @@ dd {
   margin: 0;
 }
 
+html:focus-within {
+  scroll-behavior: smooth;
+}
+
 html,
 body {
   height: 100%;
@@ -37,7 +40,6 @@ body {
   font-variant-ligatures: common-ligatures;
   overflow-x: hidden;
   overflow-y: scroll;
-  scroll-behavior: smooth;
   text-rendering: optimizeLegibility;
 }
 
