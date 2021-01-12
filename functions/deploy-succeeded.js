@@ -141,5 +141,5 @@ const publishPost = async (statusText) => {
 
 // Lambda Function Handler
 exports.handler = async () => {
-  return fetchFeed.then(gateway).then(prepareStatusText).then(publishPost);
+  return fetchFeed().then(gateway).then(prepareStatusText).then(publishPost);
 };
