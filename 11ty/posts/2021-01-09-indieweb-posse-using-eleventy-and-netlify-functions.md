@@ -83,7 +83,7 @@ A couple of questions I have before start doing TDD:
 - I don't want to actually send out a tweet every time I run test. I need to mock it
 - How I'm going to test functions that would go inside the `handler` method?
 
-For mocking, I'll use [Mock Service Worker](https://mswjs.io/) which "is an API mocking library that uses Service Worker API to intercept actual requests." It sounds like for client-side only, but it actually works in Node too.
+For mocking, I'll use [Mock Service Worker](https://mswjs.io/) which "is an API mocking library that uses Service Worker API to intercept actual requests." It sounds like for client-side only, but it actually works in Node.js too.
 
 For testing non-export functions, I've decided to use [jhnns /rewire](https://github.com/jhnns/rewire). This looks like very black magic. I could export functions that I'm going to write for test, but that's not what I intended to do with `deploy-succeeded.js` so I'll take the black magic this time.
 
@@ -155,7 +155,7 @@ After researching Tweeter API Doc, I did find out about the search feature. In s
 
 If I were simply used the Search API to find out I tweeted the article or now by searching article URL which I think it's unique enough for this kind of search, then there would be a couple of issues.
 
-The issues I can see now would be situation like this: if I did tweet the most recent article but after 7 days, I've noticed typos so I fix them and deploy it, then that article is still the most recent article, and it'll be after 7 days, so the article will get tweeted again.
+The issues I can see now would be situation like this: if I did tweet the most recent article but after 7 days, I've noticed typos, so I fix them and deploy it, then that article is still the most recent article, and it'll be after 7 days, so the article will get tweeted again.
 
 I can't speak for the others but for me, Twitter is already noisy, so it would be great if I can avoid being the noise…
 
