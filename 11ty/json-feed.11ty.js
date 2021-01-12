@@ -37,17 +37,19 @@ module.exports = class {
     // eslint-disable-next-line sonarjs/prefer-object-literal
     const feed = {};
 
-    feed.version = 'https://jsonfeed.org/version/1';
+    feed.version = 'https://jsonfeed.org/version/1.1';
     feed.user_comment = `This is a blog feed. You can add this to your feed reader using the following URL: ${data.site.url}/feed.json`;
     feed.title = `${data.site.name}`;
     feed.home_page_url = `${data.site.url}`;
     feed.feed_url = `${data.site.url}/feed.json`;
     feed.description = `${data.site.description}`;
     feed.favicon = `${data.site.url}/favicon.ico`;
-    feed.author = {
-      name: `${data.site.author.name}`,
-      url: `${data.site.url}`,
-    };
+    feed.authors = [
+      {
+        name: `${data.site.author.name}`,
+        url: `${data.site.url}`,
+      },
+    ];
 
     feed.items = [];
 
@@ -63,9 +65,11 @@ module.exports = class {
       item.summary = post.data.desc;
       item.content_html = await this.prepareContent(post.templateContent);
       item.date_published = post.data.date;
-      item.author = {
-        name: `${post.data.author}`,
-      };
+      item.authors = [
+        {
+          name: `${post.data.author}`,
+        },
+      ];
 
       feed.items.push(item);
     }
