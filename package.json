@@ -40,7 +40,7 @@
     "@11ty/eleventy-plugin-syntaxhighlight": "^3.0.6",
     "@frontendweekly/collection-postfeed": "^0.0.9",
     "@frontendweekly/collection-posts": "^0.0.9",
-    "@frontendweekly/molle": "^0.0.29",
+    "@frontendweekly/molle": "^0.0.31",
     "autoprefixer": "^10.2.1",
     "cssnano": "^4.1.10",
     "dotenv": "^8.2.0",
