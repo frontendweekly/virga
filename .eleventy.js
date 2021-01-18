@@ -10,6 +10,7 @@ const filterDateIso = require('@frontendweekly/filter-date-iso');
 // Import transforms
 const transformHtmlMin = require('@frontendweekly/transform-htmlmin');
 const transformEnhancePostHtml = require('@frontendweekly/transform-enhance-post-html');
+
 // Import collection
 const collectionPost = require('@frontendweekly/collection-posts');
 const collectionPostFeed = require('@frontendweekly/collection-postfeed');
@@ -32,10 +33,10 @@ module.exports = function (config) {
 
   // Transforms
   config.addTransform('htmlmin', transformHtmlMin);
-  config.addTransform('enhancePostHtml', transformEnhancePostHtml);
+  config.addTransform('transformEnhancePostHtml', transformEnhancePostHtml);
 
   // Passthrough copy
-  config.addPassthroughCopy('11ty/images');
+  config.addPassthroughCopy({'11ty/images/generated': 'images'});
   config.addPassthroughCopy('11ty/favicon.*');
   config.addPassthroughCopy('11ty/humans.txt');
 
