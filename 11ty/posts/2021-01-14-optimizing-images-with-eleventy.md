@@ -269,8 +269,6 @@ Remove entire `if`, then did `act pull_request -n`. It looks good.
 
 Act is intended to work as a local task runner so, if I run it without `-n` it should actually compress images, but since I want to see, what actually happens when real `push` or `pull_request` have triggered.
 
-I'm writing this story for me and future me. This is a way to learn for me, so I don't heisted to make mistakes. I don't really know if there are any readers either.
-
-Therefore, I'm going to stop writing this story and publish it along with my newly created Transform and (hopefully working) GitHub Action.
+![GitHub's pull request screen capture displaying GitHub Action result](images/2021-01-18-n80ugn4M@2x.png 'It worked 🎉')
 
 Well, then until next journey.
