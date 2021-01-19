@@ -3,8 +3,10 @@ const {advanceTo, clear} = require('jest-date-mock');
 const rewire = require('rewire');
 
 const deploySucceeded = rewire('../functions/deploy-succeeded');
+const handleError = deploySucceeded.__get__('handleError');
+const fetchFeed = deploySucceeded.__get__('fetchFeed');
 const differenceInDays = deploySucceeded.__get__('differenceInDays');
-const searchTwitterForUrl = deploySucceeded.__get__('searchTwitterForUrl');
+const gateway = deploySucceeded.__get__('gateway');
 const prepareStatusText = deploySucceeded.__get__('prepareStatusText');
 const publishPost = deploySucceeded.__get__('publishPost');
 
@@ -12,27 +14,21 @@ beforeAll(() => server.listen());
 
 afterAll(() => {
   server.close();
-  clear();
 });
 
 test('The most recent post is LESS than 7 days old', () => {
   // Arrange
   advanceTo(new Date(2021, 0, 1, 0, 0, 0));
   const now = new Date();
-
   const lessThan7Days = '2021-01-06T12:15:31.627Z';
 
-  // Assert
-  expect(differenceInDays(now, lessThan7Days)).toBeLessThanOrEqual(7);
-});
-
-test('Twitter Search API returns ZERO result', async () => {
-  // Arrange
-  const url = 'TEST';
   // Act
-  const actual = await searchTwitterForUrl(url);
+  const actual = differenceInDays(now, lessThan7Days);
+
   // Assert
-  expect(actual).toBe(true);
+  expect(actual).toBeLessThanOrEqual(7);
+
+  clear();
 });
 
 describe('Prepare a status text for a tweet', () => {
@@ -70,12 +66,31 @@ describe('Prepare a status text for a tweet', () => {
 });
 
 test('publishPost works', async () => {
-  const statusText = `This is a test tweet with in 240 characters limit via Virga: https://virga.frontendweekly.tokyo/test-`;
-  const actual = await publishPost(statusText);
+  const ingredient = {
+    status:
+      'This is a test tweet over 240 characters limit. This is a test tweet over 240 characters limit. This is a test tweet over 240 characters limit.',
+    url: 'https://virga.frontendweekly.tokyo/test-',
+    siteName: 'Virga',
+  };
+  const actual = await publishPost(ingredient);
   expect(actual).toMatchInlineSnapshot(`
     Object {
-      "body": "Post \\"This is a test tweet with in 240 characters limit via Virga: https://virga.frontendweekly.tokyo/test-\\" successfully posted to Twitter.",
+      "body": "Post \\"This is a test tweet over 240 characters limit. This is a test tweet over... via Virga: https://virga.frontendweekly.tokyo/test-\\" successfully posted to Twitter.",
       "statusCode": 200,
     }
   `);
+});
+
+test('integration test', async () => {
+  advanceTo(new Date(2021, 0, 19, 0, 0, 0));
+  const actual = await fetchFeed().then(gateway).catch(handleError);
+
+  expect(actual).toMatchInlineSnapshot(`
+    Object {
+      "body": "Post \\"Shareable Configs via undefined: https://virga.frontendweekly.tokyo/posts/shareable-configs\\" successfully posted to Twitter.",
+      "statusCode": 200,
+    }
+  `);
+
+  clear();
 });
