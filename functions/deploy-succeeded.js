@@ -24,6 +24,29 @@ const status = (code, msg) => {
   };
 };
 
+/// Helper Function to calc date difference between published date and now
+const differenceInDays = (now, publishedDate) =>
+  Math.ceil((now - new Date(publishedDate)) / 1000 / 60 / 60 / 24);
+
+/// Helper Function to check twitter for any tweets containing post URL
+const searchTwitterForUrl = async (url) => {
+  try {
+    // check twitter for any tweets containing post URL.
+    // if there are none, publish it.
+    const q = await twitter.get('search/tweets', {q: url});
+    if (q.statuses && q.statuses.length === 0) {
+      return true;
+    } else {
+      return status(
+        400,
+        'Latest post was already syndicated. No action taken.'
+      );
+    }
+  } catch (err) {
+    return handleError(err);
+  }
+};
+
 // Configure Twitter API Client
 const twitter = new Twitter({
   subdomain: 'api',
@@ -51,38 +74,17 @@ const gateway = async (feed) => {
   // assume the last post is not yet syndicated
   const latestPost = feed.items[0];
 
-  const isLessThan7DaysOld = (compare) => {
-    return (
-      Math.ceil((new Date() - new Date(compare)) / 1000 / 60 / 60 / 24) >= -7
-    );
-  };
-
-  const doesSearchReturnZero = async (query) => {
-    try {
-      // check twitter for any tweets containing post URL.
-      // if there are none, publish it.
-      const q = await twitter.get('search/tweets', {q: query});
-      if (q.statuses && q.statuses.length === 0) {
-        return true;
-      } else {
-        return status(
-          400,
-          'Latest post was already syndicated. No action taken.'
-        );
-      }
-    } catch (err) {
-      return handleError(err);
-    }
-  };
-
-  if (!isLessThan7DaysOld(latestPost.date_published) >= 7) {
+  // if the latest post is 7 days old, assume post is syndicated
+  if (differenceInDays(new Date(), latestPost.date_published) >= 7) {
     return status(
       400,
-      'Latest post is 7 days old, assuming already syndicated. No action taken.'
+      'Latest post is more than 7 days old, assuming already syndicated. No action taken.'
     );
   }
 
-  if (await doesSearchReturnZero(latestPost.url)) {
+  // check twitter for any tweets containing post URL.
+  // if there are none, publish it.
+  if (await searchTwitterForUrl(latestPost.url)) {
     return {
       status: latestPost.title,
       url: latestPost.url,

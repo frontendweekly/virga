@@ -3,8 +3,8 @@ const {advanceTo, clear} = require('jest-date-mock');
 const rewire = require('rewire');
 
 const deploySucceeded = rewire('../functions/deploy-succeeded');
-const isLessThan7DaysOld = deploySucceeded.__get__('isLessThan7DaysOld');
-const doesSearchReturnZero = deploySucceeded.__get__('doesSearchReturnZero');
+const differenceInDays = deploySucceeded.__get__('differenceInDays');
+const searchTwitterForUrl = deploySucceeded.__get__('searchTwitterForUrl');
 const prepareStatusText = deploySucceeded.__get__('prepareStatusText');
 const publishPost = deploySucceeded.__get__('publishPost');
 
@@ -20,19 +20,17 @@ test('The most recent post is LESS than 7 days old', () => {
   advanceTo(new Date(2021, 0, 1, 0, 0, 0));
   const now = new Date();
 
-  const moreThan7Days = '2021-01-10T12:15:31.627Z';
   const lessThan7Days = '2021-01-06T12:15:31.627Z';
 
   // Assert
-  expect(isLessThan7DaysOld(now, moreThan7Days)).toBe(false);
-  expect(isLessThan7DaysOld(now, lessThan7Days)).toBe(true);
+  expect(differenceInDays(now, lessThan7Days)).toBeLessThanOrEqual(7);
 });
 
 test('Twitter Search API returns ZERO result', async () => {
   // Arrange
-  const query = 'TEST';
+  const url = 'TEST';
   // Act
-  const actual = await doesSearchReturnZero(query);
+  const actual = await searchTwitterForUrl(url);
   // Assert
   expect(actual).toBe(true);
 });
