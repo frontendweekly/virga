@@ -77,8 +77,8 @@ const prepareStatusText = (ingredient = {}) => {
 
 // Push a new post to Twitter
 const publishPost = async (ingredient) => {
-  const statusText = prepareStatusText(ingredient);
   try {
+    const statusText = prepareStatusText(ingredient);
     const tweet = await twitter.post('statuses/update', {
       status: statusText,
     });
@@ -98,23 +98,22 @@ const publishPost = async (ingredient) => {
 // Gateway
 const gateway = async (feed) => {
   const items = feed.items;
-
-  if (!items.length) {
-    return status(404, 'No posts found to process.');
-  }
-
-  // assume the last post is not yet syndicated
-  const latestPost = items[0];
-
-  // if the latest post is 7 days old, assume post is syndicated
-  if (differenceInDays(new Date(), latestPost.date_published) >= 7) {
-    return status(
-      400,
-      'Latest post is more than 7 days old, assuming already syndicated. No action taken.'
-    );
-  }
-
   try {
+    if (!items.length) {
+      return status(404, 'No posts found to process.');
+    }
+
+    // assume the last post is not yet syndicated
+    const latestPost = items[0];
+
+    // if the latest post is 7 days old, assume post is syndicated
+    if (differenceInDays(new Date(), latestPost.date_published) >= 7) {
+      return status(
+        400,
+        'Latest post is more than 7 days old, assuming already syndicated. No action taken.'
+      );
+    }
+
     // check twitter for any tweets containing post URL.
     // if there are none, publish it.
     const q = await twitter.get('search/tweets', {q: latestPost.url});
