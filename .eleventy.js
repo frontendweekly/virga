@@ -9,7 +9,9 @@ const filterDateIso = require('@frontendweekly/filter-date-iso');
 
 // Import transforms
 const transformHtmlMin = require('@frontendweekly/transform-htmlmin');
-const transformEnhancePostHtml = require('@frontendweekly/transform-enhance-post-html');
+const transformEnhancePostIframe = require('@frontendweekly/transform-enhance-post-iframe');
+const transformEnhancePostCodeBlock = require('@frontendweekly/transform-enhance-post-code-block');
+const transformEnhancePostImg = require('@frontendweekly/transform-enhance-post-img');
 
 // Import collection
 const collectionPost = require('@frontendweekly/collection-posts');
@@ -32,8 +34,10 @@ module.exports = function (config) {
   config.addFilter('dateIsoFilter', filterDateIso);
 
   // Transforms
+  config.addTransform('enhancePostIframe', transformEnhancePostIframe);
+  config.addTransform('enhancePostCodeBlock', transformEnhancePostCodeBlock);
+  config.addTransform('enhancePostImg', transformEnhancePostImg);
   config.addTransform('htmlmin', transformHtmlMin);
-  config.addTransform('transformEnhancePostHtml', transformEnhancePostHtml);
 
   // Passthrough copy
   config.addPassthroughCopy({'11ty/images/generated': 'images'});
