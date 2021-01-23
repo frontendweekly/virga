@@ -1,7 +1,19 @@
 // Import plugins
 const rssPlugin = require('@11ty/eleventy-plugin-rss');
 const syntaxHighlight = require('@11ty/eleventy-plugin-syntaxhighlight');
-const molle = require('@frontendweekly/molle');
+const markdown = require('@frontendweekly/eleventy-plugin-markdown');
+
+// Import filters
+const filterDateOrdinalSuffix = require('@frontendweekly/filter-date-ordinal-suffix');
+const filterDateIso = require('@frontendweekly/filter-date-iso');
+
+// Import transforms
+const transformHtmlMin = require('@frontendweekly/transform-htmlmin');
+const transformEnhancePostIframe = require('@frontendweekly/transform-enhance-post-iframe');
+const transformEnhancePostCodeBlock = require('@frontendweekly/transform-enhance-post-code-block');
+const transformEnhancePostImg = require('@frontendweekly/transform-enhance-post-img');
+
+// Import collection
 const collectionPost = require('@frontendweekly/collection-posts');
 const collectionPostFeed = require('@frontendweekly/collection-postfeed');
 
@@ -15,10 +27,20 @@ module.exports = function (config) {
   // Plugins
   config.addPlugin(rssPlugin);
   config.addPlugin(syntaxHighlight);
-  config.addPlugin(molle);
+  config.setLibrary('md', markdown);
+
+  // Filters
+  config.addFilter('dateOrdinalSuffixFilter', filterDateOrdinalSuffix);
+  config.addFilter('dateIsoFilter', filterDateIso);
+
+  // Transforms
+  config.addTransform('enhancePostIframe', transformEnhancePostIframe);
+  config.addTransform('enhancePostCodeBlock', transformEnhancePostCodeBlock);
+  config.addTransform('enhancePostImg', transformEnhancePostImg);
+  config.addTransform('htmlmin', transformHtmlMin);
 
   // Passthrough copy
-  config.addPassthroughCopy('11ty/images');
+  config.addPassthroughCopy({'11ty/images/generated': 'images'});
   config.addPassthroughCopy('11ty/favicon.*');
   config.addPassthroughCopy('11ty/humans.txt');
 
