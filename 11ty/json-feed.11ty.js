@@ -1,5 +1,7 @@
-const posthtml = require('posthtml');
-const posthtmlUrls = require('posthtml-urls');
+const {
+  dateToRfc3339,
+  convertHtmlToAbsoluteUrls,
+} = require('@11ty/eleventy-plugin-rss');
 
 module.exports = class {
   async data() {
@@ -7,30 +9,6 @@ module.exports = class {
       permalink: `/feed.json`,
       eleventyExcludeFromCollections: true,
     };
-  }
-
-  async prepareContent(content, baseURL) {
-    const prep = posthtml().use(
-      posthtmlUrls({
-        eachURL: function (url) {
-          url = url.trim();
-
-          // #anchor in-page
-          if (url.indexOf('#') === 0) {
-            return url;
-          }
-
-          if (url.indexOf('http') === 0) {
-            return url;
-          }
-
-          return `${baseURL}${url}`;
-        },
-      })
-    );
-
-    const processed = await prep.process(content);
-    return processed.html.replace(/\n/g, ' ');
   }
 
   async render(data) {
@@ -63,8 +41,12 @@ module.exports = class {
 
       item.title = post.data.title;
       item.summary = post.data.desc;
-      item.content_html = await this.prepareContent(post.templateContent);
-      item.date_published = post.data.date;
+      item.content_html2 = await convertHtmlToAbsoluteUrls(
+        post.templateContent,
+        absolutePostUrl,
+        {closingSingleTag: 'slash'}
+      );
+      item.date_published = dateToRfc3339(post.data.date);
       item.authors = [
         {
           name: `${post.data.author}`,
