@@ -1,4 +1,4 @@
-const {mockFeed, server} = require('./deploy-succeeded.mock');
+const {server} = require('./deploy-succeeded.mock');
 const {advanceTo, clear} = require('jest-date-mock');
 const rewire = require('rewire');
 
@@ -19,11 +19,11 @@ afterAll(() => {
 test('The most recent post is LESS than 7 days old', () => {
   // Arrange
   advanceTo(new Date(2021, 0, 1, 0, 0, 0));
-  const now = new Date();
+  const date = new Date();
   const lessThan7Days = '2021-01-06T12:15:31.627Z';
 
   // Act
-  const actual = differenceInDays(now, lessThan7Days);
+  const actual = differenceInDays(date, lessThan7Days);
 
   // Assert
   expect(actual).toBeLessThanOrEqual(7);
@@ -36,6 +36,7 @@ describe('Prepare a status text for a tweet', () => {
     // Arrange
     const ingredient = {
       status: 'This is a test tweet with in 240 characters limit',
+      // eslint-disable-next-line sonarjs/no-duplicate-string
       url: 'https://virga.frontendweekly.tokyo/test-',
       siteName: 'Virga',
     };
@@ -82,15 +83,11 @@ test('publishPost works', async () => {
 });
 
 test('integration test', async () => {
-  advanceTo(new Date(2021, 0, 19, 0, 0, 0));
   const actual = await fetchFeed().then(gateway).catch(handleError);
-
   expect(actual).toMatchInlineSnapshot(`
     Object {
-      "body": "Post \\"Shareable Configs via undefined: https://virga.frontendweekly.tokyo/posts/shareable-configs\\" successfully posted to Twitter.",
+      "body": "Post \\"Shareable Configs via Virga: https://virga.frontendweekly.tokyo/posts/shareable-configs\\" successfully posted to Twitter.",
       "statusCode": 200,
     }
   `);
-
-  clear();
 });

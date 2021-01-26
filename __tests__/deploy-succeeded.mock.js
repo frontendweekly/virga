@@ -10,7 +10,7 @@ const mockFeed = {
       summary:
         'A story about creating shareable configurations for ESLint, stylelint, Jest preset and Browserlist',
       // eslint-disable-next-line sonarjs/no-duplicate-string
-      date_published: '2021-01-16T12:15:31.627Z',
+      date_published: `${Date.now()}`,
       author: {
         name: 'Yuya Saito',
       },

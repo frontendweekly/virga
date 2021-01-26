@@ -25,8 +25,8 @@ const status = (code, msg) => {
 };
 
 /// Helper Function to calc date difference between published date and now
-const differenceInDays = (now, publishedDate) =>
-  Math.ceil((now - new Date(publishedDate)) / 1000 / 60 / 60 / 24);
+const differenceInDays = (date = new Date(Date.now()), publishedDate) =>
+  Math.ceil((date - new Date(publishedDate)) / 1000 / 60 / 60 / 24);
 
 // Configure Twitter API Client
 const twitter = new Twitter({
@@ -107,7 +107,9 @@ const gateway = async (feed) => {
     const latestPost = items[0];
 
     // if the latest post is 7 days old, assume post is syndicated
-    if (differenceInDays(new Date(), latestPost.date_published) >= 7) {
+    if (
+      differenceInDays(new Date(Date.now()), latestPost.date_published) >= 7
+    ) {
       return status(
         400,
         'Latest post is more than 7 days old, assuming already syndicated. No action taken.'
@@ -121,7 +123,7 @@ const gateway = async (feed) => {
       return publishPost({
         status: latestPost.title,
         url: latestPost.url,
-        title: feed.title,
+        siteName: feed.title,
       });
     } else {
       return status(
