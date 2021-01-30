@@ -8,7 +8,7 @@ module.exports = async function () {
     duration: '1d',
     type: 'json',
   });
-  const urlWithOrigin = speedify[site.url];
+  const urlWithOrigin = speedify[site.url + '/'];
   const hash = urlWithOrigin.hash;
 
   const response = await fetch(`${speedifyUrl}/api/${hash}.json`);
