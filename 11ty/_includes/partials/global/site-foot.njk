@@ -13,6 +13,10 @@
       {% include "partials/components/small-print.njk" %}
       {% endif %}
 
+      {% if speedify %}
+      {% include "partials/components/speedify.njk" %}
+      {% endif %}
+
       {% if site.showThemeCredit %}
       <p class="c-site-foot__credit">
         <small>Powered by <a href="{{ site.social.github }}">Virga</a>. Made Proudly in Tokyo.</small>

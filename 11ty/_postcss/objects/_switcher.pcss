@@ -1,0 +1,16 @@
+.o-switcher__intermediary {
+  display: flex;
+  flex-wrap: wrap;
+  margin: calc((1em / 2) * -1);
+}
+
+.o-switcher__intermediary > * {
+  flex-basis: calc((27.25 - (100% - 1em)) * 999); /* stylelint-disable-line */
+  flex-grow: 1;
+  margin: calc(1em / 2);
+}
+
+.o-switcher__intermediary > :nth-last-child(n + 5),
+.o-switcher__intermediary > :nth-last-child(n + 5) ~ * {
+  flex-basis: 100%;
+}

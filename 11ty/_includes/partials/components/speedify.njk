@@ -1,0 +1,31 @@
+<div class="c-speedify-score">
+  <h4 class="c-speedify-score__label">Lighthouse Scores for {{ site.name }} (Generated at {{ speedify.timestamp | dateOrdinalSuffixFilter }} by <a href="https://www.zachleat.com/web/speedlify/">Speedlify</a>)</h4>
+  <a class="c-speedify-score__indicator o-switcher" href="https://speedify.frontendweekly.tokyo/virga/">
+    <div class="o-switcher__intermediary">
+      <div class="c-speedify-score__item" title="Performance">
+        <span class="c-speedify-score__bar" style="--speedify-score: {{ speedify.performance }}"></span>
+        <span class="c-speedify-score__point">{{ speedify.performance }}</span>
+        <span class="c-speedify-score__title">Performance</span>
+        <span class="c-speedify-score__faux-border"></span>
+      </div>
+      <div class="c-speedify-score__item" title="Accessibility">
+        <span class="c-speedify-score__bar" style="--speedify-score: {{ speedify.accessibility }}"></span>
+        <span class="c-speedify-score__point">{{ speedify.accessibility }}</span>
+        <span class="c-speedify-score__title">Accessibility</span>
+        <span class="c-speedify-score__faux-border"></span>
+      </div>
+      <div class="c-speedify-score__item" title="Best Practices">
+        <span class="c-speedify-score__bar" style="--speedify-score: {{ speedify.bestPractices }}"></span>
+        <span class="c-speedify-score__point">{{ speedify.bestPractices }}</span>
+        <span class="c-speedify-score__title">Best Practices</span>
+        <span class="c-speedify-score__faux-border"></span>
+      </div>
+      <div class="c-speedify-score__item" title="SEO">
+        <span class="c-speedify-score__bar" style="--speedify-score: {{ speedify.seo }}"></span>
+        <span class="c-speedify-score__point">{{ speedify.seo }}</span>
+        <span class="c-speedify-score__title">SEO</span>
+        <span class="c-speedify-score__faux-border"></span>
+      </div>
+    </div>
+  </a>
+</div>
