@@ -43,7 +43,7 @@
     "@frontendweekly/eleventy-plugin-markdown": "^0.0.13",
     "@frontendweekly/filter-date-iso": "^0.0.14",
     "@frontendweekly/filter-date-ordinal-suffix": "^0.0.17",
-    "@frontendweekly/transform-enhance-post-code-block": "^0.0.5",
+    "@frontendweekly/transform-enhance-post-code-block": "^0.0.6",
     "@frontendweekly/transform-enhance-post-iframe": "^0.0.5",
     "@frontendweekly/transform-enhance-post-img": "^0.0.6",
     "@frontendweekly/transform-htmlmin": "^0.0.15",
