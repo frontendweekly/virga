@@ -93,7 +93,7 @@ and here is `inline code`.
 
 ### With heading 3 as subheading
 
-![Site flow for Virga](/images/varga-site-flow.png 'This is a site flow for Virga')
+![Site flow for Virga](/images/virga-site-flow.png 'This is a site flow for Virga')
 
 ## How about footnotes?
 

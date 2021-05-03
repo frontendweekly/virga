@@ -122,7 +122,7 @@ Let's turn this into the monstrously huge chunk of `<picture>`.
 
 [`@11ty/eleventy-img`](https://www.npmjs.com/package/@11ty/eleventy-img) is a plugin for Eleventy which uses the [sharp](https://sharp.pixelplumbing.com/) image processor and outputs multiple sizes, save multiple formats, cache remote images locally.
 
-Examples at [Eleventy Doc](https://www.11ty.dev/docs/plugins/image/) shows using it with Shortcodes, but I only use images in one layout and want to keep using markdown syntax, I'll use the plugin at [Transforms](https://www.11ty.dev/docs/config/#transforms).
+Examples at [Eleventy Doc](https://www.11ty.dev/docs/plugins/image/) shows using it with Shortcodes, but I only use images in one layout and want to keep using Markdown syntax, I'll use the plugin at [Transforms](https://www.11ty.dev/docs/config/#transforms).
 
 `@11ty/eleventy-img` is a simple yet very powerful plugin.
 After about an hour of trial and error, I've settled with this: 
@@ -185,7 +185,7 @@ const metadata = await Image(imagePath, {
 By looking at this output from the plugin, I can see what I'd need to construct `<picture>` and its siblings.
 Since I've already had an Eleventy Transform for enhancing an article, I'm going to use it.
 
-Transforms can modify a template’s output. I'd like to think of it as a post processing tool in Eleventy.
+Transforms can modify a template’s output. I'd like to think of it as a post-processing tool in Eleventy.
 So for an article, a markdown file is used to build an HTML file, Transforms will take that output(the HTML file) and modify it.
 
 By using this, I can "transform" this:
@@ -269,6 +269,6 @@ Remove entire `if`, then did `act pull_request -n`. It looks good.
 
 Act is intended to work as a local task runner so, if I run it without `-n` it should actually compress images, but since I want to see, what actually happens when real `push` or `pull_request` have triggered.
 
-![GitHub's pull request screen capture displaying GitHub Action result](images/2021-01-18-n80ugn4M@2x.png 'It worked 🎉')
+![GitHub's pull request screen capture displaying GitHub Action result](/images/2021-01-18-n80ugn4M@2x.png 'It worked 🎉')
 
 Well, then until next journey.

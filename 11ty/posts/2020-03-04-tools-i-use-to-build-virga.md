@@ -1,5 +1,5 @@
 ---
-title: Tools I use to build Virga
+title: Tools I used to build Virga
 date: 2020-03-04
 author: Yuya Saito
 desc: Or I don't know how I make stuff without those great tools.
@@ -16,19 +16,19 @@ I don't own an external keyboard nor monitor.
 
 ## Editor: IntellJ IDEA & iA Writer
 
-I used be a Vimmer but I've been using [IntellJ IDEA](https://www.jetbrains.com/idea/) for 4 or 5 years now for coding.
+I used be a Vimmer, but I've been using [IntellJ IDEA](https://www.jetbrains.com/idea/) for 4 or 5 years now for coding.
 And I use iA [Writer](https://ia.net/writer) for any other writing which is where Virga's inspiration comes from by the way.
 I love iA Writer. I've been using it since it's released.
 
-I've been looking for very light weight editor for coding. IntellJ IDEA is too heavy for small changes.
-[Xi editor](https://xi-editor.io/) looks very promising so I'm looking forward its progress.
+I've been looking for very lightweight editor for coding. IntellJ IDEA is too heavy for small changes.
+[Xi editor](https://xi-editor.io/) looks very promising, so I'm looking forward its progress.
 
 ## Terminal: iTerm2
 
-iTerm2 is my choice for a termial app. I've tried Hyper for while but I went back to iTerm2.
+iTerm2 is my choice for a Terminal app. I've tried Hyper for while, but I went back to iTerm2.
 My default shell is now [`fish`](https://fishshell.com/) which I've made the switch after I upgrade to Catalina.
 
-I have so many command line tools with me so I'm not gonna share them all here but I'll list ones I use in developing websites.
+I have so many command line tools with me, so I'm not going to share them all here, but I'll list ones I use in developing websites.
 
 [`direnv`](https://direnv.net/)
 : Load/unload environment variables based on \$PWD
@@ -71,7 +71,7 @@ I don't do UI design but when I need to do some vector related stuff, I use [Ske
 I like color. So I have [Sip](https://sipapp.io/) and [Spectrum](http://www.eigenlogik.com/spectrum/mac). The former is a color picker app though I love its color contrast ability for it. The latter is a color scheme design app.
 
 My default browser is [Firefox Developer Edition](https://www.mozilla.org/en-US/firefox/developer/).  
-I've made the switch from Chrome from this year and I only go back to Chrome when I need to do some serious performance audit.
+I've made the switch from Chrome from this year, and I only go back to Chrome when I need to do some serious performance audit.
 
 ## Web Tools
 

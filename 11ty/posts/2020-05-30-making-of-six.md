@@ -30,9 +30,9 @@ The time stamp indicates modification time.
 
 @ 22:18 May 31, 2020{:.explanation}
 
-I'm not a designer. I had once call myself one but not anymore.
+I'm not a designer. I had once called myself one but not anymore.
 I haven't done any development as a professional for long time either.
-I definitely work around those area, but I'm not there.
+I definitely work around this area, but I'm not there.
 
 Anyway.
 
@@ -43,7 +43,7 @@ Here's what I have come up so far.
 
 "Sixty Six is a collection of highlights which makes a foundation for the discoverable mental notes."
 
-My english skill has been diminishing but I still can tell this isn't good one, but it is not broken.
+My english skill has been diminishing, but I still can tell this isn't good one, but it is not broken.
 
 What is the kernel of Sixty Six?
 
@@ -56,7 +56,7 @@ I'll start with HTML to find a way in.
 
 @ 23:17 June 3, 2020{:.explanation}
 
-In "The Festival of Sunflower" (Translation is mine. It's titled "ひまわりの祝祭" in Japanese) which is one of my favorite mystery book by Iori Fujiwara, main character had always build his canvas from a plywood in his high school.
+In "The Festival of Sunflower" (Translation is mine. It's titled "ひまわりの祝祭" in Japanese) which is one of my favorite mystery book by Iori Fujiwara, main character had always built his canvas from a plywood in his high school.
 
 He paint it white, torch it, make it flat and paint it white again. He does this several times to build his canvas.
 I'm no artist. I've never done any oil painting, but I can empathize why he does this.
@@ -87,23 +87,23 @@ So that's what I've done.
 It's been there for about one week.
 I thought about using grid, but decided to go with [The Switcher](https://every-layout.dev/layouts/switcher/).
 
-Every contents are in it, but I think it's too vanilla.
+Every content are in it, but I think it's too vanilla.
 But It's too early to talk about personality of Six yet.
 
 Let's work on other kind of footer: meta.
-That's where I put something like author, publish date and etc.
+That's where I put something like author, publish date etc.
 It's kind of like footer. I often even use `<footer>` for it.
 
 Sixty Six has only one meta, yet again working from footer make sense for me.
 I've prepended a symbol `—` to bylines which carry the message about Sixty Six.
 
-I've gone back and forward if I should have other meta data other than authors.
+I've gone back and forward if I should have other metadata other than authors.
 
 ## The quote
 
 @ 21:18 June 15, 2020{:.explanation}
 
-Main contents for Sixty Six are quotes and I have been working on it since I've started to do redesign.
+Main contents for Sixty Six are quotes, and I have been working on it since I've started to do redesign.
 
 I tend to quote the whole paragraph if it's not too long; therefore, my contents tend to be short. It's quite safe to say they are not long-form at all.
 
@@ -111,14 +111,14 @@ I need them to stand out, so the quote have given the largest font size.
 
 Georgia is my choice for this redesign. I love working with typeface since I don't get to do so in my day job. Japanese fonts are very heavy so for performance budget we've set, I cannot use custom fonts.
 
-However, I still choose Georgia since this is how typically read in my Instapaper app which is where the most of quotes come from.
+However, I still choose Georgia since this is how typically read in my Instapaper app which is where the most of the quotes come from.
 
-Sixty Six is my bedlock for the discoverable memory. I don't have any research to back this up, but I think it helps me to remember if the typeface for reading and recalling is same. I don't have to question my self why I chose different typeface at least.
+Sixty Six is my bedrock for the discoverable memory. I don't have any research to back this up, but I think it helps me to remember if the typeface for reading and recalling is same. I don't have to question my self why I chose different typeface at least.
 
 It's been about one week since I've finished working on the quote and list of quotes.
-It's still very minimum but I like minimum.
+It's still very minimum, but I like minimum.
 
-## Adding sprit
+## Adding spirit
 
 @ 21:39 June 18, 2020{:.explanation}
 

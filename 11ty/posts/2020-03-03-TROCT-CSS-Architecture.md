@@ -7,7 +7,7 @@ tags:
   - CSS
 ---
 
-The title is just a click bait and I won't claim I invented this since it is just my way of applying the Inverted Triangle architecture (AKA ITCSS) which was first introduced by Harry Roberts.
+The title is just a clickbait and I won't claim I invented this since it is just my way of applying the Inverted Triangle architecture (AKA ITCSS) which was first introduced by Harry Roberts.
 
 In simplest words, ITCSS is a methodology for organizing CSS files within layers-from generic to explicit, and from low to high specificity.
 If you want to learn more in depth, you should [check out Harry's talk](https://youtu.be/hz76JIU_xB0).
@@ -20,7 +20,7 @@ While ITCSS has 7 layers (Settings, Tools, Generic, Elements, Objects, Component
 - **C**omponents
 - **T**ools
 
-Before I explaining responsibilities for each layer, I'll show you how I'm applying it at this very project.
+Before I'm explaining responsibilities for each layer, I'll show you how I'm applying it at this very project.
 
 ```shell
 .
@@ -50,7 +50,7 @@ Before I explaining responsibilities for each layer, I'll show you how I'm apply
 ├── main.pcss
 ```
 
-Let's dig in to each layers.
+Let's dig in to each layer.
 
 ### Tokens
 
@@ -65,11 +65,11 @@ I might be able to put these "tokens" into Roots, but I really love the principl
 
 Responsibilities for Roots layer are same as Generic AND Elements in ITCSS.
 
-In ITCSS, Generic houses all the very high-level, far reaching styles. it often contains things like normalize.css, CSS resets, and for example box-sizing rules.
+In ITCSS, Generic houses all the very high-level, far-reaching styles. it often contains things like normalize.css, CSS resets, and for example box-sizing rules.
 
 And Elements refer to all un-classed HTML tags. Styles in here get applied to specific HTML tags, like headings, links, and lists. This is the last layer where we use type selectors.
 
-It has both "very high-level and far reaching styles" and project default styles AKA "all un-classed HTML tags".
+It has both "very high-level and far-reaching styles" and project default styles AKA "all un-classed HTML tags".
 Both belongs to "roots" of project so that's where the name comes from.
 
 `_element.pcss` has most styles for "all un-classed HTML tags" which also has "reset" or "normalize" rules.
@@ -81,7 +81,7 @@ This is from Eric Meyer who introduced "Reset CSS" into this world so I'm follow
 
 ### Objects
 
-This layer houses same responsibilities as ITCSS does which follow OOCSS (Object Oriented CSS) principles. They are small and reusable pieces with no aesthetics which can be used in UI composition.
+This layer houses same responsibilities as ITCSS does which follow OOCSS (Object-Oriented CSS) principles. They are small and reusable pieces with no aesthetics which can be used in UI composition.
 
 ### Components
 
@@ -94,11 +94,11 @@ This layer would be very confusing for those who are familiar with ITCSS.
 In ITCSS, "Tools" means globally used mixins and functions for preprocessors like Sass.
 But since I'm using PostCSS, I'm using the name "Tools" as "Utilities" and/or "Trumps" in ITCSS.
 
-Reason behind this is, "Utilities" is hard for me to type and I always have to look up what "Trumps" means so in other word, it is "language barrier" for me so I want to change it so that it would be more easier for me.
+Reason behind this is, "Utilities" is hard for me to type, and I always have to look up what "Trumps" means so in other word, it is "language barrier" for me, so I want to change it so that it would be easier for me.
 
 ## TROCT is ITCSS
 
 ITCSS, at its core, is a set of principles to answer many of issues around writing scalable and predictable CSS in large projects.
 So TROCT just applies those principles accordingly.
 
-Just like how I had opened this post, title of this post is just a click bait. It's just showing example of ITCSS as I understand it.
+Just like how I had opened this post, title of this post is just a clickbait. It's just showing example of ITCSS as I understand it.

@@ -26,7 +26,7 @@ Your Hero's worst fears realized.{:.explanation}
 
 Before I actually write some JavaScript(I'm assuming that is the language I can use to build Netlify Build Plugins), I need to find out about I can run Netlify Build Plugins locally.
 
-Here are references I've found so far and I haven't read it all yet.
+Here are references I've found so far, and I haven't read it all yet.
 
 - [What are Netlify Build Plugins? Part 1 - How to Use Build Plugins](https://www.netlify.com/blog/2020/04/30/whats-a-netlify-build-plugin-series-part-1-using-build-plugins/)
 - [Build Plugins | Netlify Docs](https://docs.netlify.com/configure-builds/build-plugins/#create-your-own)
@@ -326,6 +326,6 @@ If I have a new quote, I have `Build time: 1m. Total deploy time: 1m 3s`.
 The answer is yes.
 
 Netlify Build Plugins have lots of possibilities, and it is relatively easy to debug, so it's enjoyable to implement.
-I'll see what could I done with this for Eleventy.
+I'll see what could I've done with this for Eleventy.
 
 Well, then until next journey.

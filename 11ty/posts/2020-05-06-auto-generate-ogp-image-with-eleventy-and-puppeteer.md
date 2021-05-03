@@ -11,7 +11,7 @@ tags:
 
 I've been publishing weekly roundup of frontend related news and articles for about 6 or 7 years.
 
-It's safe to say I like reading and I've started to highlight when I read. (I use [Pocket](https://getpocket.com) for reading on Web and Kindle for books. I've been switching between Pocket and Instapaper)
+It's safe to say I like reading, and I've started to highlight when I read. (I use [Pocket](https://getpocket.com) for reading on Web and Kindle for books. I've been switching between Pocket and Instapaper)
 
 I used to give talks on meetups and conferences and all the talks I've given (about 40 talks), I always ended with a quote.
 
@@ -157,7 +157,7 @@ I'm sure I'm missing something but...:
 
 Despite my bad decision, I have made it work so let's use them to display on social media. I always consult [HEAD by Josh Buchea](https://github.com/joshbuchea/HEAD) whenever I need to add metatags in `<head>` and it does indeed have [Social](https://github.com/joshbuchea/HEAD#social) section.
 
-I wanted to add `socialImage` field to each posts data, but couldn't get it work as expected so:
+I wanted to add `socialImage` field to each posts' data, but couldn't get it work as expected so:
 
 ```html
 {% raw %}<meta
@@ -180,6 +180,6 @@ I'm thinking about using [Netlify Build Plugins](https://www.netlify.com/build/p
 Exploring Netlify Build Plugins will be a great story.
 
 Finally, Netlify build is done: `Build time: 3m 17s. Total deploy time: 3m 27s` and last time I had deployed Sixty Six, it was `Build time: 1m 18s. Total deploy time: 1m 30s`.
-For now, I can live with it but I won't be porting this feature to any other blogs right now.
+For now, I can live with it, but I won't be porting this feature to any other blogs right now.
 
 Well, then until next journey.

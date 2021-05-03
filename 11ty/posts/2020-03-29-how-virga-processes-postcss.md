@@ -43,7 +43,7 @@ module.exports = (ctx) => ({
 Next step of process is to "convert modern CSS into something most browsers can understand, determining the polyfills you need based on your targeted browsers or runtime environments" via [`PostCSS Preset Env`](https://github.com/csstools/postcss-preset-env).
 It is like [Babel](https://babeljs.io/) for CSS.
 
-the third step is [`autoprefixer`](https://github.com/postcss/autoprefixer) which parses CSS and adds vendor prefixes to rules by Can I Use. Even though needs for "vendor prefixes" getting smaller now, I would still include this plugin.
+the third step is [`autoprefixer`](https://github.com/postcss/autoprefixer) which parses CSS and adds vendor prefixes to rule by Can I Use. Even though needs for "vendor prefixes" getting smaller now, I would still include this plugin.
 
 The final step is [`cssnano`](https://github.com/cssnano/cssnano) which is a modular minifier, built on top of the PostCSS ecosystem.
 
@@ -100,7 +100,7 @@ This file is processed by Eleventy. Although it doesn't look like a "template la
 
 According to [Eleventy Documentation](https://www.11ty.dev/docs/languages/javascript/#classes), "Eleventy looks for classes that have a `render` method and uses `render` to return the content of the template."
 Since YAML Front Matter is not supported in JavaScript template types. `data` method is there to pass `data` to control how this template will render(in other words, build) a file.
-So according to this setting, the final css will be generated into ‌`dist/css/main.css`.
+So according to this setting, the final css will be generated into `dist/css/main.css`.
 
 Finally, you would want to add `addWatchTarget` at `.eleventy.js` so that when the file or the files in this directory change Eleventy will trigger a build which would look like this:
 

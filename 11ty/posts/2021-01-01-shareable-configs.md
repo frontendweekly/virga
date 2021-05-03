@@ -7,11 +7,11 @@ author: Yuya Saito
 
 ## Unstable Linting
 
-Static testing AKA linting has been integrated with my development for some times; however, my configurations for ESLint and stylelint haven't have a single source of truth.
+Static testing AKA linting has been integrated with my development for some times; however, my configurations for ESLint and stylelint haven't had a single source of truth.
 
 I've been copy and pasting configurations for long so that there are several versions of them.
 
-In addition, I run linting as a part of tests using Jest runners and I realized that I have several versions for Jest configuration.
+In addition, I run linting as a part of tests using Jest runners, and I realized that I have several versions for Jest configuration.
 
 I knew there are a way to create a shareable configuration for ESLint, but didn't know how.
 I didn't know there are a way to do a shareable configuration for stylelint nor Jest.
@@ -71,16 +71,16 @@ module.exports = {
 
 ## Jest
 
-Last year, I've spend some time renewing my knowledge and skill for testing via [Testing Javascript by Kent C. Dodds](https://testingjavascript.com/).
+Last year, I've spent some time renewing my knowledge and skill for testing via [Testing Javascript by Kent C. Dodds](https://testingjavascript.com/).
 
 I love tinkering with my config(that's why I'm writing this story), so "Configure Jest for Testing JavaScript Applications" is one of my favorite sections.
 
-In that section, Kent C. Dodds showed real-world configuration for a large real-world application and I have distilled it for my environment.
+In that section, Kent C. Dodds showed real-world configuration for a large real-world application, and I have distilled it for my environment.
 
 ### Jest has `jest-preset.js`
 
 First, Jest has `jest.config.js` so I thought I could use same approach as ESLint and stylelint for creating a shareable config.
-Even though, I think I could make it work but I've found a better way.
+Even though, I think I could make it work, but I've found a better way.
 
 I've stumble upon `preset` when I'm reading Jest documentation.
 
@@ -101,7 +101,7 @@ module.exports = {
 
 My renewed ESLint and stylelint has rules for linting browser compatibilities so having a shared Browserlist setting comes in handy.
 
-I've realized that I depend on Browserlist tightly yet I only know a few thing about it.
+I've realized that I depend on Browserlist tightly, yet I only know a few things about it.
 Naturally, I didn't know about its shareable configs capability.
 
 However, how to set it up is quite similar to ESLint and stylelint.
@@ -133,7 +133,7 @@ Since I mainly use it for my side project which is done in Eleventy, I consider 
 
 I use yarn 2 without Lerna for mono-repo setup for this, but that's another story.
 
-I've spend some time to re-create new configs for ESLint, stylelint, Jest and Browserslist and I'm happy for now.
+I've spent some time to re-create new configs for ESLint, stylelint, Jest and Browserslist, and I'm happy for now.
 I might add my prettier config to molle-rc later. 
 
 Well, then until next journey. 

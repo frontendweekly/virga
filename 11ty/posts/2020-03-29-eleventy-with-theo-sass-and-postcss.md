@@ -36,7 +36,7 @@ Have you noticed that Sass has changed its primary implementation of Sass?
 
 Sass was originally written in Ruby and then LibSass is a C/C++ port of the Sass engine. LibSass is just a library, so it has been used with a wrapper like Node Sass.
 
-Now Sass is written in Dart and it is the primary implementation of Sass which means it gets new features before any other implementation.
+Now Sass is written in Dart, and it is the primary implementation of Sass which means it gets new features before any other implementation.
 
 In this post, when I mention Sass, I'm taking about Dart Sass.
 

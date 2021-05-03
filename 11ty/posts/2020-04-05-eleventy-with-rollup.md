@@ -2,7 +2,7 @@
 title: 'Eleventy with Rollup'
 date: 2020-04-05T11:13:14.711Z
 author: Yuya Saito
-desc: My favorite languages are HTML and CSS but sometimes I do need JavaScript and when I do I use Rollup
+desc: My favorite languages are HTML and CSS, but sometimes I do need JavaScript and when I do I use Rollup
 tags:
   - eleventy
   - bundler

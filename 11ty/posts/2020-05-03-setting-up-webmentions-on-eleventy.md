@@ -63,7 +63,7 @@ To enable Webmention, I need to do 1) Receive, 2) Transform the data, 3) Display
 
 #### UI: [Fat marker sketch](https://basecamp.com/shapeup/1.3-chapter-04#fat-marker-sketches)
 
-![Webmention sketch](/images/webmention-varga.png 'Fat marker sketch')
+![Webmention sketch](/images/webmention-virga.png 'Fat marker sketch')
 
 ### Receiving Webmention
 
@@ -228,11 +228,11 @@ Before I start transforming the data, I need to know how I would transform them 
 
 IF `wm-property` === `repost-of` AND `like-of`, I want something like this:
 
-![repost-of and like-of](/images/repost-like-of-webmention-varga.png 'Fat marker sketch for repost-of and like-of')
+![repost-of and like-of](/images/repost-like-of-webmention-virga.png 'Fat marker sketch for repost-of and like-of')
 
 ELSE IF `wm-property` === `mention-of` AND `in-reply-to`, I want something like this:
 
-![mention-of and in-reply-to](/images/in-reply-to-mention-of-webmention-varga.png 'Fat marker sketch for mention-of and in-reply-to')
+![mention-of and in-reply-to](/images/in-reply-to-mention-of-webmention-virga.png 'Fat marker sketch for mention-of and in-reply-to')
 
 ### HTML, CSS and filter
 

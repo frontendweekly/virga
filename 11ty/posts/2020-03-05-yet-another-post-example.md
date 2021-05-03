@@ -36,7 +36,7 @@ Subsequent paragraphs are indented to show that they belong to the previous foot
 
 ## Figure/Image (Recap)
 
-![Site flow for Virga](/images/varga-site-flow.png 'This is a site flow for Varga')
+![Site flow for Virga](/images/virga-site-flow.png 'This is a site flow for Virga')
 
 ## Code (Recap)
 

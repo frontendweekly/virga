@@ -7,13 +7,13 @@ author: Yuya Saito
 
 I regrettably forgot who actually said this: "Performance optimization is not an event, it's process." This always stuck in my mind when it comes to perf.
 
-When it comes to processes, it's important to monitor. Seeing the change reminds us.
+When it comes to process, it's important to monitor. Seeing the change reminds us.
 
-There are lots of ways to do this, but I like light weight solution of [Speedlify](https://www.zachleat.com/web/speedlify/) which is created by Zach Leatherman.
+There are lots of ways to do this, but I like lightweight solution of [Speedlify](https://www.zachleat.com/web/speedlify/) which is created by Zach Leatherman.
 
 And he explains how to use it at "[I added Lighthouse Scores to my Site’s Footer and You Can Too](https://www.zachleat.com/web/lighthouse-in-footer/)"
 
-I did follow his instruction and it went as smoothly as expected.
+I did follow his instruction, and it went as smoothly as expected.
 I now have Lighthouse scores on my footer.
 
 One thing I derailed from his instruction is that I didn't use his web components. I went with server-side way.

@@ -10,7 +10,7 @@ author: Yuya Saito
 > POSSE is an abbreviation for Publish (on your) Own Site, Syndicate Elsewhere, the practice of posting content on your own site first, then publishing copies or sharing links to third parties (like social media silos) with original post links to provide viewers a path to directly interacting with your content.
 > — https://indieweb.org/POSSE
 
-I've briefly mentioned about POSSE at [How Would I Extend Virga?](https://virga.frontendweekly.tokyo/posts/2020-03-07-extend-ideas-for-virga/) and I've implemented "auto tweet posing when I deploy new article" by following [Max Böck’s tutorial](https://mxb.dev/blog/syndicating-content-to-twitter-with-netlify-functions/).
+I've briefly mentioned POSSE at [How Would I Extend Virga?](https://virga.frontendweekly.tokyo/posts/2020-03-07-extend-ideas-for-virga/) and I've implemented "auto tweet posing when I deploy new article" by following [Max Böck’s tutorial](https://mxb.dev/blog/syndicating-content-to-twitter-with-netlify-functions/).
 
 While Max Böck’s tutorial is great, I've been thinking about changing and exploring a few details.
 

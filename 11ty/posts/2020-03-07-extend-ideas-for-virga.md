@@ -32,7 +32,7 @@ Virga surely not covering every aspect of IndieWeb but does offer a starting poi
 
 Netlify is good place to serve your content.
 Virga has been configured to deploy to Netlify.
-Netlify has DNS service so you can set up your custom domain very easily.
+Netlify has DNS service, so you can set up your custom domain very easily.
 
 ### Add info about yourself
 

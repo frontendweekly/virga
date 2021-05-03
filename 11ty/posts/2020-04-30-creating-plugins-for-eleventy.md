@@ -13,13 +13,13 @@ Before I introduced my story about creating plugins for Eleventy, let me write a
 
 Virga was born to learn about Eleventy, so I forked [Hylia](https://hylia.website/) as a starting point so Virga is also a starter kit for Eleventy. I'm using it for 2 other blogs([Frontend Weekly Tokyo](https://frontendweekly.tokyo/) and [Sixty Six](https://sixtysix.frontendweekly.tokyo/)) and I've started use Virga as a blog since I didn't think anyone actually using this as a starter kit.
 
-I've written a few articles mostly about Virga itself and I have nothing to left to write.
+I've written a few articles mostly about Virga itself, and I have nothing to left to write.
 Now I need to think about what I'm going to write. I know. This is where blogging becomes difficult, right?
 
 So here it is, this is what I'm doing about it.
 
-I write a story about what I'm going to implement and I write about it as I do. I don't even know how this story is going to be and that I think makes it interesting.
-This is like a diary but I'll call it a story anyway.
+I write a story about what I'm going to implement, and I write about it as I do. I don't even know how this story is going to be and that I think makes it interesting.
+This is like a diary, but I'll call it a story anyway.
 
 This is a story about implementing plugins for Eleventy.
 
@@ -30,11 +30,11 @@ To answer the latter, I'm using plugins such as [`eleventy-plugins-rss`](https:/
 
 [`eleventy-plugin-blog-tools`](https://github.com/brob/eleventy-plugin-blog-tools) by Bryan Robinson is why I thought about making plugin at first.
 
-I have 3 blogs including this one and they all use same 5 filters and 2 transforms. I update these scarcely but whenever I do, I have to do it 3 times.
+I have 3 blogs including this one, and they all use same 5 filters and 2 transforms. I update these scarcely but whenever I do, I have to do it 3 times.
 
-This is the very problem I'm trying to fix it with my soon to be created plugins and this is where MOLLE comes in.
+This is the very problem I'm trying to fix it with my soon-to-be created plugins and this is where MOLLE comes in.
 
-MOLLE is where I place my tiny plugins and I want to tryout monorepo using [Lerna](https://lerna.js.org/). While I could have published my plugins at npm, but I also want to try [GitHub Packages](https://github.com/features/packages).
+MOLLE is where I place my tiny plugins, and I want to tryout monorepo using [Lerna](https://lerna.js.org/). While I could have published my plugins at npm, but I also want to try [GitHub Packages](https://github.com/features/packages).
 
 This is where my journey begins.
 
@@ -55,12 +55,12 @@ While [official GitHub repo page](https://github.com/lerna/lerna) offers detaile
 - [What is a mono-repository and why you should try Lerna](https://dev.to/anonimoconiglio/what-is-a-mono-repository-and-why-you-should-try-lerna-57lm) by Santiago
 - [Using Lerna to manage your JavaScript monorepo](https://dev.to/jody/using-lerna-to-manage-your-javascript-monorepo-4eoo) by Jody Heavener
 
-I want to choose which plugin to install even though I need most of plugins to run my blogs. Therefore each of my plugins are going to have different version. This is what "Independent mode" means in Lerna.
+I want to choose which plugin to install even though I need most of the plugins to run my blogs. Therefore, each of my plugins are going to have different version. This is what "Independent mode" means in Lerna.
 And that's what `lerna init --independent` does.
 
 There are many commands available on Lerna, but so far I've only used `lerna publish` which publishes updated packages to the registry.
 
-I'm going to need to learn more about Lerna but I initialized it and am able to publish my packages to GitHub Packages (with couple of mistakes along the way, of course).
+I'm going to need to learn more about Lerna, but I initialized it and am able to publish my packages to GitHub Packages (with a couple of mistakes along the way, of course).
 
 My current config for Lerna looks like this:
 
@@ -81,7 +81,7 @@ My current config for Lerna looks like this:
 
 ## Configuring for GitHub Packages
 
-Publishing a package to GitHub Packages is same process as npm org and I already have done it before at work.
+Publishing a package to GitHub Packages is same process as npm org, and I already have done it before at work.
 
 I needed to generate GitHub Personal Token since I forgot I already had one for GitHub Packages (Dear future me, you should save tokens on 1 password whenever you make new one).
 
@@ -94,7 +94,7 @@ registry=https://npm.pkg.github.com/frontendweekly
 
 I use [direnv](https://github.com/direnv/direnv) to load and unload environment variables so actual value of `${GITHUB_PKG_TOKEN}` is in `.envrc` file.
 
-I haven't figure out how to use GitHub Actions to automate publishing a package yet but that's something I am going to do in future.
+I haven't figure out how to use GitHub Actions to automate publishing a package yet but that's something I am going to do in the future.
 
 ## What makes it a plugin in Eleventy?
 
@@ -109,14 +109,14 @@ module.exports = function (eleventyConfig) {
 
 And this is how a plugin might be "imported" from an "external repository".
 
-I've read some of plugins' code but I didn't know why I want to do `addPluin()` when you could do `addFilter()` or `addTransform()`?
+I've read some of the plugins' code, but I didn't know why I want to do `addPluin()` when you could do `addFilter()` or `addTransform()`?
 
 [`eleventy-plugin-blog-tools`](https://github.com/brob/eleventy-plugin-blog-tools) by Bryan Robinson offers 5 shortcodes, 2 filters and 1 collection as a plugin and I can import all by doing `addPluin()` which is handy for sure.
 
 And I could do that by setting up `.eleventy.js` as I would normally do in Eleventy.
 Now I see what makes a plugin a plugin.
 
-I've already have 4 packages ported to MOLLE and I've published each packages but those packages don't have `.eleventy.js`.
+I've already had 4 packages ported to MOLLE, and I've published each packages, but those packages don't have `.eleventy.js`.
 I should have come to that realization before publishing packages, however I have a good idea to save my mistake.
 
 Published packages are going to stay as there are. Just packages. But I can import them individually if I want.
@@ -183,20 +183,20 @@ const transformEnhancePostHtml = require('../transform-enhance-post-html');
 ```
 
 I made the change and run `npx lerna bootstrap`.
-I don't know what exactly `lerna bootstrap` does and I thought it'll install all packages I've specified in the code.
+I don't know what exactly `lerna bootstrap` does, and I thought it'll install all packages I've specified in the code.
 
 Nope.
 
-Looks like I need to do that manually so I did:
+Looks like I need to do that manually, so I did:
 
 ```bash
 npx lerna add @frontendweekly/filter-date-ordinal-suffix packages/molle --registry https://npm.pkg.github.com
 npx lerna add @frontendweekly/filter-date-iso packages/molle --registry https://npm.pkg.github.com
 npx lerna add @frontendweekly/transform-enhance-post-html packages/molle --registry https://npm.pkg.github.com
-# ... and other dependecies
+# ... and other dependencies
 ```
 
-It seems like I have to do this for every dependencies I need to add, but this does the tricks.
+It seems like I have to do this for every dependency I need to add, but this does the tricks.
 
 ## Taking out MOLLE for spin
 
