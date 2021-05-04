@@ -4,7 +4,7 @@
   functions = "functions"
 
 [build.environment]
-  NODE_VERSION = "14.15.114.15.1"
+  NODE_VERSION = "14.15.1"
 
 [[headers]]
   for = "/*"
@@ -14,6 +14,7 @@
     X-Content-Type-Options = "nosniff"
     Referrer-Policy= "origin-when-cross-origin"
     Strict-Transport-Security= "max-age=86400"
+    Permissions-Policy = "interest-cohort=()"
 
 # Netlify subdomain
 [[redirects]]
@@ -21,3 +22,8 @@
     to = "https://virga.frontendweekly.tokyo/:splat"
     status = 301
     force = true
+
+[[plugins]]
+  package = "netlify-plugin-cache"
+  [plugins.inputs]
+    paths = [".cache", "11ty/generated"]

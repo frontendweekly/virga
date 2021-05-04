@@ -53,6 +53,7 @@
     "cssnano": "^5.0.2",
     "dotenv-flow": "^3.2.0",
     "gray-matter": "^4.0.3",
+    "netlify-plugin-cache": "^1.0.3",
     "node-fetch": "^2.6.1",
     "postcss": "^8.2.13",
     "postcss-cli": "^8.3.1",
