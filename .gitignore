@@ -1,7 +1,6 @@
 *.log
 npm-debug.*
 *.scssc
-*.log
 *.swp
 .DS_Store
 .sass-cache

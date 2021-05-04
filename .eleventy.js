@@ -40,7 +40,6 @@ module.exports = function (config) {
   config.addTransform('htmlmin', transformHtmlMin);
 
   // Passthrough copy
-  config.addPassthroughCopy({'11ty/images': 'images'});
   config.addPassthroughCopy({'11ty/generated': 'images'});
   config.addPassthroughCopy('11ty/favicon.*');
   config.addPassthroughCopy('11ty/humans.txt');
