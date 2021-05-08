@@ -26,6 +26,6 @@
 [[plugins]]
   package = "netlify-plugin-cache"
   [plugins.inputs]
-    paths = [".cache", "11ty/generated"]
+    paths = [".cache"]
 [[plugins]]
 package = "netlify-plugin-debug-cache"
