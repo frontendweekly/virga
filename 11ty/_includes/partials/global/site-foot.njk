@@ -13,7 +13,7 @@
       {% include "partials/components/small-print.njk" %}
       {% endif %}
 
-      {% if speedify %}
+      {% if speedify and page.url === '/' %}
       {% include "partials/components/speedify.njk" %}
       {% endif %}
 

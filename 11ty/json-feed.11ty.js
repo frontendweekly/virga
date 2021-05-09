@@ -41,7 +41,7 @@ module.exports = class {
 
       item.title = post.data.title;
       item.summary = post.data.desc;
-      item.content_html2 = await convertHtmlToAbsoluteUrls(
+      item.content_html = await convertHtmlToAbsoluteUrls(
         post.templateContent,
         absolutePostUrl,
         {closingSingleTag: 'slash'}
