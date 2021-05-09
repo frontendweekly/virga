@@ -12,8 +12,8 @@
     X-Frame-Options = "DENY"
     X-XSS-Protection = "1; mode=block"
     X-Content-Type-Options = "nosniff"
-    Referrer-Policy= "origin-when-cross-origin"
-    Strict-Transport-Security= "max-age=86400"
+    Referrer-Policy = "origin-when-cross-origin"
+    Strict-Transport-Security = "max-age=86400"
     Permissions-Policy = "interest-cohort=()"
 
 # Netlify subdomain
@@ -28,4 +28,4 @@
   [plugins.inputs]
     paths = [".cache"]
 [[plugins]]
-package = "netlify-plugin-debug-cache"
+  package = "netlify-plugin-debug-cache"
